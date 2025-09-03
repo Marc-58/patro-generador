@@ -50,7 +50,6 @@ mides.sisa = parseFloat(document.getElementById("sisaCosCadera").value);
 mides.torax = parseFloat(document.getElementById("toraxCosCadera").value);
 mides.pit = parseFloat(document.getElementById("pitCosCadera").value);
 
-
     let midesNecessaries = [
       mides.coll, mides.talleEspatlles, mides.talleDavanter, mides.altDePit,
       mides.espatllesTotal, mides.caiguda, mides.sisa, mides.torax, mides.pit
@@ -82,6 +81,21 @@ mides.llarg = parseFloat(document.getElementById("llargVestit").value);
 
     if (midesNecessaries.some(v => isNaN(v))) {
       alert("Revisa que totes les mides del cos estiguin introduïdes correctament.");
+      return;
+    }
+  }else if (peca === "faldillaPantalo") {
+   mides.cadera = parseFloat(document.getElementById("caderaFaldillaPantalo").value);
+mides.cintura = parseFloat(document.getElementById("cinturaFaldillaPantalo").value);
+mides.tiro = parseFloat(document.getElementById("tiroFaldillaPantalo").value);
+mides.llarg = parseFloat(document.getElementById("llargFaldillaPantalo").value);
+
+
+    let midesNecessaries = [
+       mides.cintura, mides.cadera, mides.tiro, mides.llarg
+    ];
+
+    if (midesNecessaries.some(v => isNaN(v))) {
+      alert("Revisa que totes les mides de la faldilla pantalo estiguin introduïdes correctament.");
       return;
     }
   }
@@ -176,6 +190,16 @@ function dibuixaPatro(p) {
 
       
       p.rect(marge, 50, torax / 2, talleDavanter);
+      // ...
+    }else if (tipus === "faldillaPantalo") {
+     
+      const cintura = mides.cintura * escala;
+      const tiro = mides.tiro * escala;
+      const cadera = mides.cadera * escala;
+      const llarg = mides.llarg * escala;
+
+      
+      p.rect(marge, 50, llarg / 2, cadera);
       // ...
     }
   };
