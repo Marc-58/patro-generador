@@ -60,6 +60,30 @@ mides.pit = parseFloat(document.getElementById("pitCosCadera").value);
       alert("Revisa que totes les mides del cos estiguin introduïdes correctament.");
       return;
     }
+  }else if (peca === "vestit") {
+   mides.cadera = parseFloat(document.getElementById("caderaVestit").value);
+mides.cintura = parseFloat(document.getElementById("cinturaVestit").value);
+mides.coll = parseFloat(document.getElementById("collVestit").value);
+mides.talleEspatlles = parseFloat(document.getElementById("talleEspatllesVestit").value);
+mides.talleDavanter = parseFloat(document.getElementById("talleDavanterVestit").value);
+mides.altDePit = parseFloat(document.getElementById("altDePitVestit").value);
+mides.espatllesTotal = parseFloat(document.getElementById("espatllesVestit").value);
+mides.caiguda = parseFloat(document.getElementById("caigudaVestit").value);
+mides.sisa = parseFloat(document.getElementById("sisaVestit").value);
+mides.torax = parseFloat(document.getElementById("toraxVestit").value);
+mides.pit = parseFloat(document.getElementById("pitVestit").value);
+mides.llarg = parseFloat(document.getElementById("llargVestit").value);
+
+
+    let midesNecessaries = [
+      mides.coll, mides.talleEspatlles, mides.talleDavanter, mides.altDePit,
+      mides.espatllesTotal, mides.caiguda, mides.sisa, mides.torax, mides.pit, mides.llarg
+    ];
+
+    if (midesNecessaries.some(v => isNaN(v))) {
+      alert("Revisa que totes les mides del cos estiguin introduïdes correctament.");
+      return;
+    }
   }
 
   const container = document.getElementById("canvas-container");
@@ -133,6 +157,24 @@ function dibuixaPatro(p) {
       const pit = mides.pit * escala;
       const cadera = mides.cadera * escala;
 
+      p.rect(marge, 50, torax / 2, talleDavanter);
+      // ...
+    }else if (tipus === "cosACadera") {
+      const espatlles = mides.espatllesTotal * escala;
+      const talleEspatlles = mides.talleEspatlles * escala;
+      const coll = mides.coll * escala;
+      const torax = mides.torax * escala;
+      const sisa = mides.sisa * escala;
+      const cintura = mides.cintura * escala;
+      const caiguda = mides.caiguda * escala;
+      const marge = espatlles / 2 + 20 * escala + 10;
+      const talleDavanter = mides.talleDavanter * escala;
+      const altDePit = mides.altDePit * escala;
+      const pit = mides.pit * escala;
+      const cadera = mides.cadera * escala;
+      const llarg = mides.llarg * escala;
+
+      
       p.rect(marge, 50, torax / 2, talleDavanter);
       // ...
     }
