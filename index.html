@@ -9,8 +9,8 @@
       padding: 20px;
     }
 
-    .formulari {
-      display: none;
+    .formulari, #triar-peca {
+      display: none; /* Ocultar formularis fins que siguin necessaris */
       margin-top: 20px;
     }
 
@@ -23,7 +23,7 @@
     }
 
     .opcions-peces img:hover {
-      border-color: #333;
+      border-color: #333; /* Canvi de color al passar el ratolí */
     }
 
     #canvas-container {
@@ -49,38 +49,45 @@
 <body>
   <h1>Generador de Patrons</h1>
 
-  <!-- Tria de peça -->
+  <!-- PAS 1: Mides bàsiques -->
+  <div id="mides-basiques">
+    <h2>Pas 1: Introdueix mides bàsiques</h2>
+    Cintura: <input id="cintura" type="number"><br>
+    Cadera: <input id="cadera" type="number"><br>
+    <button onclick="mostrarOpcions()">Continuar</button>
+  </div>
+
+  <!-- PAS 2: Tria la peça -->
   <div id="triar-peca">
-    <h2>Tria la peça</h2>
+    <h2>Pas 2: Tria la peça</h2>
     <div class="opcions-peces" style="display:flex; gap:20px; justify-content:center;">
       <img src="https://i.pinimg.com/736x/52/d7/8f/52d78f97d4773d860a5092113134fd90.jpg" 
            alt="Faldilla" onclick="seleccionar('faldilla')">
-      <img src="https://drive.google.com/uc?export=view&id=1Tl7yCasA0C56UREleebcdq3lXerEKSID" 
-           alt="Camisa" onclick="seleccionar('camisa')">
+      <img src="https://i.pinimg.com/736x/fe/6b/87/fe6b87de0418757dbfbaf99b6ca5c782.jpg" 
+           alt="Brusa" onclick="seleccionar('brusa')">
     </div>
   </div>
 
   <!-- Formulari de faldilla -->
   <div id="faldilla-form" class="formulari">
     <h2>Faldilla</h2>
-   Cintura: <input id="cinturaFaldilla" type="number"><br>
-    Cadera: <input id="caderaFaldilla" type="number"><br>
-    Llarg: <input id="llargFaldilla" type="number"><br>    <button onclick="generarPatro('faldilla')">Generar patró</button>
+    Llarg: <input id="llargFaldilla" type="number"><br>
+    <button onclick="generarPatro('faldilla')">Generar patró</button>
   </div>
 
-  <!-- Formulari de camisa -->
-  <div id="camisa-form" class="formulari">
-    <h2>Camisa</h2>
-    Talle Espatlles: <input id="talleEspatlles" type="number"><br>
-    Pit: <input id="pit" type="number"><br>
-    Torax: <input id="torax" type="number"><br>
-    Alt de pit: <input id="altDePit" type="number"><br>
+  <!-- Formulari de brusa -->
+  <div id="brusa-form" class="formulari">
+    <h2>Brusa</h2>
     Coll: <input id="coll" type="number"><br>
-    Sisa: <input id="sisa" type="number"><br>
-    Caiguda: <input id="caiguda" type="number"><br>
-    Espatlles: <input id="espatllesTotal" type="number"><br>
+    Talle Espatlles: <input id="talleEspatlles" type="number"><br>
     Talle davanter: <input id="talleDavanter" type="number"><br>
-    <button onclick="generarPatro('camisa')">Generar patró</button>
+    Alt de pit: <input id="altDePit" type="number"><br>
+    Espatlles: <input id="espatllesTotal" type="number"><br>
+    Caiguda: <input id="caiguda" type="number"><br>
+    Sisa: <input id="sisa" type="number"><br>
+    Torax: <input id="torax" type="number"><br>
+    Pit: <input id="pit" type="number"><br>
+    <button onclick="generarPatro('brusa')">Generar patró</button>
   </div>
 
   <!-- Canvas i botó de descàrrega -->
@@ -88,13 +95,7 @@
   <button onclick="descarregarCanvas()">Descarregar imatge</button>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/p5.min.js"></script>
-  <script src="sketch.js"></script>
-  <script>
-    function seleccionar(peca) {
-      document.querySelectorAll('.formulari').forEach(f => f.style.display = 'none');
-      document.getElementById(peca + '-form').style.display = 'block';
-    }
-  </script>
+  <script src="sketch.js"></script> <!-- Assegura't que 'sketch.js' conté el codi JavaScript -->
 </body>
 </html>
 
