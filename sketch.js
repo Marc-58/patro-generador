@@ -232,6 +232,13 @@ function dibuixaPatro(p) {
 
       p.rect(marge, marge, llarg, cadera / 4);
       // afegeix aquí més detalls del dibuix...
+      
+    }else if (tipus === "coll") {
+      const coll = mides.coll * escala;
+     
+
+      p.rect(marge, marge, coll, coll / 4);
+      // afegeix aquí més detalls del dibuix...
     }
   };
 }
