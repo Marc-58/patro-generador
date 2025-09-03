@@ -60,80 +60,6 @@ mides.pit = parseFloat(document.getElementById("pitCosCadera").value);
       alert("Revisa que totes les mides del cos estiguin introduïdes correctament.");
       return;
     }
-  }else if (peca === "vestit") {
-    mides.cadera = parseFloat(document.getElementById("caderaVestit").value);
-    mides.cintura = parseFloat(document.getElementById("cinturaVestit").value);
-    mides.coll = parseFloat(document.getElementById("collVestit").value);
-    mides.talleEspatlles = parseFloat(document.getElementById("talleEspatllesVestit").value);
-    mides.talleDavanter = parseFloat(document.getElementById("talleDavanterVestit").value);
-    mides.altDePit = parseFloat(document.getElementById("altDePitVestit").value);
-    mides.espatllesTotal = parseFloat(document.getElementById("espatllesTotalVestit").value);
-    mides.caiguda = parseFloat(document.getElementById("caigudaVestit").value);
-    mides.sisa = parseFloat(document.getElementById("sisaVestit").value);
-    mides.torax = parseFloat(document.getElementById("toraxVestit").value);
-    mides.pit = parseFloat(document.getElementById("pitVestit").value);
-    mides.llargVestit = parseFloat(document.getElementById("llargVestit").value);
-
-    if (isNaN(mides.llargVestit)) {
-      alert("Introdueix un valor vàlid per al llarg del vestit.");
-      return;
-    }
-
-  }else if (peca === "pantalo") {
-    mides.cadera = parseFloat(document.getElementById("caderaPantalo").value);
-    mides.cintura = parseFloat(document.getElementById("cinturaPantalo").value);
-    mides.llarg = parseFloat(document.getElementById("llargPantalo").value);
-    mides.tiro = parseFloat(document.getElementById("tiroPantalo").value);
-    mides.genoll = parseFloat(document.getElementById("genollPantalo").value);
-
-    if (isNaN(mides.llarg) || isNaN(mides.genoll)) {
-      alert("Revisa les mides del pantaló.");
-      return;
-    }
-
-  } else if (peca === "faldillaPantalo") {
-    mides.cadera = parseFloat(document.getElementById("caderaPantalo").value);
-    mides.cintura = parseFloat(document.getElementById("cinturaPantalo").value);
-    mides.llarg = parseFloat(document.getElementById("llargPantalo").value);
-    mides.tiro = parseFloat(document.getElementById("tiroPantalo").value);
-
-    if (isNaN(mides.llarg)) {
-      alert("Revisa les mides de la faldilla pantaló.");
-      return;
-    }
-
-  } else if (peca === "colls") {
-    mides.circumferenciaColl = parseFloat(document.getElementById("circunferenciaColl").value);
-
-  } else if (peca === "maniga") {
-    mides.llargTotal = parseFloat(document.getElementById("llargTotalManiga").value);
-    mides.llargBraç = parseFloat(document.getElementById("llargBraç").value);
-    mides.munyeca = parseFloat(document.getElementById("munyecaManiga").value);
-    mides.sisa = parseFloat(document.getElementById("sisaManiga").value);
-    mides.biceps = parseFloat(document.getElementById("bicepsManiga").value);
-
-    if (isNaN(mides.llargTotal)) {
-      alert("Revisa les mides de la màniga.");
-      return;
-    }
-
-  } else if (peca === "faldillaMitjaCapa") {
-    mides.cintura = parseFloat(document.getElementById("cinturaFaldillaMitjaCapa").value);
-    mides.llarg = parseFloat(document.getElementById("llargFaldillaMitjaCapa").value);
-
-    if (isNaN(mides.llarg)) {
-      alert("Revisa les mides de la faldilla mitja capa.");
-      return;
-    }
-
-  } else if (peca === "faldillaCapaSencera") {
-    mides.cintura = parseFloat(document.getElementById("cinturaFaldillaCapaSencera").value);
-    mides.llarg = parseFloat(document.getElementById("llargFaldillaCapaSencera").value);
-
-    if (isNaN(mides.llarg)) {
-      alert("Introdueix un valor vàlid per al llarg de la faldilla.");
-      return;
-    }
   }
 
   const container = document.getElementById("canvas-container");
@@ -210,42 +136,6 @@ function dibuixaPatro(p) {
       p.rect(marge, 50, torax / 2, talleDavanter);
       // ...
     }
-    else if (tipus === "vestit") {
-      const espatlles = mides.espatllesTotal * escala;
-  const talleEspatlles = mides.talleEspatlles * escala;
-  const coll = mides.coll * escala;
-  const torax = mides.torax * escala;
-  const sisa = mides.sisa * escala;
-  const cintura = mides.cintura * escala;
-  const caiguda = mides.caiguda * escala;
-  const marge = espatlles / 2 + 20 * escala + 10;
-  const talleDavanter = mides.talleDavanter * escala;
-  const altDePit = mides.altDePit * escala;
-  const pit = mides.pit * escala;
-  const llargVestit = mides.llargVestit * escala;
-  const cadera = mides.cadera * escala;
-
-  // Part esquerra - esquena
-  p.rect(10, 10, espatlles / 2, talleEspatlles+18);
-    } 
-    else if (tipus === "faldillaPantalo") {
-      dibuixarPatroFaldillaPantalo(p, mides, escala);
-    } 
-    else if (tipus === "pantalo") {
-      dibuixarPatroPantalo(p, mides, escala);
-    } 
-    else if (tipus === "colls") {
-      dibuixarPatroColls(p, mides, escala);
-    } 
-    else if (tipus === "maniga") {
-      dibuixarPatroManiga(p, mides, escala);
-    } 
-    else if (tipus === "faldillaMitjaCapa") {
-      dibuixarPatroFaldillaMitjaCapa(p, mides, escala);
-    } 
-    else if (tipus === "faldillaCapaSencera") {
-      dibuixarPatroFaldillaCapaSencera(p, mides, escala);
-    }
   };
 }
 
@@ -259,4 +149,3 @@ function descarregarCanvas() {
     link.click();
   }
 }
-
