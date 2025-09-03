@@ -52,10 +52,10 @@
   <div id="triar-peca">
     <h2>Tria la peça</h2>
     <div class="opcions-peces" style="display:flex; gap:20px; justify-content:center;">
-      <img src="https://i.pinimg.com/736x/52/d7/8f/52d78f97d4773d860a5092113134fd90.jpg" 
-           alt="Faldilla" onclick="seleccionar('faldilla')">
-      <img src="https://i.pinimg.com/736x/fe/6b/87/fe6b87de0418757dbfbaf99b6ca5c782.jpg" 
-           alt="Brusa" onclick="seleccionar('brusa')">
+      <img src="https://i.pinimg.com/736x/52/d7/8f/52d78f97d4773d860a5092113134fd90.jpg"  alt="Faldilla" onclick="seleccionar('faldilla')">
+      <img src="https://i.pinimg.com/736x/fe/6b/87/fe6b87de0418757dbfbaf99b6ca5c782.jpg"  alt="Brusa" onclick="seleccionar('brusa')">
+      <img src="https://i.pinimg.com/736x/52/d7/8f/52d78f97d4773d860a5092113134fd90.jpg" alt="Cos a cadera" onclick="seleccionar('cosACadera')">
+
     </div>
   </div>
 
@@ -85,11 +85,25 @@
     <button onclick="generarPatro('brusa')">Generar patró</button>
   </div>
 
-  <!-- Canvas i botó de descàrrega -->
-  <div id="canvas-container"></div>
-  <button id="btnDescarregar" onclick="descarregarCanvas()" style="display:none;">
-    Descarregar imatge
-  </button>
+  <div id="cosACadera-form" class="formulari">
+    <h2>Cos a cadera</h2>
+    Cintura: <input id="cinturaCosCadera" type="number"><br>
+    Cadera: <input id="caderaCosCadera" type="number"><br>
+    Coll: <input id="collCosCadera" type="number"><br>
+    Talle Espatlles: <input id="talleEspatllesCosCadera" type="number"><br>
+    Talle davanter: <input id="talleDavanterCosCadera" type="number"><br>
+    Alt de pit: <input id="altDePitCosCadera" type="number"><br>
+    Espatlles: <input id="espatllesCosCadera" type="number"><br>
+    Caiguda: <input id="caigudaCosCadera" type="number"><br>
+    Sisa: <input id="sisaCosCadera" type="number"><br>
+    Tòrax: <input id="toraxCosCadera" type="number"><br>
+    Pit: <input id="pitCosCadera" type="number"><br>
+    <button onclick="generarPatro('cosACadera')">Generar patró</button>
+  </div>
+
+ <div id="canvas-container"></div>
+  <button onclick="descarregarCanvas()">Descarregar imatge</button>
+
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/p5.min.js"></script>
   <script src="sketch.js"></script>
