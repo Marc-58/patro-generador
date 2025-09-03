@@ -98,6 +98,20 @@ function generarPatro(peca) {
       alert("Revisa que totes les mides de la faldilla-pantaló estiguin introduïdes correctament.");
       return;
     }
+  }else if (peca === "pantalo") {
+    mides.cadera = parseFloat(document.getElementById("caderaPantalo").value);
+    mides.cintura = parseFloat(document.getElementById("cinturaPantalo").value);
+    mides.tiro = parseFloat(document.getElementById("tiroPantalo").value);
+    mides.llarg = parseFloat(document.getElementById("llargPantalo").value);
+
+    let midesNecessaries = [
+      mides.cintura, mides.cadera, mides.tiro, mides.llarg
+    ];
+
+    if (midesNecessaries.some(v => isNaN(v))) {
+      alert("Revisa que totes les mides de la faldilla-pantaló estiguin introduïdes correctament.");
+      return;
+    }
   }
 
   const container = document.getElementById("canvas-container");
@@ -191,6 +205,15 @@ function dibuixaPatro(p) {
       // afegeix aquí més detalls del dibuix...
 
     } else if (tipus === "faldillaPantalo") {
+      const cintura = mides.cintura * escala;
+      const tiro = mides.tiro * escala;
+      const cadera = mides.cadera * escala;
+      const llarg = mides.llarg * escala;
+
+      p.rect(marge, marge, llarg, cadera / 4);
+      // afegeix aquí més detalls del dibuix...
+      
+    }else if (tipus === "pantalo") {
       const cintura = mides.cintura * escala;
       const tiro = mides.tiro * escala;
       const cadera = mides.cadera * escala;
