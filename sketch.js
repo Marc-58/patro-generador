@@ -199,7 +199,7 @@ function dibuixaPatro(p) {
       const llarg = mides.llarg * escala;
 
       
-      p.rect(marge, 50, llarg / 2, cadera);
+      p.rect(marge, marge, llarg , cadera/4);
       // ...
     }
   };
