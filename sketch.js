@@ -112,18 +112,7 @@ function generarPatro(peca) {
       alert("Revisa que totes les mides de la faldilla-pantaló estiguin introduïdes correctament.");
       return;
     }
-  } else if (peca === "coll") {
-    mides.coll = parseFloat(document.getElementById("collColl").value);
-
-    let midesNecessaries = [
-      mides.coll
-    ];
-
-    if (midesNecessaries.some(v => isNaN(v))) {
-      alert("Revisa que totes les mides de la faldilla-pantaló estiguin introduïdes correctament.");
-      return;
-    }
-  }
+  } 
 
   const container = document.getElementById("canvas-container");
   container.innerHTML = '';
@@ -233,12 +222,6 @@ function dibuixaPatro(p) {
       p.rect(marge, marge, llarg, cadera / 4);
       // afegeix aquí més detalls del dibuix...
       
-    }else if (tipus === "coll") {
-      const coll = mides.coll * escala;
-     
-
-      p.rect(marge, marge, coll, coll / 4);
-      // afegeix aquí més detalls del dibuix...
     }
   };
 }
