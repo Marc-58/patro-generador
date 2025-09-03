@@ -36,7 +36,7 @@
       margin-top: 20px;
     }
 
-    /* Aquí canviem de flex → grid */
+    /* Grid per a les opcions */
     .opcions-peces {
       display: grid;
       grid-template-columns: repeat(5, 1fr); /* 5 columnes */
@@ -90,15 +90,13 @@
 
   <div id="triar-peca">
     <h2>Tria la peça</h2>
-    <div class="opcions-peces" style="display:flex; gap:20px; justify-content:center;">
+    <div class="opcions-peces">
       <img src="https://i.pinimg.com/736x/52/d7/8f/52d78f97d4773d860a5092113134fd90.jpg"  alt="Faldilla" onclick="seleccionar('faldilla')">
       <img src="https://i.pinimg.com/736x/fe/6b/87/fe6b87de0418757dbfbaf99b6ca5c782.jpg"  alt="Brusa" onclick="seleccionar('brusa')">
       <img src="https://i.pinimg.com/736x/52/d7/8f/52d78f97d4773d860a5092113134fd90.jpg" alt="Cos a cadera" onclick="seleccionar('cosACadera')">
       <img src="https://i.pinimg.com/236x/c1/5c/15/c15c159f09b1de522f791643eb5a4e78.jpg" alt="Vestit" title="Vestit tipus recte" onclick="seleccionar('vestit')">
       <img src="https://patronesmujer.com/blog/wp-content/uploads/2015/01/Falda-pantal%C3%B3n-delantero11.jpg" alt="Falda pantaló" onclick="seleccionar('faldillaPantalo')">
       <img src="https://i.pinimg.com/736x/a8/a7/1d/a8a71d7805cdb415529d58a67bed72e1.jpg" alt="Pantaló" onclick="seleccionar('pantalo')">
-
-
     </div>
   </div>
 
@@ -167,7 +165,6 @@
     Cintura: <input id="cinturaFaldillaPantalo" type="number"><br>
     Cadera: <input id="caderaFaldillaPantalo" type="number"><br>
     Tiro: <input id="tiroFaldillaPantalo" type="number"><br>
-
     <button onclick="generarPatro('faldillaPantalo')">Generar patró</button>
   </div>
 
@@ -177,13 +174,11 @@
     Cintura: <input id="cinturaPantalo" type="number"><br>
     Cadera: <input id="caderaPantalo" type="number"><br>
     Tiro: <input id="tiroPantalo" type="number"><br>
-
     <button onclick="generarPatro('pantalo')">Generar patró</button>
   </div>
   
  <div id="canvas-container"></div>
   <button onclick="descarregarCanvas()">Descarregar imatge</button>
-
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/p5.min.js"></script>
   <script src="sketch.js"></script>
