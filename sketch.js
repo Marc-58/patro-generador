@@ -38,17 +38,17 @@ function generarPatro(peca) {
     }
 
   } else if (peca === "cosACadera") {
-   mides.cadera = parseFloat(document.getElementById("caderaCosCadera").value);
-mides.cintura = parseFloat(document.getElementById("cinturaCosCadera").value);
-mides.coll = parseFloat(document.getElementById("collCosCadera").value);
-mides.talleEspatlles = parseFloat(document.getElementById("talleEspatllesCosCadera").value);
-mides.talleDavanter = parseFloat(document.getElementById("talleDavanterCosCadera").value);
-mides.altDePit = parseFloat(document.getElementById("altDePitCosCadera").value);
-mides.espatllesTotal = parseFloat(document.getElementById("espatllesCosCadera").value);
-mides.caiguda = parseFloat(document.getElementById("caigudaCosCadera").value);
-mides.sisa = parseFloat(document.getElementById("sisaCosCadera").value);
-mides.torax = parseFloat(document.getElementById("toraxCosCadera").value);
-mides.pit = parseFloat(document.getElementById("pitCosCadera").value);
+    mides.cadera = parseFloat(document.getElementById("caderaCosCadera").value);
+    mides.cintura = parseFloat(document.getElementById("cinturaCosCadera").value);
+    mides.coll = parseFloat(document.getElementById("collCosCadera").value);
+    mides.talleEspatlles = parseFloat(document.getElementById("talleEspatllesCosCadera").value);
+    mides.talleDavanter = parseFloat(document.getElementById("talleDavanterCosCadera").value);
+    mides.altDePit = parseFloat(document.getElementById("altDePitCosCadera").value);
+    mides.espatllesTotal = parseFloat(document.getElementById("espatllesCosCadera").value);
+    mides.caiguda = parseFloat(document.getElementById("caigudaCosCadera").value);
+    mides.sisa = parseFloat(document.getElementById("sisaCosCadera").value);
+    mides.torax = parseFloat(document.getElementById("toraxCosCadera").value);
+    mides.pit = parseFloat(document.getElementById("pitCosCadera").value);
 
     let midesNecessaries = [
       mides.coll, mides.talleEspatlles, mides.talleDavanter, mides.altDePit,
@@ -59,20 +59,20 @@ mides.pit = parseFloat(document.getElementById("pitCosCadera").value);
       alert("Revisa que totes les mides del cos estiguin introduïdes correctament.");
       return;
     }
-  }else if (peca === "vestit") {
-   mides.cadera = parseFloat(document.getElementById("caderaVestit").value);
-mides.cintura = parseFloat(document.getElementById("cinturaVestit").value);
-mides.coll = parseFloat(document.getElementById("collVestit").value);
-mides.talleEspatlles = parseFloat(document.getElementById("talleEspatllesVestit").value);
-mides.talleDavanter = parseFloat(document.getElementById("talleDavanterVestit").value);
-mides.altDePit = parseFloat(document.getElementById("altDePitVestit").value);
-mides.espatllesTotal = parseFloat(document.getElementById("espatllesVestit").value);
-mides.caiguda = parseFloat(document.getElementById("caigudaVestit").value);
-mides.sisa = parseFloat(document.getElementById("sisaVestit").value);
-mides.torax = parseFloat(document.getElementById("toraxVestit").value);
-mides.pit = parseFloat(document.getElementById("pitVestit").value);
-mides.llarg = parseFloat(document.getElementById("llargVestit").value);
 
+  } else if (peca === "vestit") {
+    mides.cadera = parseFloat(document.getElementById("caderaVestit").value);
+    mides.cintura = parseFloat(document.getElementById("cinturaVestit").value);
+    mides.coll = parseFloat(document.getElementById("collVestit").value);
+    mides.talleEspatlles = parseFloat(document.getElementById("talleEspatllesVestit").value);
+    mides.talleDavanter = parseFloat(document.getElementById("talleDavanterVestit").value);
+    mides.altDePit = parseFloat(document.getElementById("altDePitVestit").value);
+    mides.espatllesTotal = parseFloat(document.getElementById("espatllesVestit").value);
+    mides.caiguda = parseFloat(document.getElementById("caigudaVestit").value);
+    mides.sisa = parseFloat(document.getElementById("sisaVestit").value);
+    mides.torax = parseFloat(document.getElementById("toraxVestit").value);
+    mides.pit = parseFloat(document.getElementById("pitVestit").value);
+    mides.llarg = parseFloat(document.getElementById("llargVestit").value);
 
     let midesNecessaries = [
       mides.coll, mides.talleEspatlles, mides.talleDavanter, mides.altDePit,
@@ -80,22 +80,22 @@ mides.llarg = parseFloat(document.getElementById("llargVestit").value);
     ];
 
     if (midesNecessaries.some(v => isNaN(v))) {
-      alert("Revisa que totes les mides del cos estiguin introduïdes correctament.");
+      alert("Revisa que totes les mides del vestit estiguin introduïdes correctament.");
       return;
     }
-  }else if (peca === "faldillaPantalo") {
-   mides.cadera = parseFloat(document.getElementById("caderaFaldillaPantalo").value);
-mides.cintura = parseFloat(document.getElementById("cinturaFaldillaPantalo").value);
-mides.tiro = parseFloat(document.getElementById("tiroFaldillaPantalo").value);
-mides.llarg = parseFloat(document.getElementById("llargFaldillaPantalo").value);
 
+  } else if (peca === "faldillaPantalo") {
+    mides.cadera = parseFloat(document.getElementById("caderaFaldillaPantalo").value);
+    mides.cintura = parseFloat(document.getElementById("cinturaFaldillaPantalo").value);
+    mides.tiro = parseFloat(document.getElementById("tiroFaldillaPantalo").value);
+    mides.llarg = parseFloat(document.getElementById("llargFaldillaPantalo").value);
 
     let midesNecessaries = [
-       mides.cintura, mides.cadera, mides.tiro, mides.llarg
+      mides.cintura, mides.cadera, mides.tiro, mides.llarg
     ];
 
     if (midesNecessaries.some(v => isNaN(v))) {
-      alert("Revisa que totes les mides de la faldilla pantalo estiguin introduïdes correctament.");
+      alert("Revisa que totes les mides de la faldilla-pantaló estiguin introduïdes correctament.");
       return;
     }
   }
@@ -110,6 +110,8 @@ mides.llarg = parseFloat(document.getElementById("llargFaldillaPantalo").value);
 function dibuixaPatro(p) {
   p.setup = function () {
     const escala = 10;
+    const marge = 50;
+
     p.createCanvas(1200, 1200);
     p.background(255);
     p.stroke(0);
@@ -119,7 +121,6 @@ function dibuixaPatro(p) {
       const cintura = mides.cintura * escala;
       const cadera = mides.cadera * escala;
       const llarg = mides.llarg * escala;
-      const marge = 50;
 
       p.line(marge, marge, marge, marge + llarg);
       p.line(marge, marge + llarg, marge + cadera / 4 + escala, marge + llarg);
@@ -143,19 +144,18 @@ function dibuixaPatro(p) {
       const altDePit = mides.altDePit * escala;
       const pit = mides.pit * escala;
       const cosACintura = mides.cosACintura * escala;
-      const marge = 50;
 
-      p.rect(50, 50, espatlles / 2, talleEspatlles);
-      p.line(50 + coll / 6, 50, 50 + espatlles / 2, 50 + (talleEspatlles - caiguda));
-      p.line(50, 50 + talleEspatlles, 50 + cintura / 2, 50 + talleEspatlles);
+      p.rect(marge, marge, espatlles / 2, talleEspatlles);
+      p.line(marge + coll / 6, marge, marge + espatlles / 2, marge + (talleEspatlles - caiguda));
+      p.line(marge, marge + talleEspatlles, marge + cintura / 2, marge + talleEspatlles);
 
       p.stroke('green');
-      p.line(50, 50 + sisa, 50, 50 + sisa + cosACintura);
+      p.line(marge, marge + sisa, marge, marge + sisa + cosACintura);
       p.stroke(0);
 
-      p.rect(marge, 50, torax / 2, talleDavanter);
-      p.line(marge, 50 + altDePit, marge + pit / 2, 50 + altDePit);
-      p.line(marge, 50 + talleDavanter, marge + cintura / 2, 50 + talleDavanter);
+      p.rect(marge, marge, torax / 2, talleDavanter);
+      p.line(marge, marge + altDePit, marge + pit / 2, marge + altDePit);
+      p.line(marge, marge + talleDavanter, marge + cintura / 2, marge + talleDavanter);
 
     } else if (tipus === "cosACadera") {
       const espatlles = mides.espatllesTotal * escala;
@@ -165,15 +165,15 @@ function dibuixaPatro(p) {
       const sisa = mides.sisa * escala;
       const cintura = mides.cintura * escala;
       const caiguda = mides.caiguda * escala;
-      const marge = espatlles / 2 + 20 * escala + 10;
       const talleDavanter = mides.talleDavanter * escala;
       const altDePit = mides.altDePit * escala;
       const pit = mides.pit * escala;
       const cadera = mides.cadera * escala;
 
-      p.rect(marge, 50, torax / 2, talleDavanter);
-      // ...
-    }else if (tipus === "cosACadera") {
+      p.rect(marge, marge, torax / 2, talleDavanter);
+      // afegeix aquí més detalls del dibuix...
+
+    } else if (tipus === "vestit") {
       const espatlles = mides.espatllesTotal * escala;
       const talleEspatlles = mides.talleEspatlles * escala;
       const coll = mides.coll * escala;
@@ -181,26 +181,23 @@ function dibuixaPatro(p) {
       const sisa = mides.sisa * escala;
       const cintura = mides.cintura * escala;
       const caiguda = mides.caiguda * escala;
-      const marge = espatlles / 2 + 20 * escala + 10;
       const talleDavanter = mides.talleDavanter * escala;
       const altDePit = mides.altDePit * escala;
       const pit = mides.pit * escala;
       const cadera = mides.cadera * escala;
       const llarg = mides.llarg * escala;
 
-      
-      p.rect(marge, 50, torax / 2, talleDavanter);
-      // ...
-    }else if (tipus === "faldillaPantalo") {
-     
+      p.rect(marge, marge, torax / 2, talleDavanter + llarg);
+      // afegeix aquí més detalls del dibuix...
+
+    } else if (tipus === "faldillaPantalo") {
       const cintura = mides.cintura * escala;
       const tiro = mides.tiro * escala;
       const cadera = mides.cadera * escala;
       const llarg = mides.llarg * escala;
 
-      
-      p.rect(marge, marge, llarg , cadera/4);
-      // ...
+      p.rect(marge, marge, llarg, cadera / 4);
+      // afegeix aquí més detalls del dibuix...
     }
   };
 }
