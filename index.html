@@ -2,65 +2,71 @@
 <html lang="ca">
 <head>
   <meta charset="UTF-8" />
-  <title>Generador de Patrons</title>
+  <title>Patronador</title>
   <style>
     body {
       font-family: sans-serif;
       padding: 20px;
     }
 
-    nav {
+    /* Barra superior */
+    .navbar {
+      width: 100%;
+      border-bottom: 2px solid #333;
+      padding: 10px 0;
       margin-bottom: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
     }
 
-    nav a {
-      margin-right: 15px;
+    .navbar a {
       text-decoration: none;
       color: #333;
       font-weight: bold;
+      font-size: 18px;
     }
 
-    nav a:hover {
+    .navbar a:hover {
       text-decoration: underline;
     }
 
-    .formulari {
-      display: none; /* Ocultar formularis fins que siguin necessaris */
+    .formulari, #triar-peca {
+      display: none;
       margin-top: 20px;
     }
 
-    /* Graella d’opcions: 2 files × 5 columnes */
+    /* Layout amb grid */
     .opcions-peces {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(5, 1fr); /* 5 columnes */
       gap: 20px;
       justify-items: center;
-      margin-top: 20px;
+      margin: auto;
+      max-width: 1000px; /* centrat */
     }
 
-    /* Cada requadre té mida fixa */
-    .opcions-peces div {
-      width: 150px;
-      height: 150px;
+    /* Cada requadre */
+    .opcions-peces .item {
+      width: 170px;
+      height: 170px;
+      border: 2px solid transparent;
+      border-radius: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
-      border: 2px solid transparent;
-      border-radius: 8px;
       overflow: hidden;
+      cursor: pointer;
     }
 
-    /* Efecte hover */
-    .opcions-peces div:hover {
+    .opcions-peces .item:hover {
       border-color: #333;
     }
 
-    /* Les imatges s’adapten al requadre sense deformar-se */
     .opcions-peces img {
       max-width: 100%;
       max-height: 100%;
-      object-fit: contain;
-      cursor: pointer;
+      object-fit: contain; /* Manté proporció */
     }
 
     #canvas-container {
@@ -84,16 +90,18 @@
   </style>
 </head>
 <body>
-  <h1>Generador de Patrons</h1>
 
-  <!-- Barra de navegació -->
-  <nav>
-    <a href="quisoc.html">Qui sóc</a>
-    <a href="comprendre-mides.html">Com prendre mides</a>
-    <a href="informacio.html">Informació addicional</a>
-  </nav>
+  <!-- Barra superior amb enllaços -->
+  <div class="navbar">
+    <a href="quisoc.html" target="_blank">Qui sóc</a>
+    <a href="comprendre-mides.html" target="_blank">Com prendre mides</a>
+    <a href="informacio.html" target="_blank">Informació addicional</a>
+  </div>
 
-  <div id="triar-peca">
+  <h1>Patronador</h1>
+
+  <!-- Tria la peça -->
+  <div id="triar-peca" style="display:block;">
     <h2>Tria la peça</h2>
     <div class="opcions-peces">
       <div><img src="https://i.pinimg.com/736x/52/d7/8f/52d78f97d4773d860a5092113134fd90.jpg" alt="Faldilla" onclick="seleccionar('faldilla')"></div>
