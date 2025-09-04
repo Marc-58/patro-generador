@@ -391,7 +391,7 @@ p.line(
     p.strokeWeight(2);
 
     // Arc de cintura (semicercle cap avall)
-    p.arc(marge + radi, marge + radi, 2 * radi, 2 * radi, 0, p.PI);
+    p.arc(marge + radi+llarg , marge , 2 * radi, 2 * radi, 0, p.PI);
 
     // Línies laterals fins al llarg de faldilla
     p.line(marge, marge + radi, marge, marge + radi + llarg);
