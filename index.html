@@ -60,8 +60,9 @@
       <img src="https://i.pinimg.com/736x/a8/a7/1d/a8a71d7805cdb415529d58a67bed72e1.jpg" alt="Pantaló" onclick="seleccionar('pantalo')">
       <img src="https://bigbensalamanca.es/blog/wp-content/uploads/cuello-Ingles_03010.jpg" alt="Colls" onclick="seleccionar('colls')">
       <img src="https://upload.wikimedia.org/wikipedia/commons/e/ed/Straight_sleeve.jpg" alt="Màniga" onclick="seleccionar('maniga')">
-
-
+      <img src="https://img.freepik.com/vector-premium/dibujo-tecnico-falda-vistas-delantera-trasera_837135-47.jpg" alt="Faldilla mitja capa" onclick="seleccionar('faldillaMitjaCapa')">
+      <img src="https://patronesmujer.com/blog/wp-content/uploads/2014/12/patron-falda-capa.jpg" alt="Faldilla capa sencera" onclick="seleccionar('faldillaCapaSencera')">
+  
     </div>
   </div>
 
@@ -161,7 +162,20 @@
 
     <button onclick="generarPatro('maniga')">Generar patró</button>
   </div>
-
+  
+   <div id="faldillaMitjaCapa-form" class="formulari">
+    <h2>Faldilla mitja capa</h2>
+    Llarg: <input id="llargFaldillaMitjaCapa" type="number"><br>
+    Cintura: <input id="cinturaFaldillaMitjaCapa" type="number"><br>
+    <button onclick="generarPatro('faldillaMitjaCapa')">Generar patró</button>
+  </div>
+  
+ <div id="faldillaCapaSencera-form" class="formulari">
+    <h2>Faldilla capa sencera</h2>
+    Llarg: <input id="llargFaldillaCapaSencera" type="number"><br>
+    Cintura: <input id="cinturaFaldillaCapaSencera" type="number"><br>
+    <button onclick="generarPatro('faldillaCapaSencera')">Generar patró</button>
+  </div>
   
  <div id="canvas-container"></div>
   <button onclick="descarregarCanvas()">Descarregar imatge</button>
