@@ -124,7 +124,23 @@ function generarPatro(peca) {
       alert("Revisa que totes les mides de colls estiguin introduïdes correctament.");
       return;
     }
-  } 
+  } else if (peca === "maniga") {
+    mides.llargTotal = parseFloat(document.getElementById("llargTotalManiga").value);
+    mides.llargBraç = parseFloat(document.getElementById("llargBraçManiga").value);
+    mides.munyeca = parseFloat(document.getElementById("munyecaManiga").value);
+    mides.sisa = parseFloat(document.getElementById("sisaManiga").value);
+    mides.contornBraç = parseFloat(document.getElementById("contornBraçManiga").value);
+
+    let midesNecessaries = [
+     mides.llargTotal, mides.llargBraç, mides.munyeca, mides.sisa, mides.contornBraç
+    ];
+
+    if (midesNecessaries.some(v => isNaN(v))) {
+      alert("Revisa que totes les mides de la faldilla-pantaló estiguin introduïdes correctament.");
+      return;
+    }
+    
+  }
 
   const container = document.getElementById("canvas-container");
   container.innerHTML = '';
@@ -238,6 +254,16 @@ function dibuixaPatro(p) {
       const coll = mides.coll * escala;
       
       p.rect(marge, marge, coll, coll / 4);
+      // afegeix aquí més detalls del dibuix...
+      
+    }else if (tipus === "maniga") {
+      const llargTotal = mides.llargTotal * escala;
+      const llargBraç = mides.llargBraç * escala;
+      const munyeca = mides.munyeca * escala;
+      const sisa = mides.sisa * escala;
+      const contornBraç = mides.contornBraç * escala;
+
+      p.rect(marge, marge, munyeca, sisa / 4);
       // afegeix aquí més detalls del dibuix...
       
     }
