@@ -295,7 +295,7 @@ function dibuixaPatro(p) {
       const llarg = mides.llarg * escala;
       const radi =   cintura/2*3.14;
 
-    p.arc(marge + radi+llarg, marge , radi+llarg, radi+llarg, 0, p.PI);
+    p.arc(marge , marge , radi+llarg, radi+llarg, 0, p.PI);
     p.arc(marge + radi+llarg, marge , radi, radi, 0, p.PI);
     p.line(marge, marge, marge +2*llarg+radi*2, marge); // línia esquerra
      
