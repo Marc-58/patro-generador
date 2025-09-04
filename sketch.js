@@ -541,29 +541,23 @@ p.line(
       p.rect(marge, marge, munyeca, sisa / 4);
       // afegeix aquí més detalls del dibuix...
       
-    }if (tipus === "faldillaMitjaCapa") if (tipus === "faldillaMitjaCapa") {
-  const cintura = mides.cintura * escala;
-  const llarg = mides.llarg * escala;
-  const radi = cintura / (2 * Math.PI)*4; // ajust del radi segons cintura
-
-  // Línia superior (cintura)
-  p.line(marge, marge, marge + llarg+radi, marge);
-
-  // Quart de cercle a l'extrem inferior dret
-  const xCentre = marge + llarg; // cantonada dreta
-  const yCentre = marge + llarg; // baix de la faldilla
-
-  p.noFill();
-  p.stroke(0);
-  p.strokeWeight(2);
-
-  // Arc de 90 graus (quart de cercle cap esquerra i amunt)
-  p.arc(xCentre, yCentre, radi * 2, radi * 2, 0, p.HALF_PI); 
-}
- if (tipus === "faldillaCapaSencera") {
+    }if (tipus === "faldillaMitjaCapa") {
       const cintura = mides.cintura * escala;
       const llarg = mides.llarg * escala;
-     const radi = cintura / (2 * Math.PI)*2;
+        const radi = cintura / (2 * Math.PI); 
+
+    // Dibuixar arcs
+    p.arc(marge + llarg + radi, marge, llarg + radi, llarg + radi,  p.HALF_PI, p.PI); 
+    p.arc(marge + llarg + radi, marge, radi, radi,  p.HALF_PI, p.PI); 
+
+    // Línia esquerra
+    p.line(marge, marge, marge + llarg + radi / 2, marge);
+  
+     
+    } if (tipus === "faldillaCapaSencera") {
+      const cintura = mides.cintura * escala;
+      const llarg = mides.llarg * escala;
+     const radi = cintura / (2 * Math.PI);
 
     // Arc de cintura (semicercle cap avall)
     p.arc(marge + radi+llarg , marge , 2 *radi ,2*radi, 0, p.PI);
