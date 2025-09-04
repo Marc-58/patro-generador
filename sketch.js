@@ -287,8 +287,14 @@ function dibuixaPatro(p) {
     }if (tipus === "faldillaMitjaCapa") {
       const cintura = mides.cintura * escala;
       const llarg = mides.llarg * escala;
+      const radi = cintura / 2 * Math.PI; 
 
-      p.line(marge, marge, marge, marge + llarg);
+    // Dibuixar arcs
+    p.arc(marge + llarg + radi, marge, llarg + radi, llarg + radi, p.PI, p.TWO_PI + p.PI); 
+    p.arc(marge + llarg + radi, marge, radi, radi, p.PI, p.TWO_PI + p.PI); 
+
+    // Línia esquerra
+    p.line(marge, marge, marge + llarg + radi / 2, marge);
      
     } if (tipus === "faldillaCapaSencera") {
   const cintura = mides.cintura * escala;
