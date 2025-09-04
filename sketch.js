@@ -291,15 +291,25 @@ function dibuixaPatro(p) {
       p.line(marge, marge, marge, marge + llarg);
      
     } if (tipus === "faldillaCapaSencera") {
-      const cintura = mides.cintura * escala;
-      const llarg = mides.llarg * escala;
-      const radi =   cintura/2*3.14;
+  const cintura = mides.cintura * escala;
+  const llarg = mides.llarg * escala;
+  const radi = cintura / 2; // radius = semi-cintura
+  const centreX = marge + llarg + radi;
+  const centreY = marge;
 
-      p.arc(marge+llarg+radi/2, marge, llarg+radi/2, llarg+radi/2, PI, TWO_PI); // x, y, ample, alt
-      p.arc(marge+llarg+radi/2, marge,radi/2, radi/2, PI, TWO_PI); // x, y, ample, alt
-      p.line(marge, marge, marge +2*llarg+radi, marge); // línia esquerra
-     
-    } 
+  p.noFill();
+  p.stroke(0);
+
+  // Arc exterior (cintura + llarg)
+  p.arc(centreX, centreY, llarg + radi, llarg + radi, p.PI, p.TWO_PI);
+
+  // Arc interior (cintura)
+  p.arc(centreX, centreY, radi * 2, radi * 2, p.PI, p.TWO_PI);
+
+  // Línia de baix de la faldilla
+  p.line(marge, marge + llarg, marge + 2 * llarg + radi, marge + llarg);
+}
+
   };
 }
 
