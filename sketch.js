@@ -384,13 +384,22 @@ p.line(
     } if (tipus === "faldillaCapaSencera") {
       const cintura = mides.cintura * escala;
       const llarg = mides.llarg * escala;
-      const radi =   cintura/2*3.14;
+     const radi = cintura / (2 * Math.PI);
 
-    p.arc(marge , marge , radi+llarg, radi+llarg, 0, p.PI);
-    p.arc(marge + radi+llarg, marge , radi, radi, 0, p.PI);
-    p.line(marge, marge, marge +2*llarg+radi*2, marge); // línia esquerra
-     
-    } 
+    p.noFill();
+    p.stroke(0);
+    p.strokeWeight(2);
+
+    // Arc de cintura (semicercle cap avall)
+    p.arc(marge + radi, marge + radi, 2 * radi, 2 * radi, 0, p.PI);
+
+    // Línies laterals fins al llarg de faldilla
+    p.line(marge, marge + radi, marge, marge + radi + llarg);
+    p.line(marge + 2 * radi, marge + radi, marge + 2 * radi, marge + radi + llarg);
+
+    // Línia inferior
+    p.line(marge, marge + radi + llarg, marge + 2 * radi, marge + radi + llarg);
+}
   };
 }
 
