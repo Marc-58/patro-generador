@@ -287,23 +287,16 @@ function dibuixaPatro(p) {
     }if (tipus === "faldillaMitjaCapa") {
       const cintura = mides.cintura * escala;
       const llarg = mides.llarg * escala;
-      const radi = cintura / 2 * Math.PI; 
 
-    // Dibuixar arcs
-    p.arc(marge + llarg + radi, marge, llarg + radi, llarg + radi, p.PI, p.TWO_PI + p.PI); 
-    p.arc(marge + llarg + radi, marge, radi, radi, p.PI, p.TWO_PI + p.PI); 
-
-    // Línia esquerra
-    p.line(marge, marge, marge + llarg + radi / 2, marge);
+      p.line(marge, marge, marge, marge + llarg);
      
     } if (tipus === "faldillaCapaSencera") {
-  const cintura = mides.cintura * escala;
-  const llarg = mides.llarg * escala;
-  const radi =   cintura/2*3.14;
+      const cintura = mides.cintura * escala;
+      const llarg = mides.llarg * escala;
 
-    p.arc(marge+llarg+radi, marge, radi+llarg, radi+llarg, 0, p.PI);
-    p.arc(marge+llarg+radi, marge, radi, radi, 0, p.PI);
-    p.line(marge, marge, marge +2*llarg+radi*2, marge); // línia esquerra
+      p.line(marge, marge, marge, marge + llarg);
+     
+    } 
   };
 }
 
