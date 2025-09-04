@@ -29,6 +29,7 @@
       margin-top: 20px;
     }
 
+    /* --- Ara sí: dues files de 5 imatges --- */
     .opcions-peces {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
@@ -78,10 +79,9 @@
     <a href="informacio.html">Informació addicional</a>
   </nav>
  
-
   <div id="triar-peca">
     <h2>Tria la peça</h2>
-    <div class="opcions-peces" style="display:flex; gap:20px; justify-content:center;">
+    <div class="opcions-peces">
       <img src="https://i.pinimg.com/736x/52/d7/8f/52d78f97d4773d860a5092113134fd90.jpg"  alt="Faldilla" onclick="seleccionar('faldilla')">
       <img src="https://i.pinimg.com/736x/fe/6b/87/fe6b87de0418757dbfbaf99b6ca5c782.jpg"  alt="Brusa" onclick="seleccionar('brusa')">
       <img src="https://i.pinimg.com/736x/52/d7/8f/52d78f97d4773d860a5092113134fd90.jpg" alt="Cos a cadera" onclick="seleccionar('cosACadera')">
@@ -92,7 +92,6 @@
       <img src="https://upload.wikimedia.org/wikipedia/commons/e/ed/Straight_sleeve.jpg" alt="Màniga" onclick="seleccionar('maniga')">
       <img src="https://img.freepik.com/vector-premium/dibujo-tecnico-falda-vistas-delantera-trasera_837135-47.jpg" alt="Faldilla mitja capa" onclick="seleccionar('faldillaMitjaCapa')">
       <img src="https://patronesmujer.com/blog/wp-content/uploads/2014/12/patron-falda-capa.jpg" alt="Faldilla capa sencera" onclick="seleccionar('faldillaCapaSencera')">
-  
     </div>
   </div>
 
@@ -209,7 +208,6 @@
   
  <div id="canvas-container"></div>
   <button onclick="descarregarCanvas()">Descarregar imatge</button>
-
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/p5.min.js"></script>
   <script src="sketch.js"></script>
