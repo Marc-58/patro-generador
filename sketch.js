@@ -172,7 +172,7 @@ function dibuixaPatro(p) {
     const escala = 10;
     const marge = 50;
 
-    p.createCanvas(1200, 1200);
+    p.createCanvas(1400, 1600);
     p.background(255);
     p.stroke(0);
     p.noFill();
