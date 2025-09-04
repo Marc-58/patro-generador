@@ -112,8 +112,9 @@ function generarPatro(peca) {
       alert("Revisa que totes les mides de la faldilla-pantaló estiguin introduïdes correctament.");
       return;
     }
+    
   } else if (peca === "coll") {
-    mides.coll = parseFloat(document.getElementById("coll").value);
+    mides.coll = parseFloat(document.getElementById("collColl").value);
 
     let midesNecessaries = [
       mides.coll
