@@ -378,18 +378,9 @@ p.line(
     }iif (tipus === "faldillaMitjaCapa") {
   const cintura = mides.cintura * escala;
   const llarg = mides.llarg * escala;
-
-  // radi interior = cintura / (2π)
   const radi = cintura / (2 * Math.PI);
-
-  // Quart de cercle inferior dret → angles de 0 a HALF_PI
-  // Arc exterior (radi + llarg)
-  p.arc(marge, marge, 2 * (radi + llarg), 2 * (radi + llarg), 0, p.HALF_PI);
-
-  // Arc interior (radi cintura)
-  p.arc(marge, marge, 2 * radi, 2 * radi, 0, p.HALF_PI);
-
-  // Dues línies rectes (costats)
+  p.arc(marge, marge, 4 * radi + llarg, 4 * radi + llarg, 0, p.HALF_PI);
+  p.arc(marge, marge, 4 * radi, 4 * radi, 0, p.HALF_PI);
   p.line(marge + radi, marge, marge + radi + llarg, marge); // horitzontal superior
   p.line(marge, marge + radi, marge, marge + radi + llarg); // vertical esquerra
 }
