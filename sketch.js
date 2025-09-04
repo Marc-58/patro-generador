@@ -378,11 +378,11 @@ p.line(
     }if (tipus === "faldillaMitjaCapa") {
       const cintura = mides.cintura * escala;
       const llarg = mides.llarg * escala;
-        const radi = cintura / 2 * Math.PI; 
+     const radi = cintura / (2 * Math.PI)*4;
 
     // Dibuixar arcs
-    p.arc(marge + llarg + radi, marge, llarg + radi, llarg + radi,  p.HALF_PI, p.PI); 
-    p.arc(marge + llarg + radi, marge, radi, radi,  p.HALF_PI, p.PI); 
+  arc(marge, marge,  radi,  radi, 0, HALF_PI);
+  arc(marge, marge,  radi+llarg,  radi+llarg, 0, HALF_PI);
 
     // Línia esquerra
     p.line(marge, marge, marge + llarg + radi / 2, marge);
@@ -391,7 +391,7 @@ p.line(
     } if (tipus === "faldillaCapaSencera") {
       const cintura = mides.cintura * escala;
       const llarg = mides.llarg * escala;
-     const radi = cintura / (2 * Math.PI);
+     const radi = cintura / (2* Math.PI);
 
     p.noFill();
     p.stroke(0);
