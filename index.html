@@ -59,6 +59,7 @@
       <img src="https://patronesmujer.com/blog/wp-content/uploads/2015/01/Falda-pantal%C3%B3n-delantero11.jpg" alt="Falda pantaló" onclick="seleccionar('faldillaPantalo')">
       <img src="https://i.pinimg.com/736x/a8/a7/1d/a8a71d7805cdb415529d58a67bed72e1.jpg" alt="Pantaló" onclick="seleccionar('pantalo')">
       <img src="https://bigbensalamanca.es/blog/wp-content/uploads/cuello-Ingles_03010.jpg" alt="Colls" onclick="seleccionar('colls')">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/e/ed/Straight_sleeve.jpg" alt="Màniga" onclick="seleccionar('maniga')">
 
 
     </div>
@@ -149,6 +150,18 @@
 
     <button onclick="generarPatro('colls')">Generar patró</button>
   </div>
+
+     <div id="maniga-form" class="formulari">
+    <h2>Maniga</h2>
+    Llarg Total: <input id="llargTotalManiga" type="number"><br>
+    Llarg Braç: <input id="llargBracManiga" type="number"><br>
+    Munyeca: <input id="munyecaManiga" type="number"><br>
+    Sisa: <input id="sisaManiga" type="number"><br>
+    Contorn Braç: <input id="contornBracManiga" type="number"><br>
+
+    <button onclick="generarPatro('maniga')">Generar patró</button>
+  </div>
+
   
  <div id="canvas-container"></div>
   <button onclick="descarregarCanvas()">Descarregar imatge</button>
