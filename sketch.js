@@ -299,11 +299,11 @@ function dibuixaPatro(p) {
     } if (tipus === "faldillaCapaSencera") {
   const cintura = mides.cintura * escala;
   const llarg = mides.llarg * escala;
-   const radi =   cintura/2*3.14;
+  const radi =   cintura/2*3.14;
 
-p.arc(marge+llarg+radi/2, marge, llarg+radi/2, llarg+radi/2, PI, TWO_PI); // x, y, ample, alt
-p.arc(marge+llarg+radi/2, marge,radi/2, radi/2, PI, TWO_PI); // x, y, ample, alt
-p.line(marge, marge, marge +2*llarg+radi, marge); // línia esquerra
+    p.arc(marge+llarg+radi, marge, radi+llarg, radi+llarg, 0, p.PI);
+    p.arc(marge+llarg+radi, marge, radi, radi, 0, p.PI);
+    p.line(marge, marge, marge +2*llarg+radi*2, marge); // línia esquerra
   };
 }
 
