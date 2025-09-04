@@ -375,20 +375,25 @@ p.line(
       p.rect(marge, marge, munyeca, sisa / 4);
       // afegeix aquí més detalls del dibuix...
       
-    }if (tipus === "faldillaMitjaCapa") {
-      const cintura = mides.cintura * escala;
-      const llarg = mides.llarg * escala;
-     const radi = cintura / (2 * Math.PI)*4;
+    }iif (tipus === "faldillaMitjaCapa") {
+  const cintura = mides.cintura * escala;
+  const llarg = mides.llarg * escala;
 
-    // Dibuixar arcs
-  arc(marge, marge,  radi,  radi, 0, HALF_PI);
-  arc(marge, marge,  radi+llarg,  radi+llarg, 0, HALF_PI);
+  // radi interior = cintura / (2π)
+  const radi = cintura / (2 * Math.PI);
 
-    // Línia esquerra
-    p.line(marge, marge, marge + llarg + radi / 2, marge);
-  
-     
-    } if (tipus === "faldillaCapaSencera") {
+  // Quart de cercle inferior dret → angles de 0 a HALF_PI
+  // Arc exterior (radi + llarg)
+  p.arc(marge, marge, 2 * (radi + llarg), 2 * (radi + llarg), 0, p.HALF_PI);
+
+  // Arc interior (radi cintura)
+  p.arc(marge, marge, 2 * radi, 2 * radi, 0, p.HALF_PI);
+
+  // Dues línies rectes (costats)
+  p.line(marge + radi, marge, marge + radi + llarg, marge); // horitzontal superior
+  p.line(marge, marge + radi, marge, marge + radi + llarg); // vertical esquerra
+}
+ if (tipus === "faldillaCapaSencera") {
       const cintura = mides.cintura * escala;
       const llarg = mides.llarg * escala;
      const radi = cintura / (2* Math.PI);
