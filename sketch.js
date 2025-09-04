@@ -113,15 +113,15 @@ function generarPatro(peca) {
       return;
     }
     
-  } else if (peca === "coll") {
-    mides.coll = parseFloat(document.getElementById("collColl").value);
+  } else if (peca === "colls") {
+    mides.coll = parseFloat(document.getElementById("collColls").value);
 
     let midesNecessaries = [
       mides.coll
     ];
 
     if (midesNecessaries.some(v => isNaN(v))) {
-      alert("Revisa que totes les mides del coll estiguin introduïdes correctament.");
+      alert("Revisa que totes les mides de colls estiguin introduïdes correctament.");
       return;
     }
   } 
@@ -234,7 +234,7 @@ function dibuixaPatro(p) {
       p.rect(marge, marge, llarg, cadera / 4);
       // afegeix aquí més detalls del dibuix...
       
-    }else if (tipus === "coll") {
+    }else if (tipus === "colls") {
       const coll = mides.coll * escala;
       
       p.rect(marge, marge, coll, coll / 4);
