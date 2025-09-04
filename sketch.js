@@ -140,7 +140,25 @@ function generarPatro(peca) {
       return;
     }
     
-  }
+  } if (peca === "faldillaMitjaCapa") {
+    mides.llarg = parseInt(document.getElementById("llargFaldillaMitjaCapa").value, 10);
+    mides.cintura = parseInt(document.getElementById("cinturaFaldillaMitjaCapa").value, 10);
+
+    if (Object.values(mides).some(v => isNaN(v))) {
+      alert("Introdueix totes les mides correctament per a la faldilla mitja capa.");
+      return;
+    }
+
+  } if (peca === "faldillaCapaSencera") {
+    mides.llarg = parseInt(document.getElementById("llargFaldillaCapaSencera").value, 10);
+    mides.cintura = parseInt(document.getElementById("cinturaFaldillaCapaSencera").value, 10);
+
+    if (Object.values(mides).some(v => isNaN(v))) {
+      alert("Introdueix totes les mides correctament per a la faldilla capa sencera.");
+      return;
+    }
+
+  } 
 
   const container = document.getElementById("canvas-container");
   container.innerHTML = '';
@@ -266,7 +284,19 @@ function dibuixaPatro(p) {
       p.rect(marge, marge, munyeca, sisa / 4);
       // afegeix aquí més detalls del dibuix...
       
-    }
+    }if (tipus === "faldillaMitjaCapa") {
+      const cintura = mides.cintura * escala;
+      const llarg = mides.llarg * escala;
+
+      p.line(marge, marge, marge, marge + llarg);
+     
+    } if (tipus === "faldillaCapaSencera") {
+      const cintura = mides.cintura * escala;
+      const llarg = mides.llarg * escala;
+
+      p.line(marge, marge, marge, marge + llarg);
+     
+    } 
   };
 }
 
