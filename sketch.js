@@ -374,10 +374,12 @@ p.line(
       const munyeca = mides.munyeca * escala;
       const sisa = mides.sisa * escala;
       const contornBraç = mides.contornBraç * escala;
+      p.line(marge,marge+(llargTotal-llargBraç), marge+(contornBraç/2-munyeca/2), marge+llarBraç );
+      p.line(marge+contornBraç,marge+(llargTotal-llargBraç), marge+(contornBraç/2-munyeca/2)+munyeca, marge+llarBraç );
+
       
 
       p.rect(marge, marge, contornBraç,llargTotal);
-      // afegeix aquí més detalls del dibuix...
       
     }if (tipus === "faldillaMitjaCapa") {
       const cintura = mides.cintura * escala;
