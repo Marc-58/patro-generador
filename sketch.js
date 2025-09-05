@@ -172,7 +172,7 @@ function dibuixaPatro(p) {
     const escala = 10;
     const marge = 50;
 
-    p.createCanvas(1600, 1300);
+    p.createCanvas(1800, 1300);
     p.background(255);
     p.stroke(0);
     p.noFill();
@@ -384,6 +384,8 @@ p.line(
     p.arc(0, marge , 2 *radi ,2*radi, 0, p.PI);
     p.arc(0 , marge , 2 * radi+llarg*2, 2 * radi+llarg*2, 0, p.PI);
     p.line(0,marge, radi+llarg, marge );
+    p.line(1,marge, 1, marge+radi+llarg );
+
   
      
     } if (tipus === "faldillaCapaSencera") {
