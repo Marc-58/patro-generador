@@ -376,7 +376,7 @@ p.line(
       const contornBraç = mides.contornBraç * escala;
       
 
-      p.rect(marge, marge, contornBraç,/llargTotal);
+      p.rect(marge, marge, contornBraç,llargTotal);
       // afegeix aquí més detalls del dibuix...
       
     }if (tipus === "faldillaMitjaCapa") {
