@@ -364,7 +364,7 @@ p.line(
       
       p.rect(marge, marge, coll/2, 6*escala);
       
-      p.line(marge+coll/2-1,marge, marge+coll/2, marge+5*escala );
+      p.line(marge+coll/2-1*escala,marge, marge+coll/2, marge+5*escala );
       p.line(marge+coll/6,marge+6*escala, marge+coll/2, marge+5*escala );
 
       
@@ -374,8 +374,9 @@ p.line(
       const munyeca = mides.munyeca * escala;
       const sisa = mides.sisa * escala;
       const contornBraç = mides.contornBraç * escala;
+      
 
-      p.rect(marge, marge, munyeca, sisa / 4);
+      p.rect(marge, marge, contornBraç,/llargTotal);
       // afegeix aquí més detalls del dibuix...
       
     }if (tipus === "faldillaMitjaCapa") {
