@@ -367,6 +367,11 @@ p.line(
       p.line(marge+coll/2-1*escala,marge, marge+coll/2, marge+5*escala );
       p.line(marge+coll/6,marge+6*escala, marge+coll/2, marge+5*escala );
 
+      p.point(marge+(llargTotal+llargBraç)/2, marge+contornBraç/4);
+      p.point(marge+(llargTotal+llargBraç)/2, marge+contornBraç*3/4);
+      p.point(marge+contornBraç/2, marge-2*escala);
+
+
       
     }else if (tipus === "maniga") {
       const llargTotal = mides.llargTotal * escala;
@@ -374,11 +379,8 @@ p.line(
       const munyeca = mides.munyeca * escala;
       const sisa = mides.sisa * escala;
       const contornBraç = mides.contornBraç * escala;
-      p.line(marge,marge+(llargTotal-llargBraç), marge+(contornBraç/2-munyeca/2), marge+llarBraç );
-      p.line(marge+contornBraç,marge+(llargTotal-llargBraç), marge+(contornBraç/2-munyeca/2)+munyeca, marge+llarBraç );
-
-      
-
+      p.line(marge,marge+(llargTotal-llargBraç), marge+(contornBraç/2-munyeca/2), marge+llargBraç );
+      p.line(marge+contornBraç,marge+(llargTotal-llargBraç), marge+(contornBraç/2-munyeca/2)+munyeca, marge+llargBraç );
       p.rect(marge, marge, contornBraç,llargTotal);
       
     }if (tipus === "faldillaMitjaCapa") {
