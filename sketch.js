@@ -172,7 +172,7 @@ function dibuixaPatro(p) {
     const escala = 10;
     const marge = 50;
 
-    p.createCanvas(1400, 1600);
+    p.createCanvas(1600, 1300);
     p.background(255);
     p.stroke(0);
     p.noFill();
@@ -378,14 +378,12 @@ p.line(
     }if (tipus === "faldillaMitjaCapa") {
       const cintura = mides.cintura * escala;
       const llarg = mides.llarg * escala;
-        const radi = cintura / 2 * Math.PI; 
+       const radi = cintura / (2 * Math.PI)*2;
 
-    // Dibuixar arcs
-    p.arc(marge , marge, llarg + radi, llarg + radi,  p.HALF_PI, p.PI); 
-    p.arc(marge + llarg + radi, marge, radi, radi,  p.HALF_PI, p.PI); 
-
-    // Línia esquerra
-    p.line(marge, marge, marge + llarg + radi / 2, marge);
+    // Arc de cintura (semicercle cap avall)
+    p.arc(0, marge , 2 *radi ,2*radi, 0, p.PI);
+    p.arc(0 , marge , 2 * radi+llarg*2, 2 * radi+llarg*2, 0, p.PI);
+    p.line(0,marge, radi+llarg, marge );
   
      
     } if (tipus === "faldillaCapaSencera") {
@@ -393,14 +391,9 @@ p.line(
       const llarg = mides.llarg * escala;
      const radi = cintura / (2 * Math.PI);
 
-    p.noFill();
-    p.stroke(0);
-    p.strokeWeight(2);
-
     // Arc de cintura (semicercle cap avall)
     p.arc(marge + radi+llarg , marge , 2 *radi ,2*radi, 0, p.PI);
     p.arc(marge + radi+llarg , marge , 2 * radi+llarg*2, 2 * radi+llarg*2, 0, p.PI);
-    // Línia inferior
     p.line(marge, marge, marge + 2 * radi*2+llarg*2, marge );
 }
   };
