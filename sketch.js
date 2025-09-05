@@ -362,8 +362,11 @@ p.line(
     }else if (tipus === "colls") {
       const coll = mides.coll * escala;
       
-      p.rect(marge, marge, coll, coll / 4);
-      // afegeix aquí més detalls del dibuix...
+      p.rect(marge, marge, coll/2, 6*escala);
+      
+      p.line(marge+coll/2-1,marge, marge+coll/6, marge+5*escala );
+      p.line(marge+coll/6,marge+6*escala, marge+coll/6, marge+5*escala );
+
       
     }else if (tipus === "maniga") {
       const llargTotal = mides.llargTotal * escala;
