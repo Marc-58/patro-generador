@@ -381,7 +381,7 @@ p.line(
         const radi = cintura / 2 * Math.PI; 
 
     // Dibuixar arcs
-    p.arc(marge + llarg + radi, marge, llarg + radi, llarg + radi,  p.HALF_PI, p.PI); 
+    p.arc(marge , marge, llarg + radi, llarg + radi,  p.HALF_PI, p.PI); 
     p.arc(marge + llarg + radi, marge, radi, radi,  p.HALF_PI, p.PI); 
 
     // Línia esquerra
