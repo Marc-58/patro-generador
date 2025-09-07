@@ -387,6 +387,18 @@ p.strokeWeight(6);
        p.point(marge+contornBraç/4),marge+(llargTotal+llargBraç)/2);
       p.point( marge+contornBraç*3/4,marge+(llargTotal+llargBraç)/2);
       p.point(marge+contornBraç/2, marge-2*escala);
+
+
+      p.beginShape();
+p.curveVertex(marge, marge + (llargTotal - llargBraç));             // punt inicial
+p.curveVertex(marge + contornBraç/4, marge + (llargTotal + llargBraç)/2); 
+p.curveVertex(marge + contornBraç/3, marge); 
+p.curveVertex(marge + contornBraç/2.5, marge - escala); 
+p.curveVertex(marge + contornBraç/2, marge - 2*escala);             // punt final
+p.endShape();
+
+
+      
       
     }if (tipus === "faldillaMitjaCapa") {
       const cintura = mides.cintura * escala;
