@@ -377,11 +377,12 @@ p.line(
       const munyeca = mides.munyeca * escala;
       const sisa = mides.sisa * escala;
       const contornBraç = mides.contornBraç * escala;
-      p.line(marge,marge+(llargTotal-llargBraç), marge+(contornBraç/2-munyeca/2), marge+llargBraç );
-      p.line(marge+contornBraç,marge+(llargTotal-llargBraç), marge+(contornBraç/2-munyeca/2)+munyeca, marge+llargBraç );
+      p.line(marge,marge+(llargTotal-llargBraç), marge+(contornBraç/2-munyeca/2), marge+llargTotal );
+      p.line(marge+contornBraç,marge+(llargTotal-llargBraç), marge+(contornBraç/2-munyeca/2)+munyeca, marge+llargTotal );
       p.rect(marge, marge, contornBraç,llargTotal);
-
-           p.point(marge+(llargTotal+llargBraç)/2, marge+contornBraç/4);
+p.stroke("red");
+p.strokeWeight(6);
+      p.point(marge+(llargTotal+llargBraç)/2, marge+contornBraç/4);
       p.point(marge+(llargTotal+llargBraç)/2, marge+contornBraç*3/4);
       p.point(marge+contornBraç/2, marge-2*escala);
       
