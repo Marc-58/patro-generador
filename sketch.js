@@ -367,9 +367,7 @@ p.line(
       p.line(marge+coll/2-1*escala,marge, marge+coll/2, marge+5*escala );
       p.line(marge+coll/6,marge+6*escala, marge+coll/2, marge+5*escala );
 
-      p.point(marge+(llargTotal+llargBraç)/2, marge+contornBraç/4);
-      p.point(marge+(llargTotal+llargBraç)/2, marge+contornBraç*3/4);
-      p.point(marge+contornBraç/2, marge-2*escala);
+
 
 
       
@@ -382,6 +380,10 @@ p.line(
       p.line(marge,marge+(llargTotal-llargBraç), marge+(contornBraç/2-munyeca/2), marge+llargBraç );
       p.line(marge+contornBraç,marge+(llargTotal-llargBraç), marge+(contornBraç/2-munyeca/2)+munyeca, marge+llargBraç );
       p.rect(marge, marge, contornBraç,llargTotal);
+
+           p.point(marge+(llargTotal+llargBraç)/2, marge+contornBraç/4);
+      p.point(marge+(llargTotal+llargBraç)/2, marge+contornBraç*3/4);
+      p.point(marge+contornBraç/2, marge-2*escala);
       
     }if (tipus === "faldillaMitjaCapa") {
       const cintura = mides.cintura * escala;
