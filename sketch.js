@@ -384,8 +384,8 @@ p.stroke("red");
 p.strokeWeight(6);
    
 
-       p.point(marge+contornBraç/4,marge+(llargTotal+llargBraç)/2);
-      p.point( marge+contornBraç*3/4,marge+(llargTotal+llargBraç)/2);
+       p.point(marge+contornBraç/4,marge+(llargTotal-llargBraç)/2);
+      p.point( marge+contornBraç*3/4,marge+(llargTotal-llargBraç)/2);
       p.point(marge+contornBraç/2, marge-2*escala);
 
 
