@@ -390,9 +390,9 @@ p.strokeWeight(6);
 
 
       p.beginShape();
-p.curveVertex(marge, marge + (llargTotal - llargBraç));             // punt inicial
+p.curveVertex(marge, marge + (llargTotal - llargBraç));    
+ p.curveVertex(marge + contornBraç/3, marge); 
 p.curveVertex(marge + contornBraç/4, marge + (llargTotal + llargBraç)/2); 
-p.curveVertex(marge + contornBraç/3, marge); 
 p.curveVertex(marge + contornBraç/2.5, marge - escala); 
 p.curveVertex(marge + contornBraç/2, marge - 2*escala);             // punt final
 p.endShape();
