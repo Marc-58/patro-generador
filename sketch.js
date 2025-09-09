@@ -128,7 +128,6 @@ function generarPatro(peca) {
     mides.llargTotal = parseFloat(document.getElementById("llargTotalManiga").value);
     mides.llargBraç = parseFloat(document.getElementById("llargBraçManiga").value);
     mides.munyeca = parseFloat(document.getElementById("munyecaManiga").value);
-    mides.sisa = parseFloat(document.getElementById("sisaManiga").value);
     mides.contornBraç = parseFloat(document.getElementById("contornBraçManiga").value);
 
     let midesNecessaries = [
@@ -499,7 +498,7 @@ p.line(
   );
 
   //cadera
-  p.line(10 +cadera / 4-1 ,talleEspatlles+18*ecala+10, 10 + cintura / 4 + 2 * escala, 10 + talleEspatlles); // cintura
+  p.line(10 +cadera / 4-1 ,talleEspatlles+18*escala+10, 10 + cintura / 4 + 2 * escala, 10 + talleEspatlles); // cintura
   p.line(marge+cadera / 4+1,talleDavanter+18*escala+10, marge + (cintura / 4 + 4 * escala), 10 + talleDavanter); // línia cintura
 
   // Part de vestit
@@ -545,7 +544,6 @@ p.line(
       const llargTotal = mides.llargTotal * escala;
       const llargBraç = mides.llargBraç * escala;
       const munyeca = mides.munyeca * escala;
-      const sisa = mides.sisa * escala;
       const contornBraç = mides.contornBraç * escala;
       p.line(marge,marge+(llargTotal-llargBraç), marge+(contornBraç/2-munyeca/2), marge+llargTotal );
       p.line(marge+contornBraç,marge+(llargTotal-llargBraç), marge+(contornBraç/2-munyeca/2)+munyeca, marge+llargTotal );
