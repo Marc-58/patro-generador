@@ -555,11 +555,12 @@ p.strokeWeight(6);
       p.point(marge+contornBraç/2, marge-2*escala);
 
 
-      p.beginShape();
-p.curveVertex(marge, marge + (llargTotal - llargBraç));                   // Punt inicial
-p.curveVertex(marge + contornBraç/4, marge + (llargTotal - llargBraç)/2); // Punt de control
-p.curveVertex(marge + contornBraç/2, marge - 2*escala);                   // Punt final
-p.endShape();
+ p.bezier(
+marge, marge + (llargTotal - llargBraç));                   // Punt inicial
+marge + contornBraç/4, marge + (llargTotal - llargBraç)/2); // Punt de control
+marge + contornBraç/2, marge - 2*escala);    
+  marge + contornBraç/2, marge + 2*escala);                   // Punt final
+);
 
 
       
