@@ -131,7 +131,7 @@ function generarPatro(peca) {
     mides.contornBraç = parseFloat(document.getElementById("contornBraçManiga").value);
 
     let midesNecessaries = [
-     mides.llargTotal, mides.llargBraç, mides.munyeca, mides.sisa, mides.contornBraç
+     mides.llargTotal, mides.llargBraç, mides.munyeca, mides.contornBraç
     ];
 
     if (midesNecessaries.some(v => isNaN(v))) {
