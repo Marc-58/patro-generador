@@ -559,12 +559,13 @@ p.strokeWeight(6);
       p.point(marge+contornBraç/2, marge-2*escala);
 
 
- p.bezier(
-marge, marge + (llargTotal - llargBraç));                   // Punt inicial
-marge + contornBraç/4, marge + (llargTotal - llargBraç)/2); // Punt de control
-marge + contornBraç/2, marge - 2*escala);    
-  marge + contornBraç/2, marge + 2*escala);                   // Punt final
+p.bezier(
+  marge, marge + (llargTotal - llargBraç),                     // punt inicial
+  marge + contornBraç / 4, marge + (llargTotal - llargBraç) / 2, // control 1
+  marge + contornBraç / 2, marge - 2 * escala,                   // control 2
+  marge + contornBraç / 2, marge + 2 * escala                    // punt final
 );
+
 
 
       
