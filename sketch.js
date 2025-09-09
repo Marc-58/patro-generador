@@ -512,8 +512,12 @@ p.line(
       const tiro = mides.tiro * escala;
       const cadera = mides.cadera * escala;
       const llarg = mides.llarg * escala;
+      const m2 = cadera/4+marge+10*escala ;
+
 
       p.rect(marge, marge, llarg, cadera / 4);
+      p.rect(m2, marge, llarg, cadera / 4);
+
       // afegeix aquí més detalls del dibuix...
       
     }else if (tipus === "pantalo") {
