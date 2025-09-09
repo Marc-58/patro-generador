@@ -499,12 +499,12 @@ p.line(
   );
 
   //cadera
-  p.line(10 +cadera / 2-1 ,talleEspatlles+18+10, 10 + cintura / 4 + 2 * escala, 10 + talleEspatlles); // cintura
-  p.line(marge+cadera / 2+1,talleDavanter+18+10, marge + (cintura / 4 + 4 * escala), 10 + talleDavanter); // línia cintura
+  p.line(10 +cadera / 4-1 ,talleEspatlles+18*ecala+10, 10 + cintura / 4 + 2 * escala, 10 + talleEspatlles); // cintura
+  p.line(marge+cadera / 4+1,talleDavanter+18*escala+10, marge + (cintura / 4 + 4 * escala), 10 + talleDavanter); // línia cintura
 
   // Part de vestit
-  p.rect(10, talleEspatlles+18+10, cadera / 2-1, llargVestit-18);
-  p.rect(marge, talleDavanter+18+10, cadera / 2+1, llargVestit-18);
+  p.rect(10, talleEspatlles+18*escala+10, cadera / 2-1*escala, llargVestit-18*escala);
+  p.rect(marge, talleDavanter+18*escala+10, cadera / 2+1*escala, llargVestit-18*escala);
 
 
     } else if (tipus === "faldillaPantalo") {
