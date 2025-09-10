@@ -502,8 +502,8 @@ p.line(
   p.line(marge+cadera / 4+1,talleDavanter+18*escala+10, marge + (cintura / 4 + 4 * escala), 10 + talleDavanter); // línia cintura
 
   // Part de vestit
-  p.rect(10, talleEspatlles+18*escala+10, cadera / 2-1*escala, llargVestit-18*escala);
-  p.rect(marge, talleDavanter+18*escala+10, cadera / 2+1*escala, llargVestit-18*escala);
+  p.rect(10, talleEspatlles+18*escala+10, cadera / 2-1*escala, llargVestit);
+  p.rect(marge, talleDavanter+18*escala+10, cadera / 2+1*escala, llargVestit);
 
 
     } else if (tipus === "faldillaPantalo") {
@@ -514,8 +514,8 @@ p.line(
       const m2 = cadera/4+marge+10*escala ;
 
 
-      p.rect(marge, marge, llarg, cadera / 4);
-      p.rect(m2, marge, llarg, cadera / 4);
+      p.rect(marge, marge, cadera / 4, llarg );
+      p.rect(m2, marge,cadera / 4, llarg );
 
       // afegeix aquí més detalls del dibuix...
       
@@ -524,8 +524,12 @@ p.line(
       const tiro = mides.tiro * escala;
       const cadera = mides.cadera * escala;
       const llarg = mides.llarg * escala;
+      const m2 = cadera/4+marge+10*escala ;
 
-      p.rect(marge, marge, llarg, cadera / 4);
+
+      p.rect(marge, marge, cadera / 4, llarg );
+      p.rect(m2, marge,cadera / 4, llarg );
+
       // afegeix aquí més detalls del dibuix...
       
     }else if (tipus === "colls") {
@@ -560,13 +564,13 @@ p.strokeWeight(6);
 p.bezier(
   marge, marge + (llargTotal - llargBraç),                     // punt inicial
   marge + contornBraç / 4, marge + (llargTotal - llargBraç) / 2, // control 1
-  marge + contornBraç / 8*2.5, marge  ,                    // punt final
+  marge + contornBraç / 8*2.5, marge-2*escala  ,                    // punt final
   marge + contornBraç / 2, marge - 2 * escala,                   // control 2
 );
 p.bezier(
   marge+contornBraç , marge + (llargTotal - llargBraç),                     // punt inicial
   marge + contornBraç / 4*3, marge + (llargTotal - llargBraç) / 2, // control 1
-  marge + contornBraç / 8*5.5, marge  ,                    // punt final
+  marge + contornBraç / 8*5.5, marge-2*escala  ,                    // punt final
   marge + contornBraç / 2, marge - 2 * escala,                   // control 2
 );
 
