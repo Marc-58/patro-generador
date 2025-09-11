@@ -527,8 +527,8 @@ p.line(marge + torax / 4 - cintura / 8, 10 + talleDavanter, marge + torax / 4 - 
       const tiro = mides.tiro * escala;
       const cadera = mides.cadera * escala;
       const llarg = mides.llarg * escala;
-       const marge = 10 ;
-      const m2 = cadera/4+marge+10*escala ;
+       const marge = 10 *escala;
+      const m2 = cadera/4+marge+10*escala+cadera/6 ;
       const B = cadera/12 ;
 
 
@@ -536,27 +536,26 @@ p.line(marge + torax / 4 - cintura / 8, 10 + talleDavanter, marge + torax / 4 - 
       p.rect(m2, marge,cadera / 4, llarg );
 
       p.line(marge+cadera/4-(cintura/4+3),marge, marge ,marge+18*escala); // cint-cad
-      p.line(marge+cadera/4-(cintura/4+3),marge, marge,marge+18*escala); // cint-cad
+      p.line(m2+cadera/4-(cintura/4+3),marge, m2,marge+18*escala); // cint-cad
 
       p.line(marge+cadera/4,marge, marge + cadera/4,marge+18*escala); // cul
-      p.line(marge+cadera/4,marge, marge + cadera/4,marge+18*escala); // braqueta
+      p.line(m2+cadera/4,marge, m2 + cadera/4,marge+tiro-13*escala); // braqueta
 
-      p.line(marge+cadera/4+B,marge+tiro, marge+cadera/4+B+B/2+B/4 ,marge+tiro); // entrepierna
       p.line(marge+cadera/4+B,marge+tiro, marge+cadera/4+B+B/2+B/4 ,marge+tiro); // entrepierna
 
       p.line( marge+cadera/4+B+B/2+B/4 ,marge+tiro, marge+cadera/4+B+B/2+B/4+1.5*escala ,marge+llarg); // entrepierna
-      p.line( marge+cadera/4+B+B/2+B/4 ,marge+tiro, marge+cadera/4+B+B/2+B/4+1.5*escala ,marge+llarg); // entrepierna
+      p.line( m2+cadera/4+B ,marge+tiro, m2+cadera/4+B+1.5*escala ,marge+llarg); // entrepierna
 
       p.line(marge ,marge+18*escala, marge-1.5*escala ,marge+llarg); // cad-baix
-      p.line(marge ,marge+18*escala, marge-1.5*escala ,marge+llarg); // cad-baix
+      p.line(m2 ,marge+18*escala, m2-1.5*escala ,marge+llarg); // cad-baix
 
       p.line( marge+cadera/4+B+B/2+B/4+1.5*escala ,marge+llarg, marge-1.5*escala ,marge+llarg); // baix
-      p.line( marge+cadera/4+B+B/2+B/4+1.5*escala ,marge+llarg, marge-1.5*escala ,marge+llarg); // baix
+      p.line( marge+cadera/4+B+1.5*escala ,marge+llarg, marge-1.5*escala ,marge+llarg); // baix
 
-      p.line(marge+cadera/4-(cintura/4+3)+cintura/8,marge, marge+cadera/4-(cintura/4+3)+cintura/8+1.5 ,marge+11*escala ); // cint-cad
-      p.line(marge+cadera/4-(cintura/4+3)+cintura/8+3*escala,marge, marge+cadera/4-(cintura/4+3)+cintura/8+1.5 ,marge+11*escala); // cint-cad
-      p.line(marge+cadera/4-(cintura/4+3),marge, marge ,marge+18*escala); // cint-cad
-      p.line(marge+cadera/4-(cintura/4+3),marge, marge,marge+18*escala); // cint-cad
+      p.line(marge+cadera/4-(cintura/4+3)+cintura/8,marge, marge+cadera/4-(cintura/4+3)+cintura/8+1.5*escala ,marge+11*escala ); // cint-cad
+      p.line(marge+cadera/4-(cintura/4+3)+cintura/8+3*escala,marge, marge+cadera/4-(cintura/4+3)+cintura/8+1.5 *escala,marge+11*escala); // cint-cad
+      p.line(m2+cadera/4-(cintura/4+3)+cintura/8,marge, m2+cadera/4-(cintura/4+3)+cintura/8+1.5*escala ,marge+11*escala ); // cint-cad
+      p.line(m2+cadera/4-(cintura/4+3)+cintura/8+3*escala,marge, m2+cadera/4-(cintura/4+3)+cintura/8+1.5 *escala,marge+11*escala); // cint-cad
       
     }else if (tipus === "pantalo") {
       const cintura = mides.cintura * escala;
