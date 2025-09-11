@@ -406,11 +406,11 @@ p.line(
   p.line(10 ,10+talleEspatlles+18*escala, 10 + cadera / 4 -1 * escala, 10 + talleEspatlles+18*escala); // cintura
   p.line(marge,talleDavanter+18*escala+10, marge + (cadera / 4 + 1 * escala),talleDavanter+18*escala+10); // línia cintura
 
-  p.line(marge + torax / 4 - cintura / 8, 10 + talleDavanter, marge + torax / 4 - cintura / 8 - 1.5 * escala, 10 + altDePit); // pinça esquerra
-  p.line(marge + torax / 4 - cintura / 8 - 3 * escala, 10 + talleDavanter, marge + torax / 4 - cintura / 8 - 1.5 * escala, talleDavanter+18*escala+10); // pinça dreta
-  p.line(marge + torax / 4 - cintura / 8, talleDavanter+18*escala+10, marge + torax / 4 - cintura / 8 - 1.5 * escala, talleDavanter+18*escala+10); // pinça esquerra
-  p.line(marge + torax / 4 - cintura / 8 - 3 * escala, talleDavanter+18*escala+10, marge + torax / 4 - cintura / 8 - 1.5 * escala, 10 + altDePit); // pinça dreta
-
+  p.line(marge + torax / 4 - cintura / 8, 10 + talleDavanter, marge + torax / 4 - cintura / 8 - 1.5 * escala, 10 + talleDavanter+18*escala); // pinça esquerra
+  p.line(marge + torax / 4 - cintura / 8 - 3 * escala, 10 + talleDavanter, marge + torax / 4 - cintura / 8 - 1.5 * escala, 10 + talleDavanter+18*escala); // pinça dreta
+ p.line(10 + cintura / 8 + 1.5 * escala, talleEspatlles  + 10+18*escala, 10 + (cintura / 8), 10 + talleEspatlles); // pinça esquerra
+  p.line(10 + cintura / 8 + 1.5 * escala,talleEspatlles  + 10+18*escala, 10 + (cintura / 8) + 3 * escala, 10 + talleEspatlles); // pinça dreta
+  
 
     } else if (tipus === "vestit") {
     const espatlles = mides.espatllesTotal * escala;
@@ -428,7 +428,7 @@ p.line(
   const cadera = mides.cadera * escala;
 
   // Part esquerra - esquena
-  p.rect(10, 10, espatlles / 2, talleEspatlles+llargVestit);
+  p.rect(10, 10, espatlles / 2, talleEspatlles+18*escala);
   p.line(10 + coll / 6, 10, 10 + espatlles / 2, 10 + (talleEspatlles - caiguda)); // espatlla
   p.line(10 + torax / 4, talleEspatlles - caiguda + sisa + 10, 10 + cintura / 4 + 2 * escala, 10 + talleEspatlles); // cintura
   p.line(10 + cintura / 8 + 1.5 * escala, talleEspatlles - caiguda + sisa + 10, 10 + (cintura / 8), 10 + talleEspatlles); // pinça esquerra
@@ -512,14 +512,14 @@ p.line(
  p.line(10 ,10+talleEspatlles+18*escala, 10 + cintura / 4 + 2 * escala, 10 + talleEspatlles+18*escala); // cintura
   p.line(marge,talleDavanter+18*escala+10, marge + (cintura / 4 + 4 * escala),talleDavanter+18*escala+10); // línia cintura
 
-   p.line(marge + torax / 4 - cintura / 8, 10 + talleDavanter, marge + torax / 4 - cintura / 8 - 1.5 * escala, 10 + altDePit); // pinça esquerra
-  p.line(marge + torax / 4 - cintura / 8 - 3 * escala, 10 + talleDavanter, marge + torax / 4 - cintura / 8 - 1.5 * escala, talleDavanter+18*escala+10); // pinça dreta
-  p.line(marge + torax / 4 - cintura / 8, talleDavanter+18*escala+10, marge + torax / 4 - cintura / 8 - 1.5 * escala, talleDavanter+18*escala+10); // pinça esquerra
-  p.line(marge + torax / 4 - cintura / 8 - 3 * escala, talleDavanter+18*escala+10, marge + torax / 4 - cintura / 8 - 1.5 * escala, 10 + altDePit); // pinça dreta
-
+p.line(marge + torax / 4 - cintura / 8, 10 + talleDavanter, marge + torax / 4 - cintura / 8 - 1.5 * escala, 10 + talleDavanter+18*escala); // pinça esquerra
+  p.line(marge + torax / 4 - cintura / 8 - 3 * escala, 10 + talleDavanter, marge + torax / 4 - cintura / 8 - 1.5 * escala, 10 + talleDavanter+18*escala); // pinça dreta
+ p.line(10 + cintura / 8 + 1.5 * escala, talleEspatlles  + 10+18*escala, 10 + (cintura / 8), 10 + talleEspatlles); // pinça esquerra
+  p.line(10 + cintura / 8 + 1.5 * escala,talleEspatlles  + 10+18*escala, 10 + (cintura / 8) + 3 * escala, 10 + talleEspatlles); // pinça dreta
+  
   // Part de vestit
-  p.rect(10, talleEspatlles+18*escala+10, cadera / 2-1*escala, llargVestit);
-  p.rect(marge, talleDavanter+18*escala+10, cadera / 2+1*escala, llargVestit);
+  p.rect(10, talleEspatlles+18*escala+10, (cadera / 4)-1*escala, llargVestit);
+  p.rect(marge, talleDavanter+18*escala+10, (cadera / 4)+1*escala, llargVestit);
 
 
     } else if (tipus === "faldillaPantalo") {
