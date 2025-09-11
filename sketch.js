@@ -322,7 +322,7 @@ p.line(
   const cadera = mides.cadera * escala;
 
   // Part esquerra - esquena
-  p.rect(10, 10, espatlles / 2, talleEspatlles+18);
+  p.rect(10, 10, espatlles / 2, talleEspatlles+18*escala);
   p.line(10 + coll / 6, 10, 10 + espatlles / 2, 10 + (talleEspatlles - caiguda)); // espatlla
   p.line(10 + torax / 4, talleEspatlles - caiguda + sisa + 10, 10 + cintura / 4 + 2 * escala, 10 + talleEspatlles); // cintura
   p.line(10 + cintura / 8 + 1.5 * escala, talleEspatlles - caiguda + sisa + 10, 10 + (cintura / 8), 10 + talleEspatlles); // pinça esquerra
@@ -345,7 +345,7 @@ p.line(
   );
 
   // Part dreta - davanter
-  p.rect(marge, 10, torax / 4, talleDavanter+18);
+  p.rect(marge, 10, torax / 4, talleDavanter+18*escala);
   p.line(marge + coll / 6, 10, marge + torax / 4 - (torax / 4 - espatlles / 2), 10 + (talleEspatlles - caiguda)); // línia espatlla
   p.line(marge, 10 + altDePit, marge + (pit / 2), 10 + altDePit); // línia alt de pit
   p.line(marge, 10 + talleDavanter, marge + (cintura / 4 + 4 * escala), 10 + talleDavanter); // línia cintura
@@ -400,9 +400,17 @@ p.line(
   );
 
   //cadera
-  p.line(10 +cadera / 2-1 ,talleEspatlles+18+10, 10 + cintura / 4 + 2 * escala, 10 + talleEspatlles); // cintura
-  p.line(marge+cadera / 2+1,talleDavanter+18+10, marge + (cintura / 4 + 4 * escala), 10 + talleDavanter); // línia cintura
-                                                                                              
+  p.line(10 +cadera / 4-1 ,talleEspatlles+18*escala+10, 10 + cintura / 4 + 2 * escala, 10 + talleEspatlles); // cintura
+  p.line(marge+cadera / 4+1,talleDavanter+18*escala+10, marge + (cintura / 4 + 4 * escala), 10 + talleDavanter); // línia cintura
+
+  p.line(10 ,10+talleEspatlles+18*escala, 10 + cintura / 4 + 2 * escala, 10 + talleEspatlles+18*escala); // cintura
+  p.line(marge,talleDavanter+18*escala+10, marge + (cintura / 4 + 4 * escala),talleDavanter+18*escala+10); // línia cintura
+
+  p.line(10 + cintura / 8 + 1.5 * escala, 10 + talleEspatlles+18*escala, 10 + (cintura / 8), 10 + talleEspatlles); // pinça esquerra
+  p.line(10 + cintura / 8 + 1.5 * escala,10 + talleEspatlles+18*escala, 10 + (cintura / 8) + 3 * escala, 10 + talleEspatlles); // pinça dreta
+  p.line(marge + torax / 4 - cintura / 8, talleDavanter+18*escala+10, marge + torax / 4 - cintura / 8 - 1.5 * escala, 10 + altDePit); // pinça esquerra
+  p.line(marge + torax / 4 - cintura / 8 - 3 * escala, talleDavanter+18*escala+10, marge + torax / 4 - cintura / 8 - 1.5 * escala, 10 + altDePit); // pinça dreta
+
 
     } else if (tipus === "vestit") {
     const espatlles = mides.espatllesTotal * escala;
@@ -501,6 +509,14 @@ p.line(
   p.line(10 +cadera / 4-1 ,talleEspatlles+18*escala+10, 10 + cintura / 4 + 2 * escala, 10 + talleEspatlles); // cintura
   p.line(marge+cadera / 4+1,talleDavanter+18*escala+10, marge + (cintura / 4 + 4 * escala), 10 + talleDavanter); // línia cintura
 
+ p.line(10 ,10+talleEspatlles+18*escala, 10 + cintura / 4 + 2 * escala, 10 + talleEspatlles+18*escala); // cintura
+  p.line(marge,talleDavanter+18*escala+10, marge + (cintura / 4 + 4 * escala),talleDavanter+18*escala+10); // línia cintura
+
+  p.line(10 + cintura / 8 + 1.5 * escala, 10 + talleEspatlles+18*escala, 10 + (cintura / 8), 10 + talleEspatlles); // pinça esquerra
+  p.line(10 + cintura / 8 + 1.5 * escala,10 + talleEspatlles+18*escala, 10 + (cintura / 8) + 3 * escala, 10 + talleEspatlles); // pinça dreta
+  p.line(marge + torax / 4 - cintura / 8, talleDavanter+18*escala+10, marge + torax / 4 - cintura / 8 - 1.5 * escala, 10 + altDePit); // pinça esquerra
+  p.line(marge + torax / 4 - cintura / 8 - 3 * escala, talleDavanter+18*escala+10, marge + torax / 4 - cintura / 8 - 1.5 * escala, 10 + altDePit); // pinça dreta
+      
   // Part de vestit
   p.rect(10, talleEspatlles+18*escala+10, cadera / 2-1*escala, llargVestit);
   p.rect(marge, talleDavanter+18*escala+10, cadera / 2+1*escala, llargVestit);
