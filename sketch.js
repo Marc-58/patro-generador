@@ -400,8 +400,8 @@ p.line(
   );
 
   //cadera
-  p.line(10 +cadera / 4-1 ,talleEspatlles+18*escala+10, 10 + cintura / 4 + 2 * escala, 10 + talleEspatlles); // cintura
-  p.line(marge+cadera / 4+1,talleDavanter+18*escala+10, marge + (cintura / 4 + 4 * escala), 10 + talleDavanter); // línia cintura
+  p.line(10 +cadera / 4-1*escala ,talleEspatlles+18*escala+10, 10 + cintura / 4 + 2 * escala, 10 + talleEspatlles); // cintura
+  p.line(marge+cadera / 4+1*escala,talleDavanter+18*escala+10, marge + (cintura / 4 + 4 * escala), 10 + talleDavanter); // línia cintura
 
   p.line(10 ,10+talleEspatlles+18*escala, 10 + cadera / 4 -1 * escala, 10 + talleEspatlles+18*escala); // cintura
   p.line(marge,talleDavanter+18*escala+10, marge + (cadera / 4 + 1 * escala),talleDavanter+18*escala+10); // línia cintura
@@ -506,11 +506,11 @@ p.line(
   );
 
   //cadera
-  p.line(10 +cadera / 4-1 ,talleEspatlles+18*escala+10, 10 + cintura / 4 + 2 * escala, 10 + talleEspatlles); // cintura
-  p.line(marge+cadera / 4+1,talleDavanter+18*escala+10, marge + (cintura / 4 + 4 * escala), 10 + talleDavanter); // línia cintura
+  p.line(10 +cadera / 4-1 ,talleEspatlles+18*escala+10, 10 + cintura / 4 + 2 * escala, 10 + talleEspatlles); // cintura-cadera
+  p.line(marge+cadera / 4+1,talleDavanter+18*escala+10, marge + (cintura / 4 + 4 * escala), 10 + talleDavanter); // línia cintura-cadera
 
- p.line(10 ,10+talleEspatlles+18*escala, 10 + cintura / 4 + 2 * escala, 10 + talleEspatlles+18*escala); // cintura
-  p.line(marge,talleDavanter+18*escala+10, marge + (cintura / 4 + 4 * escala),talleDavanter+18*escala+10); // línia cintura
+  p.line(10 ,10+talleEspatlles+18*escala, 10 + cadera / 4 -1 * escala, 10 + talleEspatlles+18*escala); // cadera
+  p.line(marge,talleDavanter+18*escala+10, marge + (cadera / 4 + 1 * escala),talleDavanter+18*escala+10); // cadera
 
 p.line(marge + torax / 4 - cintura / 8, 10 + talleDavanter, marge + torax / 4 - cintura / 8 - 1.5 * escala, 10 + talleDavanter+18*escala); // pinça esquerra
   p.line(marge + torax / 4 - cintura / 8 - 3 * escala, 10 + talleDavanter, marge + torax / 4 - cintura / 8 - 1.5 * escala, 10 + talleDavanter+18*escala); // pinça dreta
@@ -518,8 +518,8 @@ p.line(marge + torax / 4 - cintura / 8, 10 + talleDavanter, marge + torax / 4 - 
   p.line(10 + cintura / 8 + 1.5 * escala,talleEspatlles  + 10+18*escala, 10 + (cintura / 8) + 3 * escala, 10 + talleEspatlles); // pinça dreta
   
   // Part de vestit
-  p.rect(10, talleEspatlles+18*escala+10, (cadera / 4)-1*escala, llargVestit);
-  p.rect(marge, talleDavanter+18*escala+10, (cadera / 4)+1*escala, llargVestit);
+  p.rect(10, talleEspatlles+18*escala+10, (cadera / 4)-1*escala, llargVestit-18*escala);
+  p.rect(marge, talleDavanter+18*escala+10, (cadera / 4)+1*escala, llargVestit-18*escala);
 
 
     } else if (tipus === "faldillaPantalo") {
