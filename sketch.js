@@ -428,7 +428,7 @@ p.line(
   const cadera = mides.cadera * escala;
 
   // Part esquerra - esquena
-  p.rect(10, 10, espatlles / 2, talleEspatlles+18);
+  p.rect(10, 10, espatlles / 2, talleEspatlles+llargVestit);
   p.line(10 + coll / 6, 10, 10 + espatlles / 2, 10 + (talleEspatlles - caiguda)); // espatlla
   p.line(10 + torax / 4, talleEspatlles - caiguda + sisa + 10, 10 + cintura / 4 + 2 * escala, 10 + talleEspatlles); // cintura
   p.line(10 + cintura / 8 + 1.5 * escala, talleEspatlles - caiguda + sisa + 10, 10 + (cintura / 8), 10 + talleEspatlles); // pinça esquerra
@@ -451,7 +451,7 @@ p.line(
   );
 
   // Part dreta - davanter
-  p.rect(marge, 10, torax / 4, talleDavanter+18);
+  p.rect(marge, 10, torax / 4, talleDavanter+llargVestit);
   p.line(marge + coll / 6, 10, marge + torax / 4 - (torax / 4 - espatlles / 2), 10 + (talleEspatlles - caiguda)); // línia espatlla
   p.line(marge, 10 + altDePit, marge + (pit / 2), 10 + altDePit); // línia alt de pit
   p.line(marge, 10 + talleDavanter, marge + (cintura / 4 + 4 * escala), 10 + talleDavanter); // línia cintura
