@@ -538,7 +538,7 @@ p.line(marge + torax / 4 - cintura / 8, 10 + talleDavanter, marge + torax / 4 - 
       p.line(marge+cadera/4-(cintura/4+3),marge, marge ,marge+18*escala); // cint-cad
       p.line(m2+cadera/4-(cintura/4+3),marge, m2,marge+18*escala); // cint-cad
 
-      p.line(marge+cadera/4,marge, marge + cadera/4,marge+18*escala); // cul
+      p.line(marge+cadera/4-1*escala,marge, marge + cadera/4,marge+18*escala); // cul
       p.line(m2+cadera/4,marge, m2 + cadera/4,marge+tiro-13*escala); // braqueta
 
       p.line(marge+cadera/4+B,marge+tiro, marge+cadera/4+B+B/2+B/4 ,marge+tiro); // entrepierna
@@ -556,6 +556,29 @@ p.line(marge + torax / 4 - cintura / 8, 10 + talleDavanter, marge + torax / 4 - 
       p.line(marge+cadera/4-(cintura/4+3)+cintura/8+3*escala,marge, marge+cadera/4-(cintura/4+3)+cintura/8+1.5 *escala,marge+11*escala); // cint-cad
       p.line(m2+cadera/4-(cintura/4+3)+cintura/8,marge, m2+cadera/4-(cintura/4+3)+cintura/8+1.5*escala ,marge+11*escala ); // cint-cad
       p.line(m2+cadera/4-(cintura/4+3)+cintura/8+3*escala,marge, m2+cadera/4-(cintura/4+3)+cintura/8+1.5 *escala,marge+11*escala); // cint-cad
+
+      // Radi del quart de cercle
+const radi = B;  
+
+// Dibuixar quart de rodona
+p.arc(
+  marge + cadera/4,              // centre X
+  marge + tiro,                  // centre Y
+  2*radi,                        // ample = diàmetre
+  2*radi,                        // alt = diàmetre
+  p.PI + p.HALF_PI,              // angle inicial (270°)
+  p.TWO_PI                       // angle final (360°)
+);
+
+p.arc(
+  m2 + cadera/4,                  // centre X
+  marge + tiro,                   // centre Y
+  2*radi,                         // ample
+  2*radi,                         // alt
+  p.PI + p.HALF_PI,               // angle inicial (270°)
+  p.TWO_PI                        // angle final (360°)
+);
+
       
     }else if (tipus === "pantalo") {
       const cintura = mides.cintura * escala;
