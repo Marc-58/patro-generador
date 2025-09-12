@@ -567,8 +567,8 @@ p.arc(
   marge + tiro,              // centre Y
   2*radi,                   // ample
   2*radi,                   // alt
-  p.PI,                      // 180° → a l'esquerra
-  p.PI + p.HALF_PI           // 270° → avall
+  p.HALF_PI * 3, 
+  p.TWO_PI           // 270° → avall
 );
 
 
@@ -579,8 +579,8 @@ p.arc(
   marge + tiro,              // centre Y
   2*radi,                   // ample
   2*radi,                   // alt
-  p.PI,                      // 180° → a l'esquerra
-  p.PI + p.HALF_PI           // 270° → avall
+  p.HALF_PI * 3, 
+  p.TWO_PI
 );
 
       
