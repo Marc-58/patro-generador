@@ -561,22 +561,26 @@ p.line(marge + torax / 4 - cintura / 8, 10 + talleDavanter, marge + torax / 4 - 
 const radi = B;  
 
 // Dibuixar quart de rodona
-p.arc(
-  marge + cadera/4,              // centre X
-  marge + tiro,                  // centre Y
-  2*radi,                        // ample = diàmetre
-  2*radi,                        // alt = diàmetre
-  p.PI + p.HALF_PI,              // angle inicial (270°)
-  p.TWO_PI                       // angle final (360°)
-);
 
 p.arc(
-  m2 + cadera/4,                  // centre X
-  marge + tiro,                   // centre Y
-  2*radi,                         // ample
-  2*radi,                         // alt
-  p.PI + p.HALF_PI,               // angle inicial (270°)
-  p.TWO_PI                        // angle final (360°)
+  marge + cadera/4,          // centre X
+  marge + tiro,              // centre Y
+  2*radi,                   // ample
+  2*radi,                   // alt
+  p.PI,                      // 180° → a l'esquerra
+  p.PI + p.HALF_PI           // 270° → avall
+);
+
+
+const radi2 = B;
+
+p.arc(
+  m2 + cadera/4,             // centre X
+  marge + tiro,              // centre Y
+  2*radi,                   // ample
+  2*radi,                   // alt
+  p.PI,                      // 180° → a l'esquerra
+  p.PI + p.HALF_PI           // 270° → avall
 );
 
       
