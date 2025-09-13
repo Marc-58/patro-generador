@@ -608,11 +608,17 @@ p.arc(
   marge + 3*escala, marge+llarg ,                    // punt final
 );
 p.bezier(//linia entrecama
-  marge+contornBraç , marge + (llargTotal - llargBraç),                     // punt inicial
-  marge + contornBraç / 4*3, marge + (llargTotal - llargBraç) / 2, // control 1
-  marge + contornBraç / 8*5.5, marge-2*escala  ,                    // punt final
-  marge + contornBraç / 2, marge - 2 * escala,                   // control 2
+  marge+cadera/4+cadera/10 +1*escala , marge+ tiro+1*escala,                     // punt inicial
+  marge +cadera/4+4*escala, marge+llargGenoll , // control 1
+  marge + cadera/4+3*escala , marge+llargGenoll+(llarg+llargGenoll)  ,                    // punt final
+  marge + cadera/4+2*escala, marge +llarg,                   // control 2
 );
+
+
+ p.line(marge+cadera/4-(cintura/4+3+3)+cintura/8,marge, marge+cadera/4-(cintura/4+3)+cintura/8+1.5*escala ,marge+11*escala ); // cint-cad
+      p.line(marge+cadera/4-(cintura/4+3+3)+cintura/8+3*escala,marge, marge+cadera/4-(cintura/4+3)+cintura/8+1.5 *escala,marge+11*escala); // cint-cad
+      p.line(m2+cadera/4-(cintura/4+3)+cintura/8,marge, m2+cadera/4-(cintura/4+3)+cintura/8+1.5*escala ,marge+11*escala ); // cint-cad
+      p.line(m2+cadera/4-(cintura/4+3)+cintura/8+3*escala,marge, m2+cadera/4-(cintura/4+3)+cintura/8+1.5 *escala,marge+11*escala); // cint-cad
 
       
 p.stroke("red");
