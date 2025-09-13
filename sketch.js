@@ -661,13 +661,13 @@ p.strokeWeight(6);
 p.bezier(
   marge, marge + (llargTotal - llargBraç),                     // punt inicial
   marge + contornBraç / 4, marge + (llargTotal - llargBraç) / 2, // control 1
-  marge + contornBraç / 8*2.5, marge-2*escala  ,                    // punt final
+  marge + contornBraç / 4, marge + (llargTotal - llargBraç) / 2, // control 1
   marge + contornBraç / 2, marge - 2 * escala,                   // control 2
 );
 p.bezier(
   marge+contornBraç , marge + (llargTotal - llargBraç),                     // punt inicial
   marge + contornBraç / 4*3, marge + (llargTotal - llargBraç) / 2, // control 1
-  marge + contornBraç / 8*5.5, marge-2*escala  ,                    // punt final
+  marge + contornBraç / 4*3, marge + (llargTotal - llargBraç) / 2, // control 1
   marge + contornBraç / 2, marge - 2 * escala,                   // control 2
 );
 
