@@ -615,8 +615,8 @@ p.bezier(//linia entrecama
 );
 
 
- p.line(marge+cadera/4-(cintura/4+3+3)+cintura/8,marge, marge+cadera/4-(cintura/4+3)+cintura/8+1.5*escala ,marge+11*escala ); // cint-cad
-      p.line(marge+cadera/4-(cintura/4+3+3)+cintura/8+3*escala,marge, marge+cadera/4-(cintura/4+3)+cintura/8+1.5 *escala,marge+11*escala); // cint-cad
+ p.line(marge+cadera/4-(cintura/4+3+3)+cintura/8,marge, marge+cadera/4-(cintura/4+3+3)+cintura/8+1.5*escala ,marge+11*escala ); // cint-cad
+      p.line(marge+cadera/4-(cintura/4+3+3)+cintura/8+3*escala,marge, marge+cadera/4-(cintura/4+3+3)+cintura/8+1.5 *escala,marge+11*escala); // cint-cad
       p.line(m2+cadera/4-(cintura/4+3)+cintura/8,marge, m2+cadera/4-(cintura/4+3)+cintura/8+1.5*escala ,marge+11*escala ); // cint-cad
       p.line(m2+cadera/4-(cintura/4+3)+cintura/8+3*escala,marge, m2+cadera/4-(cintura/4+3)+cintura/8+1.5 *escala,marge+11*escala); // cint-cad
 
