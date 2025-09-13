@@ -601,22 +601,31 @@ p.arc(
       p.line(marge+cadera/4-3*escala,marge, marge + cadera/4,marge+18*escala); // cul
       p.line(m2+cadera/4,marge, m2 + cadera/4,marge+tiro-13*escala); // bragueta
 
-      p.bezier(  //linia fora
- marge+cadera/4-(cintura/4+3+3),marge,                     // pu
-  marge -1*escala,marge+tiro , // control 1
-  marge + 1.5*escala, marge+llargGenoll ,                    // punt final
-  marge + 3*escala, marge+llarg ,                    // punt final
-);
-p.bezier(//linia entrecama
-  marge+cadera/4+cadera/10 +1*escala , marge+ tiro+1*escala,                     // punt inicial
-  marge +cadera/4+4*escala, marge+llargGenoll , // control 1
-  marge + cadera/4+3*escala , marge+llargGenoll+(llarg+llargGenoll)  ,                    // punt final
-  marge + cadera/4+2*escala, marge +llarg,                   // control 2
-);
+     // Línia fora amb curveVertex
+p.beginShape();
+p.noFill();
+p.curveVertex(marge+cadera/4-(cintura/4+3+3), marge); // primer punt (repetit)
+p.curveVertex(marge+cadera/4-(cintura/4+3+3), marge); 
+p.curveVertex(marge -1*escala, marge+tiro);
+p.curveVertex(marge + 1.5*escala, marge+llargGenoll);
+p.curveVertex(marge + 3*escala, marge+llarg);
+p.curveVertex(marge + 3*escala, marge+llarg); // últim repetit
+p.endShape();
+
+// Línia entrecama amb curveVertex
+p.beginShape();
+p.noFill();
+p.curveVertex(marge+cadera/4+cadera/10 +1*escala, marge+tiro+1*escala); 
+p.curveVertex(marge+cadera/4+cadera/10 +1*escala, marge+tiro+1*escala);
+p.curveVertex(marge + cadera/4+4*escala, marge+llargGenoll);
+p.curveVertex(marge + cadera/4+2*escala, marge+llarg);
+p.curveVertex(marge + cadera/4+2*escala, marge+llarg); 
+p.endShape();
 
 
- p.line(marge+cadera/4-(cintura/4+3+3)+cintura/8,marge, marge+cadera/4-(cintura/4+3+3)+cintura/8+1.5*escala ,marge+11*escala ); // cint-cad
-      p.line(marge+cadera/4-(cintura/4+3+3)+cintura/8+3*escala,marge, marge+cadera/4-(cintura/4+3+3)+cintura/8+1.5 *escala,marge+11*escala); // cint-cad
+
+ p.line(marge+cadera/4-(cintura/4+6*escala)+cintura/8,marge, marge+cadera/4-(cintura/4+6*escala)+cintura/8+1.5*escala ,marge+11*escala ); // cint-cad
+      p.line(marge+cadera/4-(cintura/4+6*escala)+cintura/8+3*escala,marge, marge+cadera/4-(cintura/4+6*escala)+cintura/8+1.5 *escala,marge+11*escala); // cint-cad
       p.line(m2+cadera/4-(cintura/4+3)+cintura/8,marge, m2+cadera/4-(cintura/4+3)+cintura/8+1.5*escala ,marge+11*escala ); // cint-cad
       p.line(m2+cadera/4-(cintura/4+3)+cintura/8+3*escala,marge, m2+cadera/4-(cintura/4+3)+cintura/8+1.5 *escala,marge+11*escala); // cint-cad
 
