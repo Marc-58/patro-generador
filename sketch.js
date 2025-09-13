@@ -103,7 +103,7 @@ function generarPatro(peca) {
     mides.cintura = parseFloat(document.getElementById("cinturaPantalo").value);
     mides.tiro = parseFloat(document.getElementById("tiroPantalo").value);
     mides.llarg = parseFloat(document.getElementById("llargPantalo").value);
-    mides.llargGenoll = parseFloat(document.getElementById("llargGenoll").value);
+    mides.llargGenoll = parseFloat(document.getElementById("llargGenollPantalo").value);
 
     let midesNecessaries = [
       mides.cintura, mides.cadera, mides.tiro, mides.llarg
@@ -626,7 +626,6 @@ p.strokeWeight(6)
        p.line(marge+cadera/4-(cintura/4+3+3),marge, marge+cadera/4-3*escala ,marge); // cint-cad
       
       p.line( marge+3*escala,marge+llarg, marge+cadera/4+2*escala ,marge+llarg); // baix
-      p.line( marge+cadera/4+B+1.5*escala ,marge+llarg, marge-1.5*escala ,marge+llarg); // baix
 
       // afegeix aquí més detalls del dibuix...
       
