@@ -103,6 +103,7 @@ function generarPatro(peca) {
     mides.cintura = parseFloat(document.getElementById("cinturaPantalo").value);
     mides.tiro = parseFloat(document.getElementById("tiroPantalo").value);
     mides.llarg = parseFloat(document.getElementById("llargPantalo").value);
+    mides.llargGenoll = parseFloat(document.getElementById("llargGenoll").value);
 
     let midesNecessaries = [
       mides.cintura, mides.cadera, mides.tiro, mides.llarg
@@ -589,11 +590,37 @@ p.arc(
       const tiro = mides.tiro * escala;
       const cadera = mides.cadera * escala;
       const llarg = mides.llarg * escala;
+      const llargGenoll = mides.llargGenoll * escala;
+      const marge = 10*escala
       const m2 = cadera/4+marge+10*escala ;
 
 
       p.rect(marge, marge, cadera / 4, llarg );
       p.rect(m2, marge,cadera / 4, llarg );
+
+      p.line(marge+cadera/4-3*escala,marge, marge + cadera/4,marge+18*escala); // cul
+      p.line(m2+cadera/4,marge, m2 + cadera/4,marge+tiro-13*escala); // bragueta
+
+      p.bezier(  //linia fora
+ marge+cadera/4-(cintura/4+3+3),marge,                     // pu
+  marge -1*escala,marge+tiro , // control 1
+  marge + 1.5*escala, marge+llargGenoll ,                    // punt final
+  marge + 3*escala, marge+llarg ,                    // punt final
+);
+p.bezier(//linia entrecama
+  marge+contornBraç , marge + (llargTotal - llargBraç),                     // punt inicial
+  marge + contornBraç / 4*3, marge + (llargTotal - llargBraç) / 2, // control 1
+  marge + contornBraç / 8*5.5, marge-2*escala  ,                    // punt final
+  marge + contornBraç / 2, marge - 2 * escala,                   // control 2
+);
+
+      
+p.stroke("red");
+p.strokeWeight(6)
+       p.line(marge+cadera/4-(cintura/4+3+3),marge, marge+cadera/4-3*escala ,marge); // cint-cad
+      
+      p.line( marge+3*escala,marge+llarg, marge+cadera/4+2*escala ,marge+llarg); // baix
+      p.line( marge+cadera/4+B+1.5*escala ,marge+llarg, marge-1.5*escala ,marge+llarg); // baix
 
       // afegeix aquí més detalls del dibuix...
       
