@@ -592,7 +592,7 @@ p.arc(
       const llarg = mides.llarg * escala;
       const llargGenoll = mides.llargGenoll * escala;
       const marge = 10*escala
-      const m2 = cadera/4+marge+10*escala ;
+      const m2 = cadera/4+marge+100*escala ;
 
 
       p.rect(marge, marge, cadera / 4, llarg );
@@ -632,11 +632,9 @@ p.endShape();
       
 p.stroke("red");
 p.strokeWeight(6)
-       p.line(marge+cadera/4-(cintura/4+3+3),marge, marge+cadera/4-3*escala ,marge); // cint-cad
-      
+       p.line(marge+cadera/4-(cintura/4+3+3),marge, marge+cadera/4-3*escala ,marge); // cint-cadera
       p.line( marge+3*escala,marge+llarg, marge+cadera/4+2*escala ,marge+llarg); // baix
 
-      // afegeix aquí més detalls del dibuix...
       
     }else if (tipus === "colls") {
       const coll = mides.coll * escala;
@@ -666,19 +664,22 @@ p.strokeWeight(6);
       p.point( marge+contornBraç*3/4,marge+(llargTotal-llargBraç)/2);
       p.point(marge+contornBraç/2, marge-2*escala);
 
+p.beginShape();
+p.noFill();
+p.curveVertex(marge, marge + (llargTotal - llargBraç)); // primer punt (repetit)
+p.curveVertex( marge + contornBraç / 4, marge + (llargTotal - llargBraç) / 2); 
+p.curveVertex(marge + contornBraç / 4, marge + (llargTotal - llargBraç) / 2);
+p.curveVertex(marge + contornBraç / 2, marge - 2 * escala);
+p.endShape();
+      
+p.beginShape();
+p.noFill();
+p.curveVertex(marge+contornBraç , marge + (llargTotal - llargBraç)); // primer punt (repetit)
+p.curveVertex(marge + contornBraç / 4*3, marge + (llargTotal - llargBraç) / 2); 
+p.curveVertex(marge + contornBraç / 4*3, marge + (llargTotal - llargBraç) / 2);
+p.curveVertex(marge + contornBraç / 2, marge - 2 * escala);
+p.endShape();
 
-p.bezier(
-  marge, marge + (llargTotal - llargBraç),                     // punt inicial
-  marge + contornBraç / 4, marge + (llargTotal - llargBraç) / 2, // control 1
-  marge + contornBraç / 4, marge + (llargTotal - llargBraç) / 2, // control 1
-  marge + contornBraç / 2, marge - 2 * escala,                   // control 2
-);
-p.bezier(
-  marge+contornBraç , marge + (llargTotal - llargBraç),                     // punt inicial
-  marge + contornBraç / 4*3, marge + (llargTotal - llargBraç) / 2, // control 1
-  marge + contornBraç / 4*3, marge + (llargTotal - llargBraç) / 2, // control 1
-  marge + contornBraç / 2, marge - 2 * escala,                   // control 2
-);
 
 
 
