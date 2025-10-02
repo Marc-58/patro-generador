@@ -659,10 +659,10 @@ p.bezier(
 );
 
 p.bezier(
-  m2 + cadera/4 , marge + 20*escala,   // punt inicial
- m2 + cadera/4 +cad/20/3,marge +20*escala+cad/20/3, // control 1 
-  m2 + cadera/4 +2*cad/20/3,marge +20*escala +2*cad/20/3, // control 2
-  m2 + cadera/4 + cadera/20, marge + 20*escala + cadera/20           // punt final
+m2 + cadera/4 , marge + 20*escala,   // punt inicial
+m2 + cadera/4 +cadera/20/3,marge +20*escala+cadera/20/3, // control 1 
+m2 + cadera/4 +2*cadera/20/3,marge +20*escala +2*cadera/20/3, // control 2
+m2 + cadera/4 + cadera/20, marge + 20*escala + cadera/20           // punt final
 );
 
       
