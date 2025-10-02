@@ -592,7 +592,7 @@ p.arc(
       const llarg = mides.llarg * escala;
       const llargGenoll = mides.llargGenoll * escala;
       const marge = 10*escala
-      const m2 = cadera/4+marge+100*escala ;
+      const m2 = cadera/4+cadera/10+marge+10*escala ;
 
 
       p.rect(marge, marge, cadera / 4, llarg );
@@ -637,9 +637,9 @@ p.beginShape();
 p.noFill();
 p.curveVertex(m2+cadera/4+cadera/20 , marge+20*escala+cadera/20); 
 p.curveVertex(m2+cadera/4+cadera/20 , marge+20*escala+cadera/20); 
-p.curveVertex(marge + cadera/4+205*escala, marge+llargGenoll);
-p.curveVertex(marge + cadera/4+1.5*escala, marge+llarg);
-p.curveVertex(marge + cadera/4+1.5*escala, marge+llarg); 
+p.curveVertex(m2 + cadera/4+205*escala, marge+llargGenoll);
+p.curveVertex(m2 + cadera/4+1.5*escala, marge+llarg);
+p.curveVertex(m2 + cadera/4+1.5*escala, marge+llarg); 
 p.endShape();
 
 
