@@ -564,24 +564,22 @@ const radi = B;
 // Dibuixar quart de rodona
 
 p.arc(
-  marge + cadera/4,          // centre X
-  marge + tiro,              // centre Y
+  marge + cadera/4+B,          // centre X
+  marge + tiro-radi,              // centre Y
   2*radi,                   // ample
   2*radi,                   // alt
-  p.HALF_PI * 3, 
-  p.TWO_PI           // 270° → avall
+  p.HALF_PI , 
+  p.PI           // 270° → avall
 );
 
 
-const radi2 = B;
-
 p.arc(
-  m2 + cadera/4,             // centre X
-  marge + tiro,              // centre Y
+  m2 + cadera/4+B,             // centre X
+  marge + tiro-radi,              // centre Y
   2*radi,                   // ample
   2*radi,                   // alt
-  p.HALF_PI * 3, 
-  p.TWO_PI
+  p.HALF_PI , 
+  p.PI
 );
 
       
