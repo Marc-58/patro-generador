@@ -646,16 +646,16 @@ p.endShape();
 
       p.line(marge+cadera/4-(cintura/4+6*escala)+cintura/8,marge, marge+cadera/4-(cintura/4+6*escala)+cintura/8+1.5*escala ,marge+11*escala ); // pinsa
       p.line(marge+cadera/4-(cintura/4+6*escala)+cintura/8+3*escala,marge, marge+cadera/4-(cintura/4+6*escala)+cintura/8+1.5 *escala,marge+11*escala); // pinsa
-      p.line(m2+cadera/4-(cintura/4+3)+cintura/8,marge, m2+cadera/4-(cintura/4+3)+cintura/8+3*escala ,marge+11*escala ); // pinsa
-      p.line(m2+cadera/4-(cintura/4+3)+cintura/8+3*escala,marge, m2+cadera/4-(cintura/4+3)+cintura/8+3 *escala,marge+11*escala); // pinsa
+      p.line(m2+cadera/4-(cintura/4+3)+cintura/8,marge, m2+cadera/4-(cintura/4+3)+cintura/8+1.5*escala ,marge+11*escala ); // pinsa
+      p.line(m2+cadera/4-(cintura/4+3)+cintura/8+3*escala,marge, m2+cadera/4-(cintura/4+3)+cintura/8+1.5 *escala,marge+11*escala); // pinsa
 
 
     
 p.bezier(
   marge + cadera/4 , marge + 18*escala,   // punt inicial
-  marge + cadera/4 + cadera/10/3, marge + (tiro -18*escala)/3+1.5*escala, // control 1 
-  marge + cadera/4 + 2*cadera/10/3, marge + 2*(tiro -18*escala)/3+1.5*escala, // control 2
-  marge + cadera/4 + cadera/10, marge + tiro + 1*escala           // punt final
+  marge + cadera/4 + cadera/10/3, marge + 18*escala+(tiro -18*escala)/3+1.5*escala, // control 1 
+  marge + cadera/4 + 2*cadera/10/3, marge + 18*escala+2*(tiro -18*escala)/3+1.5*escala, // control 2
+  marge + cadera/4 + cadera/10+1*escala, marge + tiro + 1*escala           // punt final
 );
 
 p.bezier(
