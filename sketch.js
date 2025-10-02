@@ -653,15 +653,15 @@ p.endShape();
     
 p.bezier(
   marge + cadera/4 , marge + 18*escala,   // punt inicial
-  marge + cadera/4 + 2*cadera/10/3, marge + (tiro -18*escala)/3, // control 1 
-  marge + cadera/4 + cadera/10/3, marge + 2*(tiro -18*escala)/3, // control 2
+  marge + cadera/4 + 2*cadera/10/3, marge + (tiro -18*escala)/3+1.5*escala, // control 1 
+  marge + cadera/4 + 2cadera/10/3, marge + 2*(tiro -18*escala)/3+1.5*escala, // control 2
   marge + cadera/4 + cadera/10, marge + tiro + 1*escala           // punt final
 );
 
 p.bezier(
 m2 + cadera/4 , marge + 20*escala,   // punt inicial
-m2 + cadera/4 +cadera/20/3,marge +20*escala+cadera/20/3, // control 1 
-m2 + cadera/4 +2*cadera/20/3,marge +20*escala +2*cadera/20/3, // control 2
+m2 + cadera/4 +cadera/20/3,marge +20*escala+cadera/20/3+1.5*escala, // control 1 
+m2 + cadera/4 +2*cadera/20/3,marge +20*escala +2*cadera/20/3+1.5*escala, // control 2
 m2 + cadera/4 + cadera/20, marge + 20*escala + cadera/20           // punt final
 );
 
