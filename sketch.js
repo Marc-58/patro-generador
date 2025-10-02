@@ -650,27 +650,19 @@ p.endShape();
       p.line(m2+cadera/4-(cintura/4+3)+cintura/8+3*escala,marge, m2+cadera/4-(cintura/4+3)+cintura/8+3 *escala,marge+11*escala); // pinsa
 
 
-      // punts inicial i final
-let x1 = m2 + cadera/4;
-let y1 = marge + 20*escala;
-let x2 = m2 + cadera/4 + cadera/20;
-let y2 = marge + 20*escala + cadera/20;
-
-// punts de control (més cap a l’esquerra)
-let cx1 = x1 - cadera/10;
-let cy1 = y1 + cadera/40;
-let cx2 = x2 - cadera/10;
-let cy2 = y2 - cadera/40;
-
-// dibuixar la corba
-p.bezier(x1, y1, cx1, cy1, cx2, cy2, x2, y2);
+    
 p.bezier(
-  marge + cadera/4 + cadera/10 + 1*escala, marge + tiro + 1*escala,   // punt inicial
-  marge + cadera/4 + cadera/10 + 1*escala - cadera/8, marge + tiro + 1*escala - tiro/10, // control 1
-  m2 + cadera/4 - cadera/8, marge + tiro - 13*escala + tiro/10,       // control 2
-  m2 + cadera/4, marge + tiro - 13*escala                             // punt final
+  marge + cadera/4  , marge 18 *escala,   // punt inicial
+  marge + cadera/4 + 2*cadera/10/3, marge + (tiro -18*escala)/3, // control 1
+  marge + cadera/4 + cadera/10/3,  marge + 2*(tiro -18*escala)/3,       // control 2
+  marge + cadera/4+ cadera/10, marge + tiro + 1*escala                             // punt final
 );
-
+p.bezier(
+  m2 + cadera/4  , marge +20*escala,   // punt inicial
+  m2 + cadera/4 +cad/20/3,marge +20*escala+cad/20/3, // control 1
+  m2 + cadera/4 +2*cad/20/3,marge +20*escala +2*cad/20/3,       // control 2
+  m2 + cadera/4+cad/20 ,marge +20*escala +cad/20                            // punt final
+);
       
       
 p.stroke("red");
