@@ -654,7 +654,7 @@ p.endShape();
 p.bezier(
   marge + cadera/4 , marge + 18*escala,   // punt inicial
   marge + cadera/4 + 2*cadera/10/3, marge + (tiro -18*escala)/3+1.5*escala, // control 1 
-  marge + cadera/4 + 2cadera/10/3, marge + 2*(tiro -18*escala)/3+1.5*escala, // control 2
+  marge + cadera/4 + 2*cadera/10/3, marge + 2*(tiro -18*escala)/3+1.5*escala, // control 2
   marge + cadera/4 + cadera/10, marge + tiro + 1*escala           // punt final
 );
 
