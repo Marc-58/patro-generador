@@ -551,7 +551,7 @@ p.line(marge + torax / 4 - cintura / 8, 10 + talleDavanter, marge + torax / 4 - 
       p.line(m2 ,marge+18*escala, m2-1.5*escala ,marge+llarg); // cad-baix
 
       p.line( marge+cadera/4+B+B/2+B/4+1.5*escala ,marge+llarg, marge-1.5*escala ,marge+llarg); // baix
-      p.line( marge+cadera/4+B+1.5*escala ,marge+llarg, marge-1.5*escala ,marge+llarg); // baix
+      p.line( m2+cadera/4+B+1.5*escala ,marge+llarg, m2-1.5*escala ,marge+llarg); // baix
 
       p.line(marge+cadera/4-(cintura/4+3)+cintura/8,marge, marge+cadera/4-(cintura/4+3)+cintura/8+1.5*escala ,marge+11*escala ); // cint-cad
       p.line(marge+cadera/4-(cintura/4+3)+cintura/8+3*escala,marge, marge+cadera/4-(cintura/4+3)+cintura/8+1.5 *escala,marge+11*escala); // cint-cad
