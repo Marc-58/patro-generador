@@ -669,8 +669,8 @@ p.strokeWeight(6)
       p.line(marge+cadera/4-(cintura/4+3+3),marge, marge+cadera/4-3*escala ,marge); // cint
       p.line( marge+3*escala,marge+llarg, marge+cadera/4+2*escala ,marge+llarg); // baix
 
-      p.line(m2+cadera/4-(cintura/4+3),marge, marge+cadera/4 ,marge); // cint
-      p.line( m2+4*escala,marge+llarg, marge+cadera/4+1.5*escala ,marge+llarg); // baix
+      p.line(m2+cadera/4-(cintura/4+3),marge, m2+cadera/4 ,marge); // cint
+      p.line( m2+4*escala,marge+llarg, m2+cadera/4+1.5*escala ,marge+llarg); // baix
 
       
     }else if (tipus === "colls") {
