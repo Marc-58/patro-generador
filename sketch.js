@@ -622,8 +622,7 @@ p.endShape();
 
 p.beginShape();
 p.noFill();
-p.curveVertex(m2+cadera/4-(cintura/4+6*escala), marge); // primer punt (repetit)
-p.curveVertex(m2+cadera/4-(cintura/4+6*escala), marge); 
+p.curveVertex(m2+cadera/4-(cintura/4+3*escala), marge); // primer punt (repetit)
 p.curveVertex(m2 , marge+18*escala);
 p.curveVertex(m2 , marge+tiro);
 p.curveVertex(m2 + 1.5*escala, marge+llargGenoll);
@@ -651,14 +650,14 @@ p.endShape();
     
 p.bezier(
   marge + cadera/4 , marge + 18*escala,   // punt inicial
-  marge + cadera/4 + cadera/10/3, marge + 18*escala+(tiro -18*escala)/3+1.5*escala, // control 1 
+  marge + cadera/4 + cadera/10/3, marge + 18*escala+(tiro -18*escala)/3+2.5*escala, // control 1 
   marge + cadera/4 + 2*cadera/10/3, marge + 18*escala+2*(tiro -18*escala)/3+1.5*escala, // control 2
   marge + cadera/4 + cadera/10+1*escala, marge + tiro + 1*escala           // punt final
 );
 
 p.bezier(
 m2 + cadera/4 , marge + 20*escala,   // punt inicial
-m2 + cadera/4 +cadera/20/3,marge +20*escala+cadera/20/3+2*escala, // control 1 
+m2 + cadera/4 +cadera/20/3,marge +20*escala+cadera/20/3+2.5*escala, // control 1 
 m2 + cadera/4 +2*cadera/20/3,marge +20*escala +2*cadera/20/3+1.5*escala, // control 2
 m2 + cadera/4 + cadera/20, marge + 20*escala + cadera/20           // punt final
 );
@@ -667,8 +666,11 @@ m2 + cadera/4 + cadera/20, marge + 20*escala + cadera/20           // punt final
       
 p.stroke("red");
 p.strokeWeight(6)
-       p.line(marge+cadera/4-(cintura/4+3+3),marge, marge+cadera/4-3*escala ,marge); // cint
+      p.line(marge+cadera/4-(cintura/4+3+3),marge, marge+cadera/4-3*escala ,marge); // cint
       p.line( marge+3*escala,marge+llarg, marge+cadera/4+2*escala ,marge+llarg); // baix
+
+      p.line(m2+cadera/4-(cintura/4+3),marge, marge+cadera/4 ,marge); // cint
+      p.line( m2+4*escala,marge+llarg, marge+cadera/4+1.5*escala ,marge+llarg); // baix
 
       
     }else if (tipus === "colls") {
