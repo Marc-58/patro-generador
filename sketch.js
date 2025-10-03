@@ -704,6 +704,7 @@ p.strokeWeight(6);
 p.beginShape();
 p.noFill();
 p.curveVertex(marge, marge + (llargTotal - llargBraç)); // primer punt (repetit)
+p.curveVertex(marge, marge + (llargTotal - llargBraç)); // primer punt (repetit)
 p.curveVertex( marge + contornBraç / 4, marge + (llargTotal - llargBraç) / 2); 
 p.curveVertex(marge + contornBraç / 4, marge + (llargTotal - llargBraç) / 2);
 p.curveVertex(marge + contornBraç / 2, marge - 2 * escala);
@@ -711,6 +712,7 @@ p.endShape();
       
 p.beginShape();
 p.noFill();
+p.curveVertex(marge+contornBraç , marge + (llargTotal - llargBraç)); // primer punt (repetit)
 p.curveVertex(marge+contornBraç , marge + (llargTotal - llargBraç)); // primer punt (repetit)
 p.curveVertex(marge + contornBraç / 4*3, marge + (llargTotal - llargBraç) / 2); 
 p.curveVertex(marge + contornBraç / 4*3, marge + (llargTotal - llargBraç) / 2);
