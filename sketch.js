@@ -1,4 +1,4 @@
-let mides = {};
+ let mides = {};
 let tipus;
 
 function seleccionar(peca) {
@@ -622,10 +622,12 @@ p.endShape();
 
 p.beginShape();
 p.noFill();
-p.curveVertex(m2+cadera/4-(cintura/4+3*escala), marge); // primer punt (repetit)
+p.curveVertex(m2+(cadera/4-(cintura/4+3*escala)), marge); // primer punt (repetit)
+p.curveVertex(m2+(cadera/4-(cintura/4+3*escala)), marge); // primer punt (repetit)
 p.curveVertex(m2 , marge+18*escala);
 p.curveVertex(m2 , marge+tiro);
 p.curveVertex(m2 + 1.5*escala, marge+llargGenoll);
+p.curveVertex(m2 + 4*escala, marge+llarg); // últim repetit
 p.curveVertex(m2 + 4*escala, marge+llarg); // últim repetit
 p.endShape();
 
@@ -708,6 +710,7 @@ p.curveVertex(marge, marge + (llargTotal - llargBraç)); // primer punt (repetit
 p.curveVertex(marge+contornBraç/4,marge+(llargTotal-llargBraç)/2); 
 p.curveVertex(marge+contornBraç/4,marge+(llargTotal-llargBraç)/2);
 p.curveVertex(marge + contornBraç / 2, marge - 2 * escala);
+p.curveVertex(marge + contornBraç / 2, marge - 2 * escala);
 p.endShape();
       
 p.beginShape();
@@ -716,6 +719,7 @@ p.curveVertex(marge+contornBraç , marge + (llargTotal - llargBraç)); // primer
 p.curveVertex(marge+contornBraç , marge + (llargTotal - llargBraç)); // primer punt (repetit)
 p.curveVertex(marge+contornBraç*3/4,marge+(llargTotal-llargBraç)/2); 
 p.curveVertex(marge+contornBraç*3/4,marge+(llargTotal-llargBraç)/2);
+p.curveVertex(marge + contornBraç / 2, marge - 2 * escala);
 p.curveVertex(marge + contornBraç / 2, marge - 2 * escala);
 p.endShape();
 
