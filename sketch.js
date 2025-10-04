@@ -713,14 +713,14 @@ p.curveVertex(marge+contornBraç/8, marge + (llargTotal - llargBraç)-2.5*escala
 p.curveVertex(marge+contornBraç/4,marge+(llargTotal-llargBraç)/2); 
 p.curveVertex(marge+contornBraç/4,marge+(llargTotal-llargBraç)/2); 
 
-p.curveVertex(marge+contornBraç/8 *3,marge+2.5*escala);
+p.curveVertex(marge+contornBraç/8 *3,marge+2*escala);
      
-p.curveVertex(marge + contornBraç / 2-1.5*escala, marge - 2 * escala);
+p.curveVertex(marge + contornBraç / 2-1.5*escala, marge - 1.5 * escala);
 p.curveVertex(marge + contornBraç / 2, marge - 2 * escala);
 p.curveVertex(marge + contornBraç / 2, marge - 2 * escala);
-p.curveVertex(marge + contornBraç / 2+1.5*escala, marge - 2 * escala);
+p.curveVertex(marge + contornBraç / 2+1.5*escala, marge - 1.5 * escala);
 
-p.curveVertex(marge + contornBraç / 2+contornBraç/8,marge+2.5*escala);
+p.curveVertex(marge + contornBraç / 2+contornBraç/8,marge+2*escala);
 
 p.curveVertex(marge+contornBraç*3/4,marge+(llargTotal-llargBraç)/2); 
 p.curveVertex(marge+contornBraç*3/4,marge+(llargTotal-llargBraç)/2);
