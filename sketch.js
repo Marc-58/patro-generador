@@ -645,8 +645,8 @@ p.endShape();
 
       p.line(marge+cadera/4-(cintura/4+6*escala)+cintura/8,marge, marge+cadera/4-(cintura/4+6*escala)+cintura/8+1.5*escala ,marge+11*escala ); // pinsa
       p.line(marge+cadera/4-(cintura/4+6*escala)+cintura/8+3*escala,marge, marge+cadera/4-(cintura/4+6*escala)+cintura/8+1.5 *escala,marge+11*escala); // pinsa
-      p.line(m2+cadera/4-(cintura/4+3)+cintura/8,marge, m2+cadera/4-(cintura/4+3)+cintura/8+1.5*escala ,marge+11*escala ); // pinsa
-      p.line(m2+cadera/4-(cintura/4+3)+cintura/8+3*escala,marge, m2+cadera/4-(cintura/4+3)+cintura/8+1.5 *escala,marge+11*escala); // pinsa
+      p.line(m2+cadera/4-(cintura/4+3*escala)+cintura/8,marge, m2+cadera/4-(cintura/4+3*escala)+cintura/8+1.5*escala ,marge+11*escala ); // pinsa
+      p.line(m2+cadera/4-(cintura/4+3*escala)+cintura/8+3*escala,marge, m2+cadera/4-(cintura/4+3*escala)+cintura/8+1.5 *escala,marge+11*escala); // pinsa
 
 
     
@@ -668,10 +668,10 @@ m2 + cadera/4 + cadera/20, marge + 20*escala + cadera/20           // punt final
       
 p.stroke("red");
 p.strokeWeight(6)
-      p.line(marge+cadera/4-(cintura/4+3+3),marge, marge+cadera/4-3*escala ,marge); // cint
+      p.line(marge+cadera/4-(cintura/4+6*escala),marge, marge+cadera/4-3*escala ,marge); // cint
       p.line( marge+3*escala,marge+llarg, marge+cadera/4+2*escala ,marge+llarg); // baix
 
-      p.line(m2+cadera/4-(cintura/4+3),marge, m2+cadera/4 ,marge); // cint
+      p.line(m2+cadera/4-(cintura/4+3*escala),marge, m2+cadera/4 ,marge); // cint
       p.line( m2+4*escala,marge+llarg, m2+cadera/4+1.5*escala ,marge+llarg); // baix
 
       
@@ -705,20 +705,35 @@ p.strokeWeight(6);
 
 p.beginShape();
 p.noFill();
+p.curveVertex(marge, marge + (llargTotal - llargBraç)); // primer punt (repetit)     
 p.curveVertex(marge, marge + (llargTotal - llargBraç)); // primer punt (repetit)
-p.curveVertex(marge, marge + (llargTotal - llargBraç)); // primer punt (repetit)
+
+p.curveVertex(marge+contornBraç/8, marge + (llargTotal - llargBraç)-2.5*escala); // primer punt (repetit)
+
+
 p.curveVertex(marge+contornBraç/4,marge+(llargTotal-llargBraç)/2); 
 p.curveVertex(marge+contornBraç/4,marge+(llargTotal-llargBraç)/2);
+
+p.curveVertex(marge+contornBraç/8 *3,marge++2.5*escala);
+     
 p.curveVertex(marge + contornBraç / 2, marge - 2 * escala);
 p.curveVertex(marge + contornBraç / 2, marge - 2 * escala);
 p.endShape();
-      
+
+     
 p.beginShape();
 p.noFill();
 p.curveVertex(marge+contornBraç , marge + (llargTotal - llargBraç)); // primer punt (repetit)
 p.curveVertex(marge+contornBraç , marge + (llargTotal - llargBraç)); // primer punt (repetit)
+
+p.curveVertex(marge+contornBraç -contornBraç/8,  marge + (llargTotal - llargBraç)-2.5*escala); // primer punt (repetit)
+
+     
 p.curveVertex(marge+contornBraç*3/4,marge+(llargTotal-llargBraç)/2); 
 p.curveVertex(marge+contornBraç*3/4,marge+(llargTotal-llargBraç)/2);
+
+p.curveVertex(marge + contornBraç / 2+contornBraç/8,marge++2.5*escala);
+     
 p.curveVertex(marge + contornBraç / 2, marge - 2 * escala);
 p.curveVertex(marge + contornBraç / 2, marge - 2 * escala);
 p.endShape();
