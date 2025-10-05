@@ -30,7 +30,6 @@ function generarPatro(peca) {
     mides.caiguda = parseInt(document.getElementById("caiguda").value, 10);
     mides.espatllesTotal = parseInt(document.getElementById("espatllesTotal").value, 10);
     mides.talleDavanter = parseInt(document.getElementById("talleDavanter").value, 10);
-    mides.cosACintura = parseInt(document.getElementById("cosACintura").value, 10);
 
     if (Object.values(mides).some(v => isNaN(v))) {
       alert("Revisa que totes les mides de la brusa estiguin introduïdes correctament.");
