@@ -221,8 +221,7 @@ function dibuixaPatro(p) {
       const talleDavanter = mides.talleDavanter * escala;
       const altDePit = mides.altDePit * escala;
       const pit = mides.pit * escala;
-      const cosACintura = mides.cosACintura * escala;
-            const marge = espatlles / 2 + 20 * escala + 10;
+      const marge = espatlles / 2 + 20 * escala + 10;
 
       // Part esquerra - esquena
       p.rect(10, 10, espatlles / 2, talleEspatlles);
@@ -248,7 +247,7 @@ function dibuixaPatro(p) {
       );
 
       // Part dreta - davanter
-      p.rect(marge, 10, torax / 4, talleDavanter);
+      p.rect(marge, 10, torax / 4,10+ talleDavanter);
       p.line(marge + coll / 6, 10, marge + torax / 4 - (torax / 4 - espatlles / 2), 10 + (talleEspatlles - caiguda)); // línia espatlla
       p.line(marge, 10 + altDePit, marge + (pit / 2), 10 + altDePit); // línia alt de pit
       p.line(marge, 10 + talleDavanter, marge + (cintura / 4 + 4 * escala), 10 + talleDavanter); // línia cintura
