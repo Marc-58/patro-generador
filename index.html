@@ -7,13 +7,14 @@
     body {
       font-family: sans-serif;
       padding: 20px;
-      background-color: #000; /* Fons negre */
-      color: #fff; /* Text blanc */
+      background-color: #000;
+      color: #fff;
     }
 
-    /* Barra superior amb imatge de fons */
+    /* Barra superior amb imatge de fons i més alçada */
     .navbar {
       width: 100%;
+      height: 200px; /* Barra més alta */
       padding: 10px 0;
       margin-bottom: 30px;
       display: flex;
@@ -23,6 +24,7 @@
       background-size: cover;
       background-position: center;
       position: relative;
+      align-items: center; /* Centrat vertical */
     }
 
     .navbar a {
@@ -47,8 +49,8 @@
     .fila-peces.esquerra { flex-direction: row-reverse; }
 
     .item {
-      width: 300px;
-      height: 250px;
+      width: 600px;  /* Doble amplada */
+      height: 500px; /* Doble alçada */
       border: 2px solid transparent;
       border-radius: 8px;
       display: flex;
