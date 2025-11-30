@@ -1,194 +1,222 @@
 <!DOCTYPE html>
 <html lang="ca">
 <head>
-<meta charset="UTF-8" />
-<title>Patronador</title>
-<style>
-  body {
-    font-family: sans-serif;
-    background-color: #000;
-    color: #fff;
-    margin: 0;
-    padding: 20px;
-  }
+  <meta charset="UTF-8" />
+  <title>Patronador</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+      background-color: #000;
+      color: #fff;
+    }
 
-  /* Barra superior */
-  .navbar {
-    width: 100%;
-    height: 150px;
-    background-image: url('https://i.pinimg.com/736x/11/fa/53/11fa53670046bef15e2c4a117c468294.jpg');
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    position: relative;
-  }
+    /* Barra superior amb fons i més alçada */
+    .navbar {
+      width: 100%;
+      height: 200px; 
+      padding: 10px 0;
+      margin-bottom: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      background-image: url('https://i.pinimg.com/736x/11/fa/53/11fa53670046bef15e2c4a117c468294.jpg');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      align-items: center;
+    }
 
-  .navbar a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    font-size: 20px;
-    z-index: 10;
-  }
+    .navbar a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+      font-size: 18px;
+    }
 
-  .navbar a:hover {
-    text-decoration: underline;
-  }
+    .navbar a:hover {
+      text-decoration: underline;
+    }
 
-  h1 {
-    text-align: center;
-    font-size: 50px;
-    margin-top: 20px;
-    margin-bottom: 40px;
-  }
+    /* Títol principal */
+    h1 {
+      text-align: center;
+      font-size: 60px;
+      margin-bottom: 40px;
+    }
 
-  /* Layout de les files de peces */
-  .fila-peces {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-bottom: 30px;
-  }
+    /* Layout de peces */
+    .fila-peces {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
 
-  /* Requadres de patrons */
-  .fila-peces .item {
-    width: 250px;
-    height: 350px;
-    border: 2px solid transparent;
-    border-radius: 10px;
-    overflow: hidden;
-    cursor: pointer;
-    background-color: #111;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+    .fila-peces.dreta { flex-direction: row; }
+    .fila-peces.esquerra { flex-direction: row-reverse; }
 
-  .fila-peces .item:hover {
-    border-color: #fff;
-  }
+    .item {
+      width: 400px;  /* Més estretes */
+      height: 550px; /* Més altes */
+      border: 2px solid transparent;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      cursor: pointer;
+    }
 
-  .fila-peces .item img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-  }
+    .item:hover {
+      border-color: #fff;
+    }
 
-  /* Foto informativa història moda */
-  .item-info {
-    width: 400px;
-    height: 300px;
-    border: 3px solid #fff;
-    border-radius: 10px;
-    overflow: hidden;
-    background-color: #222;
-    margin: 0 auto; /* centrat horitzontal */
-  }
+    .item img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
 
-  .item-info img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+    /* Espai per escriure */
+    .espai-escriure {
+      text-align: center;
+      margin: 10px 0 20px 0;
+      color: #fff;
+    }
 
-  /* Espai per escriure frase */
-  .espai-escriure {
-    text-align: center;
-    margin: 10px 0 30px 0;
-    font-size: 18px;
-    border-bottom: 2px solid #fff;
-    padding-bottom: 10px;
-  }
+    hr {
+      border: 1px solid #fff;
+      margin: 10px 0;
+    }
 
-  #canvas-container {
-    margin-top: 20px;
-    text-align: center;
-  }
+    /* Imatges històriques diferenciades */
+    .historia {
+      width: 100%;
+      height: 200px;
+      border: 2px solid #fff;
+      border-radius: 8px;
+      margin: 20px 0;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      overflow: hidden;
+    }
 
-  button {
-    margin-top: 10px;
-    padding: 10px;
-    background-color: #333;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-</style>
+    .historia img {
+      width: 18%;
+      height: 100%;
+      object-fit: cover;
+      border: 2px solid #fff;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .formulari {
+      display: none;
+      margin-top: 20px;
+    }
+
+    input {
+      margin: 5px;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 10px;
+      background-color: #333;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #canvas-container {
+      margin-top: 20px;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
 
-<!-- Barra superior -->
-<div class="navbar">
-  <a href="quisoc.html" target="_blank">Qui sóc</a>
-  <a href="comprendre-mides.html" target="_blank">Com prendre mides</a>
-  <a href="informacio.html" target="_blank">Informació addicional</a>
-</div>
+  <!-- Barra superior amb enllaços -->
+  <div class="navbar">
+    <a href="quisoc.html" target="_blank">Qui sóc</a>
+    <a href="comprendre-mides.html" target="_blank">Com prendre mides</a>
+    <a href="informacio.html" target="_blank">Informació addicional</a>
+  </div>
 
-<h1>Patronador</h1>
+  <h1>Patronador</h1>
 
-<!-- Fila 1 de patrons -->
-<div class="fila-peces">
-  <div class="item"><img src="https://i.pinimg.com/736x/52/d7/8f/52d78f97d4773d860a5092113134fd90.jpg" alt="Faldilla" onclick="seleccionar('faldilla')"></div>
-  <div class="item"><img src="https://i.pinimg.com/736x/ae/23/e2/ae23e286e730820512b52a23f4781efd.jpg" alt="Brusa" onclick="seleccionar('brusa')"></div>
-</div>
+  <div id="triar-peca" style="display:block;">
 
-<!-- Foto informativa història de la moda -->
-<div class="item-info">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Marie-Antoinette_portrait.jpg/440px-Marie-Antoinette_portrait.jpg" alt="Moda Antiga">
-</div>
-<div class="espai-escriure">Escriviu aquí una frase explicant la història d’aquesta imatge.</div>
+    <!-- Fila 1 -->
+    <div class="fila-peces dreta">
+      <div class="item"><img src="https://i.pinimg.com/736x/52/d7/8f/52d78f97d4773d860a5092113134fd90.jpg" alt="Faldilla" onclick="seleccionar('faldilla')"></div>
+      <div class="item"><img src="https://i.pinimg.com/736x/ae/23/e2/ae23e286e730820512b52a23f4781efd.jpg" alt="Brusa" onclick="seleccionar('brusa')"></div>
+    </div>
+    <hr>
+    <div class="espai-escriure">Espai per escriure sobre aquestes peces</div>
+    <hr>
 
-<!-- Fila 2 de patrons -->
-<div class="fila-peces">
-  <div class="item"><img src="https://i.pinimg.com/736x/cb/b6/c2/cbb6c2a26d77b3155fedd50dab681d26.jpg" alt="Cos a cadera" onclick="seleccionar('cosACadera')"></div>
-  <div class="item"><img src="https://i.pinimg.com/236x/c1/5c/15/c15c159f09b1de522f791643eb5a4e78.jpg" alt="Vestit" onclick="seleccionar('vestit')"></div>
-</div>
+    <!-- Fila història 1 -->
+    <div class="historia">
+      <img src="https://i.pinimg.com/564x/01/23/45/0123456789abcdef.jpg" alt="Moda Històrica 1">
+      <img src="https://i.pinimg.com/564x/12/34/56/123456abcdef.jpg" alt="Moda Històrica 2">
+      <img src="https://i.pinimg.com/564x/23/45/67/234567abcdef.jpg" alt="Moda Històrica 3">
+      <img src="https://i.pinimg.com/564x/34/56/78/345678abcdef.jpg" alt="Moda Històrica 4">
+      <img src="https://i.pinimg.com/564x/45/67/89/456789abcdef.jpg" alt="Moda Històrica 5">
+    </div>
+    <div class="espai-escriure">Espai per escriure sobre la història de la moda</div>
+    <hr>
 
-<!-- Foto informativa història de la moda -->
-<div class="item-info">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Flapper_dress_1920s.jpg/440px-Flapper_dress_1920s.jpg" alt="Moda anys 20">
-</div>
-<div class="espai-escriure">Escriviu aquí una frase explicant la història d’aquesta imatge.</div>
+    <!-- Fila 2 -->
+    <div class="fila-peces esquerra">
+      <div class="item"><img src="https://i.pinimg.com/736x/cb/b6/c2/cbb6c2a26d77b3155fedd50dab681d26.jpg" alt="Cos a cadera" onclick="seleccionar('cosACadera')"></div>
+      <div class="item"><img src="https://i.pinimg.com/236x/c1/5c/15/c15c159f09b1de522f791643eb5a4e78.jpg" alt="Vestit" onclick="seleccionar('vestit')"></div>
+    </div>
+    <hr>
+    <div class="espai-escriure">Espai per escriure sobre aquestes peces</div>
+    <hr>
 
-<!-- Fila 3 de patrons -->
-<div class="fila-peces">
-  <div class="item"><img src="https://patronesmujer.com/blog/wp-content/uploads/2015/01/Falda-pantal%C3%B3n-delantero11.jpg" alt="Faldilla pantaló" onclick="seleccionar('faldillaPantalo')"></div>
-  <div class="item"><img src="https://i.pinimg.com/736x/a8/a7/1d/a8a71d7805cdb415529d58a67bed72e1.jpg" alt="Pantaló" onclick="seleccionar('pantalo')"></div>
-</div>
+    <!-- Fila història 2 -->
+    <div class="historia">
+      <img src="https://i.pinimg.com/564x/55/66/77/556677abcdef.jpg" alt="Moda Històrica 6">
+      <img src="https://i.pinimg.com/564x/66/77/88/667788abcdef.jpg" alt="Moda Històrica 7">
+      <img src="https://i.pinimg.com/564x/77/88/99/778899abcdef.jpg" alt="Moda Històrica 8">
+      <img src="https://i.pinimg.com/564x/88/99/00/889900abcdef.jpg" alt="Moda Històrica 9">
+      <img src="https://i.pinimg.com/564x/99/00/11/990011abcdef.jpg" alt="Moda Històrica 10">
+    </div>
+    <div class="espai-escriure">Espai per escriure sobre la història de la moda</div>
+    <hr>
 
-<!-- Foto informativa història de la moda -->
-<div class="item-info">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Chanel_suit_1926.jpg/440px-Chanel_suit_1926.jpg" alt="Moda Chanel">
-</div>
-<div class="espai-escriure">Escriviu aquí una frase explicant la història d’aquesta imatge.</div>
+    <!-- Fila 3 -->
+    <div class="fila-peces dreta">
+      <div class="item"><img src="https://patronesmujer.com/blog/wp-content/uploads/2015/01/Falda-pantal%C3%B3n-delantero11.jpg" alt="Faldilla pantaló" onclick="seleccionar('faldillaPantalo')"></div>
+      <div class="item"><img src="https://i.pinimg.com/736x/a8/a7/1d/a8a71d7805cdb415529d58a67bed72e1.jpg" alt="Pantaló" onclick="seleccionar('pantalo')"></div>
+    </div>
+    <hr>
+    <div class="espai-escriure">Espai per escriure sobre aquestes peces</div>
+    <hr>
 
-<!-- Fila 4 de patrons -->
-<div class="fila-peces">
-  <div class="item"><img src="https://bigbensalamanca.es/blog/wp-content/uploads/cuello-Ingles_03010.jpg" alt="Colls" onclick="seleccionar('colls')"></div>
-  <div class="item"><img src="https://upload.wikimedia.org/wikipedia/commons/e/ed/Straight_sleeve.jpg" alt="Màniga" onclick="seleccionar('maniga')"></div>
-</div>
+    <!-- Fila 4 -->
+    <div class="fila-peces esquerra">
+      <div class="item"><img src="https://bigbensalamanca.es/blog/wp-content/uploads/cuello-Ingles_03010.jpg" alt="Colls" onclick="seleccionar('colls')"></div>
+      <div class="item"><img src="https://upload.wikimedia.org/wikipedia/commons/e/ed/Straight_sleeve.jpg" alt="Màniga" onclick="seleccionar('maniga')"></div>
+    </div>
+    <hr>
+    <div class="espai-escriure">Espai per escriure sobre aquestes peces</div>
+    <hr>
 
-<!-- Foto informativa història de la moda -->
-<div class="item-info">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Audrey_Hepburn_in_Hollywood_1960s.jpg/440px-Audrey_Hepburn_in_Hollywood_1960s.jpg" alt="Moda Audrey Hepburn">
-</div>
-<div class="espai-escriure">Escriviu aquí una frase explicant la història d’aquesta imatge.</div>
+    <!-- Fila 5 -->
+    <div class="fila-peces dreta">
+      <div class="item"><img src="https://img.freepik.com/vector-premium/dibujo-tecnico-falda-vistas-delantera-trasera_837135-47.jpg" alt="Faldilla mitja capa" onclick="seleccionar('faldillaMitjaCapa')"></div>
+      <div class="item"><img src="https://patronesmujer.com/blog/wp-content/uploads/2014/12/patron-falda-capa.jpg" alt="Faldilla capa sencera" onclick="seleccionar('faldillaCapaSencera')"></div>
+    </div>
+    <hr>
+    <div class="espai-escriure">Espai per escriure sobre aquestes peces</div>
+    <hr>
 
-<!-- Fila 5 de patrons -->
-<div class="fila-peces">
-  <div class="item"><img src="https://img.freepik.com/vector-premium/dibujo-tecnico-falda-vistas-delantera-trasera_837135-47.jpg" alt="Faldilla mitja capa" onclick="seleccionar('faldillaMitjaCapa')"></div>
-  <div class="item"><img src="https://patronesmujer.com/blog/wp-content/uploads/2014/12/patron-falda-capa.jpg" alt="Faldilla capa sencera" onclick="seleccionar('faldillaCapaSencera')"></div>
-</div>
-
-<!-- Foto informativa història de la moda -->
-<div class="item-info">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Modern_fashion_2000s.jpg/440px-Modern_fashion_2000s.jpg" alt="Moda actual">
-</div>
-<div class="espai-escriure">Escriviu aquí una frase explicant la història d’aquesta imatge.</div>
+  </div>
 
 
   <!-- Formulari de faldilla -->
