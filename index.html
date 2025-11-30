@@ -16,7 +16,7 @@
     .navbar {
       width: 100%;
       border-bottom: 2px solid white;
-      padding: 15px 0;
+      padding: 10px 0;
       margin-bottom: 40px;
       display: flex;
       justify-content: center;
@@ -26,47 +26,51 @@
     .navbar a {
       color: white;
       text-decoration: none;
-      font-size: 20px;
+      font-size: 18px;
       font-weight: bold;
     }
 
-    /* Cada TRAM té un fons diferent */
-    .tram {
-      padding: 40px 20px;
-      margin-bottom: 70px;
-      border-radius: 12px;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      border: 2px solid white;
+    .inner-block {
+      margin-bottom: 80px; /* espai entre seccions */
+      text-align: center;
     }
 
-    /* Parella d’imatges amb enllaç */
+    /* Parella d’imatges */
     .pair {
       display: flex;
       justify-content: center;
-      gap: 40px;
-      margin-bottom: 20px;
+      gap: 30px;
+      margin-bottom: 15px;
     }
 
     .pair img {
-      width: 300px;          /* més amples */
-      height: 500px;         /* més llargues */
+      width: 300px;      /* Més amples */
+      height: 500px;     /* El doble de llargues */
       object-fit: cover;
-      border-radius: 10px;
+      border: 2px solid white;
+      border-radius: 8px;
+    }
+
+    /* Frase */
+    .frase {
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+
+    /* Imatge de fons del tram */
+    .bg-img {
+      width: 100%;
+      max-height: 350px;
+      object-fit: cover;
+      border-radius: 12px;
       border: 2px solid white;
     }
 
-    .frase {
-      font-size: 26px;
-      font-weight: bold;
-      margin-bottom: 20px;
-      text-shadow: 2px 2px 5px black;
-    }
   </style>
 </head>
 <body>
 
+  <!-- Barra superior -->
   <div class="navbar">
     <a href="comprendre-mides.html" target="_blank">Com prendre mides</a>
     <a href="quisoc.html" target="_blank">Qui sóc</a>
@@ -74,9 +78,8 @@
   </div>
 
 
-  <!-- 🟣 TRAM 1 -->
-  <div class="tram" style="background-image: url('extra1.jpg');">
-
+  <!-- 🔹 SECCIÓ 1 -->
+  <div class="inner-block">
     <div class="pair">
       <a href="enllac1.html"><img src="foto1.jpg"></a>
       <a href="enllac2.html"><img src="foto2.jpg"></a>
@@ -84,12 +87,12 @@
 
     <div class="frase">Frase del primer tram</div>
 
+    <img class="bg-img" src="fons1.jpg">
   </div>
 
 
-  <!-- 🟣 TRAM 2 -->
-  <div class="tram" style="background-image: url('extra2.jpg');">
-
+  <!-- 🔹 SECCIÓ 2 -->
+  <div class="inner-block">
     <div class="pair">
       <a href="enllac3.html"><img src="foto3.jpg"></a>
       <a href="enllac4.html"><img src="foto4.jpg"></a>
@@ -97,12 +100,12 @@
 
     <div class="frase">Frase del segon tram</div>
 
+    <img class="bg-img" src="fons2.jpg">
   </div>
 
 
-  <!-- 🟣 TRAM 3 -->
-  <div class="tram" style="background-image: url('extra3.jpg');">
-
+  <!-- 🔹 SECCIÓ 3 -->
+  <div class="inner-block">
     <div class="pair">
       <a href="enllac5.html"><img src="foto5.jpg"></a>
       <a href="enllac6.html"><img src="foto6.jpg"></a>
@@ -110,12 +113,12 @@
 
     <div class="frase">Frase del tercer tram</div>
 
+    <img class="bg-img" src="fons3.jpg">
   </div>
 
 
-  <!-- 🟣 TRAM 4 -->
-  <div class="tram" style="background-image: url('extra4.jpg');">
-
+  <!-- 🔹 SECCIÓ 4 -->
+  <div class="inner-block">
     <div class="pair">
       <a href="enllac7.html"><img src="foto7.jpg"></a>
       <a href="enllac8.html"><img src="foto8.jpg"></a>
@@ -123,12 +126,12 @@
 
     <div class="frase">Frase del quart tram</div>
 
+    <img class="bg-img" src="fons4.jpg">
   </div>
 
 
-  <!-- 🟣 TRAM 5 -->
-  <div class="tram" style="background-image: url('extra5.jpg');">
-
+  <!-- 🔹 SECCIÓ 5 -->
+  <div class="inner-block">
     <div class="pair">
       <a href="enllac9.html"><img src="foto9.jpg"></a>
       <a href="enllac10.html"><img src="foto10.jpg"></a>
@@ -136,7 +139,9 @@
 
     <div class="frase">Frase del cinquè tram</div>
 
+    <img class="bg-img" src="fons5.jpg">
   </div>
+
 
   <!-- Formulari de faldilla -->
   <div id="faldilla-form" class="formulari">
