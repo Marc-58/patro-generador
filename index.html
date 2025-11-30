@@ -1,166 +1,140 @@
 <!DOCTYPE html>
 <html lang="ca">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Patronador</title>
+
   <style>
     body {
+      background: black;
+      color: white;
       font-family: sans-serif;
       padding: 20px;
-      background-color: #000; /* fons negre */
-      color: #fff; /* text blanc */
     }
 
     /* Barra superior */
     .navbar {
       width: 100%;
-      border-bottom: 2px solid #fff;
-      padding: 10px 0;
-      margin-bottom: 30px;
+      border-bottom: 2px solid white;
+      padding: 15px 0;
+      margin-bottom: 40px;
       display: flex;
       justify-content: center;
-      gap: 30px;
-      position: relative;
+      gap: 40px;
     }
 
     .navbar a {
+      color: white;
       text-decoration: none;
-      color: #fff;
+      font-size: 20px;
       font-weight: bold;
-      font-size: 18px;
     }
 
-    .navbar a:hover {
-      text-decoration: underline;
+    /* Cada TRAM té un fons diferent */
+    .tram {
+      padding: 40px 20px;
+      margin-bottom: 70px;
+      border-radius: 12px;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      border: 2px solid white;
     }
 
-    .formulari, #triar-peca {
-      display: none;
-      margin-top: 20px;
-    }
-
-    /* Files de peces */
-    .fila-peces {
+    /* Parella d’imatges amb enllaç */
+    .pair {
       display: flex;
+      justify-content: center;
       gap: 40px;
       margin-bottom: 20px;
     }
 
-    .dreta { justify-content: flex-end; }
-    .esquerra { justify-content: flex-start; }
-
-    .item {
-      width: 260px;
-      height: 400px; /* més llargues */
-      border: 2px solid #fff;
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      cursor: pointer;
-    }
-
-    .item img {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain;
-    }
-
-    .espai-escriure {
-      width: 100%;
-      text-align: center;
-      margin-bottom: 20px;
-      font-style: italic;
-    }
-
-    /* IMATGE DE FONS ENTRE FRASE I FRASE */
-    .tram-fons {
-      width: 100%;
-      height: 250px;
-      background-size: cover;
-      background-position: center;
-      border: 2px solid #fff;
+    .pair img {
+      width: 300px;          /* més amples */
+      height: 500px;         /* més llargues */
+      object-fit: cover;
       border-radius: 10px;
-      margin-bottom: 40px;
+      border: 2px solid white;
     }
 
-    button {
-      margin-top: 10px;
-      padding: 10px;
-      background-color: #fff;
-      color: #000;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    input {
-      margin: 5px;
-      background-color: #000;
-      color: #fff;
-      border: 1px solid #fff;
-      border-radius: 3px;
-      padding: 5px;
+    .frase {
+      font-size: 26px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 5px black;
     }
   </style>
 </head>
 <body>
 
-  <!-- BARRA SUPERIOR -->
   <div class="navbar">
-    <img src="https://i.pinimg.com/736x/11/fa/53/11fa53670046bef15e2c4a117c468294.jpg" 
-         alt="Logo de la web"
-         style="height: 100px; position: absolute; left: 10px; top: 50%; transform: translateY(-50%);">
-    <a href="quisoc.html" target="_blank">Qui sóc</a>
     <a href="comprendre-mides.html" target="_blank">Com prendre mides</a>
+    <a href="quisoc.html" target="_blank">Qui sóc</a>
     <a href="informacio.html" target="_blank">Informació addicional</a>
   </div>
 
-  <h1>Patronador</h1>
 
-  <div id="triar-peca" style="display:block;">
-    <h2>Tria la peça</h2>
+  <!-- 🟣 TRAM 1 -->
+  <div class="tram" style="background-image: url('extra1.jpg');">
 
-    <!-- FILA 1 (dreta) -->
-    <div class="fila-peces dreta">
-      <div class="item"><img src="https://i.pinimg.com/736x/52/d7/8f/52d78f97d4773d860a5092113134fd90.jpg" onclick="seleccionar('faldilla')"></div>
-      <div class="item"><img src="https://i.pinimg.com/736x/ae/23/e2/ae23e286e730820512b52a23f4781efd.jpg" onclick="seleccionar('brusa')"></div>
+    <div class="pair">
+      <a href="enllac1.html"><img src="foto1.jpg"></a>
+      <a href="enllac2.html"><img src="foto2.jpg"></a>
     </div>
-    <div class="espai-escriure">Espai per comentar aquestes peces</div>
-    <div class="tram-fons" style="background-image: url('https://i.imgur.com/0Z6b8vE.jpeg');"></div>
 
-    <!-- FILA 2 (esquerra) -->
-    <div class="fila-peces esquerra">
-      <div class="item"><img src="https://i.pinimg.com/736x/cb/b6/c2/cbb6c2a26d77b3155fedd50dab681d26.jpg" onclick="seleccionar('cosACadera')"></div>
-      <div class="item"><img src="https://i.pinimg.com/236x/c1/5c/15/c15c159f09b1de522f791643eb5a4e78.jpg" onclick="seleccionar('vestit')"></div>
-    </div>
-    <div class="espai-escriure">Espai per comentar aquestes peces</div>
-    <div class="tram-fons" style="background-image: url('https://i.imgur.com/J0ykE5g.jpeg');"></div>
+    <div class="frase">Frase del primer tram</div>
 
-    <!-- FILA 3 (dreta) -->
-    <div class="fila-peces dreta">
-      <div class="item"><img src="https://patronesmujer.com/blog/wp-content/uploads/2015/01/Falda-pantal%C3%B3n-delantero11.jpg" onclick="seleccionar('faldillaPantalo')"></div>
-      <div class="item"><img src="https://i.pinimg.com/736x/a8/a7/1d/a8a71d7805cdb415529d58a67bed72e1.jpg" onclick="seleccionar('pantalo')"></div>
-    </div>
-    <div class="espai-escriure">Espai per comentar aquestes peces</div>
-    <div class="tram-fons" style="background-image: url('https://i.imgur.com/rSbl2kI.jpeg');"></div>
+  </div>
 
-    <!-- FILA 4 (esquerra) -->
-    <div class="fila-peces esquerra">
-      <div class="item"><img src="https://bigbensalamanca.es/blog/wp-content/uploads/cuello-Ingles_03010.jpg" onclick="seleccionar('colls')"></div>
-      <div class="item"><img src="https://upload.wikimedia.org/wikipedia/commons/e/ed/Straight_sleeve.jpg" onclick="seleccionar('maniga')"></div>
-    </div>
-    <div class="espai-escriure">Espai per comentar aquestes peces</div>
-    <div class="tram-fons" style="background-image: url('https://i.imgur.com/0iLyE2D.jpeg');"></div>
 
-    <!-- FILA 5 (dreta) -->
-    <div class="fila-peces dreta">
-      <div class="item"><img src="https://img.freepik.com/vector-premium/dibujo-tecnico-falda-vistas-delantera-trasera_837135-47.jpg" onclick="seleccionar('faldillaMitjaCapa')"></div>
-      <div class="item"><img src="https://patronesmujer.com/blog/wp-content/uploads/2014/12/patron-falda-capa.jpg" onclick="seleccionar('faldillaCapaSencera')"></div>
+  <!-- 🟣 TRAM 2 -->
+  <div class="tram" style="background-image: url('extra2.jpg');">
+
+    <div class="pair">
+      <a href="enllac3.html"><img src="foto3.jpg"></a>
+      <a href="enllac4.html"><img src="foto4.jpg"></a>
     </div>
-    <div class="espai-escriure">Espai per comentar aquestes peces</div>
-    <div class="tram-fons" style="background-image: url('https://i.imgur.com/rA5tbr8.jpeg');"></div>
+
+    <div class="frase">Frase del segon tram</div>
+
+  </div>
+
+
+  <!-- 🟣 TRAM 3 -->
+  <div class="tram" style="background-image: url('extra3.jpg');">
+
+    <div class="pair">
+      <a href="enllac5.html"><img src="foto5.jpg"></a>
+      <a href="enllac6.html"><img src="foto6.jpg"></a>
+    </div>
+
+    <div class="frase">Frase del tercer tram</div>
+
+  </div>
+
+
+  <!-- 🟣 TRAM 4 -->
+  <div class="tram" style="background-image: url('extra4.jpg');">
+
+    <div class="pair">
+      <a href="enllac7.html"><img src="foto7.jpg"></a>
+      <a href="enllac8.html"><img src="foto8.jpg"></a>
+    </div>
+
+    <div class="frase">Frase del quart tram</div>
+
+  </div>
+
+
+  <!-- 🟣 TRAM 5 -->
+  <div class="tram" style="background-image: url('extra5.jpg');">
+
+    <div class="pair">
+      <a href="enllac9.html"><img src="foto9.jpg"></a>
+      <a href="enllac10.html"><img src="foto10.jpg"></a>
+    </div>
+
+    <div class="frase">Frase del cinquè tram</div>
 
   </div>
 
