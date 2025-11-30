@@ -5,120 +5,143 @@
   <title>Patronador</title>
   <style>
     body {
-      font-family: sans-serif;
-      padding: 20px;
-      background-color: black;
-      color: white;
+      font-family: sans-serif; /* Defineix la tipografia principal de la pàgina */
+      padding: 20px; /* Espai interior de la pàgina */
     }
 
+    /* Barra superior */
     .navbar {
-      width: 100%;
-      border-bottom: 2px solid #fff;
-      padding: 10px 0;
-      margin-bottom: 30px;
-      display: flex;
-      justify-content: center;
-      gap: 30px;
+      width: 100%; /* Ocupa tota l'amplada */
+      border-bottom: 2px solid #333; /* Línia inferior de la barra */
+      padding: 15px 0; /* Espai interior vertical */
+      margin-bottom: 30px; /* Separació amb contingut següent */
+      display: flex; /* Layout flexible */
+      justify-content: center; /* Centrat horitzontal */
+      gap: 30px; /* Espai entre enllaços */
     }
 
     .navbar a {
-      text-decoration: none;
-      color: #fff;
-      font-weight: bold;
-      font-size: 18px;
+      color: #333; /* Color del text */
+      font-weight: bold; /* Text en negreta */
+      font-size: 18px; /* Mida del text */
     }
 
-    .parelles {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 40px;
-      max-width: 900px;
-      margin: auto;
-      margin-top: 40px;
+    .navbar a:hover {
+      text-decoration: underline; /* Subratllat al passar el ratolí */
     }
 
-    .box {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 15px;
+    /* Formularis i secció de triar peça */
+    .formulari, #triar-peca {
+      display: none; /* Oculta inicialment */
+      margin-top: 20px; /* Separació superior */
     }
 
-    .items {
-      display: flex;
-      gap: 20px;
-      justify-content: center;
+    /* Layout de les opcions de peces amb grid */
+    .opcions-peces {
+      display: grid; /* Disposa els elements en quadrícula */
+      grid-template-columns: repeat(5, 1fr); /* 5 columnes iguals */
+      gap: 20px; /* Espai entre elements */
+      justify-items: center; /* Centrat horitzontal dins cel·la */
+      margin: auto; /* Centrat del contenidor */
+      max-width: 1000px; /* Amplada màxima */
     }
 
-    .items img {
-      width: 160px;
-      height: 160px;
-      object-fit: cover;
-      border-radius: 8px;
-      cursor: pointer;
+    /* Cada requadre d'una peça */
+    .opcions-peces .item {
+      width: 170px; /* Amplada del requadre */
+      height: 170px; /* Alçada del requadre */
+      border: 2px solid transparent; /* Borde invisible inicial */
+      border-radius: 8px; /* Cantonades arrodonides */
+      display: flex; /* Layout flexible */
+      align-items: center; /* Centrat vertical */
+      justify-content: center; /* Centrat horitzontal */
+      overflow: hidden; /* Amaga contingut que sobresurt */
+      cursor: pointer; /* Canvia cursor al passar per sobre */
     }
 
-    .frase {
-      text-align: center;
-      font-size: 16px;
-      padding: 10px;
-      opacity: 0.8;
+    .opcions-peces .item:hover {
+      border-color: #333; /* Canvia color del borde al passar el ratolí */
+    }
+
+    .opcions-peces img {
+      max-width: 100%; /* Amplada màxima dins del requadre */
+      max-height: 100%; /* Alçada màxima dins del requadre */
+      object-fit: contain; /* Manté proporció de la imatge */
+    }
+
+    #canvas-container {
+      margin-top: 20px; /* Separació superior */
+      text-align: center; /* Centrat horitzontal */
+    }
+
+    button {
+      margin-top: 10px; /* Separació superior */
+      padding: 10px; /* Espai interior */
+      background-color: #333; /* Color de fons */
+      color: white; /* Color del text */
+      border: none; /* Sense borde */
+      border-radius: 5px; /* Cantonades arrodonides */
+      cursor: pointer; /* Canvia cursor al passar per sobre */
+    }
+
+    input {
+      margin: 5px; /* Espai al voltant dels inputs */
     }
   </style>
 </head>
 <body>
 
-  <div class="navbar">
-    <a href="comprendre-mides.html" target="_blank">Com prendre mides</a>
-    <a href="quisoc.html" target="_blank">Qui sóc</a>
-    <a href="informacio.html" target="_blank">Informació addicional</a>
+  <!-- Barra superior amb enllaços -->
+  <div class="navbar" style="position: relative;">
+    <img src="https://i.pinimg.com/736x/11/fa/53/11fa53670046bef15e2c4a117c468294.jpg" 
+         alt="Logo de la web" 
+         style="height: 100px; position: absolute; left: 10px; top: 50%; transform: translateY(-50%);">
+
+    <a href="quisoc.html" target="_blank" style="font-weight: bold;">Qui sóc</a> <!-- Enllaç a la pàgina Qui sóc -->
+    <a href="comprendre-mides.html" target="_blank">Com prendre mides</a> <!-- Enllaç a la pàgina de mides -->
+    <a href="informacio.html" target="_blank">Informació addicional</a> <!-- Enllaç informació extra -->
   </div>
 
-  <h1 style="text-align:center;">Entrant al món del Patronador</h1>
+  <h1>Patronador</h1> <!-- Títol principal de la pàgina -->
 
-  <div class="parelles">
-
-    <div class="box">
-      <div class="items">
-        <img src="https://i.pinimg.com/736x/52/d7/8f/52d78f97d4773d860a5092113134fd90.jpg" alt="Faldilla">
-        <img src="https://i.pinimg.com/736x/ae/23/e2/ae23e286e730820512b52a23f4781efd.jpg" alt="Brusa">
-      </div>
-      <div class="frase">Faldilla i Brusa — Un clàssic elegant.</div>
+  <!-- Tria la peça -->
+  <div id="triar-peca" style="display:block;">
+    <h2>Tria la peça</h2> <!-- Subtítol per triar peça -->
+    <div class="opcions-peces">
+      <!-- Cada imatge representa un tipus de peça i crida la funció seleccionar() amb el nom de la peça -->
+      <div><img src="https://i.pinimg.com/736x/52/d7/8f/52d78f97d4773d860a5092113134fd90.jpg" alt="Faldilla" onclick="seleccionar('faldilla')"></div>
+      <div><img src="https://i.pinimg.com/736x/ae/23/e2/ae23e286e730820512b52a23f4781efd.jpg" alt="Brusa" onclick="seleccionar('brusa')"></div>
+      <div><img src="https://i.pinimg.com/736x/cb/b6/c2/cbb6c2a26d77b3155fedd50dab681d26.jpg" alt="Cos a cadera" onclick="seleccionar('cosACadera')"></div>
+      <div><img src="https://i.pinimg.com/236x/c1/5c/15/c15c159f09b1de522f791643eb5a4e78.jpg" alt="Vestit" onclick="seleccionar('vestit')"></div>
+      <div><img src="https://patronesmujer.com/blog/wp-content/uploads/2015/01/Falda-pantal%C3%B3n-delantero11.jpg" alt="Faldilla pantaló" onclick="seleccionar('faldillaPantalo')"></div>
+      <div><img src="https://i.pinimg.com/736x/a8/a7/1d/a8a71d7805cdb415529d58a67bed72e1.jpg" alt="Pantaló" onclick="seleccionar('pantalo')"></div>
+      <div><img src="https://bigbensalamanca.es/blog/wp-content/uploads/cuello-Ingles_03010.jpg" alt="Colls" onclick="seleccionar('colls')"></div>
+      <div><img src="https://upload.wikimedia.org/wikipedia/commons/e/ed/Straight_sleeve.jpg" alt="Màniga" onclick="seleccionar('maniga')"></div>
+      <div><img src="https://img.freepik.com/vector-premium/dibujo-tecnico-falda-vistas-delantera-trasera_837135-47.jpg" alt="Faldilla mitja capa" onclick="seleccionar('faldillaMitjaCapa')"></div>
+      <div><img src="https://patronesmujer.com/blog/wp-content/uploads/2014/12/patron-falda-capa.jpg" alt="Faldilla capa sencera" onclick="seleccionar('faldillaCapaSencera')"></div>
     </div>
-
-    <div class="box">
-      <div class="items">
-        <img src="https://i.pinimg.com/736x/cb/b6/c2/cbb6c2a26d77b3155fedd50dab681d26.jpg" alt="Cos a cadera">
-        <img src="https://i.pinimg.com/236x/c1/5c/15/c15c159f09b1de522f791643eb5a4e78.jpg" alt="Vestit">
-      </div>
-      <div class="frase">Cos a cadera i Vestit — Versatilitat total.</div>
-    </div>
-
-    <div class="box">
-      <div class="items">
-        <img src="https://patronesmujer.com/blog/wp-content/uploads/2015/01/Falda-pantalón-delantero11.jpg" alt="Faldilla pantaló">
-        <img src="https://i.pinimg.com/736x/a8/a7/1d/a8a71d7805cdb415529d58a67bed72e1.jpg" alt="Pantaló">
-      </div>
-      <div class="frase">Faldilla pantaló i Pantaló — Comoditat i estil.</div>
-    </div>
-
-    <div class="box">
-      <div class="items">
-        <img src="https://bigbensalamanca.es/blog/wp-content/uploads/cuello-Ingles_03010.jpg" alt="Colls">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/e/ed/Straight_sleeve.jpg" alt="Màniga">
-      </div>
-      <div class="frase">Colls i Màniga — Detalls que sumen.</div>
-    </div>
-
-    <div class="box">
-      <div class="items">
-        <img src="https://img.freepik.com/vector-premium/dibujo-tecnico-falda-vistas-delantera-trasera_837135-47.jpg" alt="Faldilla mitja capa">
-        <img src="https://patronesmujer.com/blog/wp-content/uploads/2014/12/patron-falda-capa.jpg" alt="Faldilla capa sencera">
-      </div>
-      <div class="frase">Mitja capa i Capa sencera — Moviment i volum.</div>
-    </div>
-
   </div>
+
+  <!-- Formularis de cada peça amb inputs per introduir mides i botó per generar patró -->
+  <div id="faldilla-form" class="formulari">
+    <h2>Faldilla</h2>
+    Llarg: <input id="llargFaldilla" type="number"><br>
+    Cintura: <input id="cinturaFaldilla" type="number"><br>
+    Cadera: <input id="caderaFaldilla" type="number"><br>
+    <button onclick="generarPatro('faldilla')">Generar patró</button>
+  </div>
+
+  <!-- La resta de formularis segueix el mateix patró: ID específic, inputs de mida, botó per generar patró -->
+
+  <div id="canvas-container"></div> <!-- Contenidor on es dibuixa el patró generat amb p5.js -->
+
+  <button onclick="descarregarCanvas()">Descarregar imatge</button> <!-- Permet descarregar el patró com a imatge -->
+  <button onclick="window.location.href='index.html'">⬅️ Tornar al patronador</button> <!-- Torna a la pàgina principal -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/p5.min.js"></script> <!-- Biblioteca p5.js per dibuixar el patró -->
+  <script src="sketch.js"></script> <!-- Script que conté la lògica per generar patrons -->
 
 </body>
 </html>
+
+
