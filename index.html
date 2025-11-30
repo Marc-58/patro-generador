@@ -6,8 +6,8 @@
 <style>
   body {
     font-family: sans-serif;
-    background-color: #000; /* fons negre */
-    color: #fff; /* text blanc */
+    background-color: #000;
+    color: #fff;
     margin: 0;
     padding: 20px;
   }
@@ -15,8 +15,8 @@
   /* Barra superior */
   .navbar {
     width: 100%;
-    height: 150px; /* més alta */
-    background-image: url('https://i.pinimg.com/736x/11/fa/53/11fa53670046bef15e2c4a117c468294.jpg'); /* imatge de fons */
+    height: 150px;
+    background-image: url('https://i.pinimg.com/736x/11/fa/53/11fa53670046bef15e2c4a117c468294.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -55,8 +55,8 @@
 
   /* Requadres de patrons */
   .fila-peces .item {
-    width: 250px; /* més estretes */
-    height: 350px; /* més altes */
+    width: 250px;
+    height: 350px;
     border: 2px solid transparent;
     border-radius: 10px;
     overflow: hidden;
@@ -77,14 +77,15 @@
     object-fit: contain;
   }
 
-  /* Fotos informatives història moda */
+  /* Foto informativa història moda */
   .item-info {
-    width: 250px;
-    height: 350px;
+    width: 400px;
+    height: 300px;
     border: 3px solid #fff;
     border-radius: 10px;
     overflow: hidden;
     background-color: #222;
+    margin: 0 auto; /* centrat horitzontal */
   }
 
   .item-info img {
@@ -102,6 +103,20 @@
     padding-bottom: 10px;
   }
 
+  #canvas-container {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
 </style>
 </head>
 <body>
@@ -121,13 +136,11 @@
   <div class="item"><img src="https://i.pinimg.com/736x/ae/23/e2/ae23e286e730820512b52a23f4781efd.jpg" alt="Brusa" onclick="seleccionar('brusa')"></div>
 </div>
 
-<!-- Fotos informatives història de la moda -->
-<div class="fila-peces" style="gap: 30px;">
-  <div class="item-info"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Marie-Antoinette_portrait.jpg/440px-Marie-Antoinette_portrait.jpg" alt="Moda Antiga"></div>
-  <div class="item-info"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Victorian_woman_c1870.jpg/440px-Victorian_woman_c1870.jpg" alt="Moda Victoriana"></div>
+<!-- Foto informativa història de la moda -->
+<div class="item-info">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Marie-Antoinette_portrait.jpg/440px-Marie-Antoinette_portrait.jpg" alt="Moda Antiga">
 </div>
-
-<div class="espai-escriure">Escriviu aquí una frase explicant la història d'aquestes imatges.</div>
+<div class="espai-escriure">Escriviu aquí una frase explicant la història d’aquesta imatge.</div>
 
 <!-- Fila 2 de patrons -->
 <div class="fila-peces">
@@ -135,13 +148,11 @@
   <div class="item"><img src="https://i.pinimg.com/236x/c1/5c/15/c15c159f09b1de522f791643eb5a4e78.jpg" alt="Vestit" onclick="seleccionar('vestit')"></div>
 </div>
 
-<!-- Fotos informatives història de la moda -->
-<div class="fila-peces" style="gap: 30px;">
-  <div class="item-info"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Flapper_dress_1920s.jpg/440px-Flapper_dress_1920s.jpg" alt="Moda anys 20"></div>
-  <div class="item-info"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/1950s_fashion.jpg/440px-1950s_fashion.jpg" alt="Moda anys 50"></div>
+<!-- Foto informativa història de la moda -->
+<div class="item-info">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Flapper_dress_1920s.jpg/440px-Flapper_dress_1920s.jpg" alt="Moda anys 20">
 </div>
-
-<div class="espai-escriure">Escriviu aquí una frase explicant la història d'aquestes imatges.</div>
+<div class="espai-escriure">Escriviu aquí una frase explicant la història d’aquesta imatge.</div>
 
 <!-- Fila 3 de patrons -->
 <div class="fila-peces">
@@ -149,13 +160,11 @@
   <div class="item"><img src="https://i.pinimg.com/736x/a8/a7/1d/a8a71d7805cdb415529d58a67bed72e1.jpg" alt="Pantaló" onclick="seleccionar('pantalo')"></div>
 </div>
 
-<!-- Fotos informatives història de la moda -->
-<div class="fila-peces" style="gap: 30px;">
-  <div class="item-info"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Chanel_suit_1926.jpg/440px-Chanel_suit_1926.jpg" alt="Moda Chanel"></div>
-  <div class="item-info"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Yves_Saint_Laurent_1960.jpg/440px-Yves_Saint_Laurent_1960.jpg" alt="Moda Yves Saint Laurent"></div>
+<!-- Foto informativa història de la moda -->
+<div class="item-info">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Chanel_suit_1926.jpg/440px-Chanel_suit_1926.jpg" alt="Moda Chanel">
 </div>
-
-<div class="espai-escriure">Escriviu aquí una frase explicant la història d'aquestes imatges.</div>
+<div class="espai-escriure">Escriviu aquí una frase explicant la història d’aquesta imatge.</div>
 
 <!-- Fila 4 de patrons -->
 <div class="fila-peces">
@@ -163,13 +172,11 @@
   <div class="item"><img src="https://upload.wikimedia.org/wikipedia/commons/e/ed/Straight_sleeve.jpg" alt="Màniga" onclick="seleccionar('maniga')"></div>
 </div>
 
-<!-- Fotos informatives història de la moda -->
-<div class="fila-peces" style="gap: 30px;">
-  <div class="item-info"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Coco_Chanel_in_1920s.jpg/440px-Coco_Chanel_in_1920s.jpg" alt="Moda Coco Chanel"></div>
-  <div class="item-info"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Audrey_Hepburn_in_Hollywood_1960s.jpg/440px-Audrey_Hepburn_in_Hollywood_1960s.jpg" alt="Moda Audrey Hepburn"></div>
+<!-- Foto informativa història de la moda -->
+<div class="item-info">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Audrey_Hepburn_in_Hollywood_1960s.jpg/440px-Audrey_Hepburn_in_Hollywood_1960s.jpg" alt="Moda Audrey Hepburn">
 </div>
-
-<div class="espai-escriure">Escriviu aquí una frase explicant la història d'aquestes imatges.</div>
+<div class="espai-escriure">Escriviu aquí una frase explicant la història d’aquesta imatge.</div>
 
 <!-- Fila 5 de patrons -->
 <div class="fila-peces">
@@ -177,13 +184,11 @@
   <div class="item"><img src="https://patronesmujer.com/blog/wp-content/uploads/2014/12/patron-falda-capa.jpg" alt="Faldilla capa sencera" onclick="seleccionar('faldillaCapaSencera')"></div>
 </div>
 
-<!-- Fotos informatives història de la moda -->
-<div class="fila-peces" style="gap: 30px;">
-  <div class="item-info"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Jean_Paul_Gaultier_1984.jpg/440px-Jean_Paul_Gaultier_1984.jpg" alt="Moda Gaultier"></div>
-  <div class="item-info"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Modern_fashion_2000s.jpg/440px-Modern_fashion_2000s.jpg" alt="Moda actual"></div>
+<!-- Foto informativa història de la moda -->
+<div class="item-info">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Modern_fashion_2000s.jpg/440px-Modern_fashion_2000s.jpg" alt="Moda actual">
 </div>
-
-<div class="espai-escriure">Escriviu aquí una frase explicant la història d'aquestes imatges.</div>
+<div class="espai-escriure">Escriviu aquí una frase explicant la història d’aquesta imatge.</div>
 
 
   <!-- Formulari de faldilla -->
