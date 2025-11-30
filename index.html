@@ -43,13 +43,13 @@
     .fila-peces {
       display: flex;
       justify-content: center;
-      gap: 40px; /* més espai entre imatges */
+      gap: 40px; /* espai entre imatges */
       margin-bottom: 20px; /* Espai inferior abans del text */
     }
 
     .item {
       width: 250px; /* més ample */
-      height: 340px; /* doble de llarg que abans */
+      height: 340px; /* més llarg */
       border: 2px solid #fff;
       border-radius: 8px;
       display: flex;
@@ -109,6 +109,7 @@
   <div id="triar-peca" style="display:block;">
     <h2>Tria la peça</h2>
 
+    <!-- Files anteriors -->
     <div class="fila-peces">
       <div class="item"><img src="https://i.pinimg.com/736x/52/d7/8f/52d78f97d4773d860a5092113134fd90.jpg" alt="Faldilla" onclick="seleccionar('faldilla')"></div>
       <div class="item"><img src="https://i.pinimg.com/736x/ae/23/e2/ae23e286e730820512b52a23f4781efd.jpg" alt="Brusa" onclick="seleccionar('brusa')"></div>
@@ -138,6 +139,19 @@
       <div class="item"><img src="https://patronesmujer.com/blog/wp-content/uploads/2014/12/patron-falda-capa.jpg" alt="Faldilla capa sencera" onclick="seleccionar('faldillaCapaSencera')"></div>
     </div>
     <div class="espai-escriure">Escriu aquí alguna cosa sobre aquestes peces</div>
+
+    <!-- Noves files afegides -->
+    <div class="fila-peces">
+      <div class="item"><img src="https://via.placeholder.com/250x340?text=Dreta+1" alt="Dreta 1" onclick="seleccionar('dreta1')"></div>
+      <div class="item"><img src="https://via.placeholder.com/250x340?text=Dreta+2" alt="Dreta 2" onclick="seleccionar('dreta2')"></div>
+    </div>
+    <div class="espai-escriure">Escriu aquí alguna cosa sobre aquestes peces dreta</div>
+
+    <div class="fila-peces">
+      <div class="item"><img src="https://via.placeholder.com/250x340?text=Esquerra+1" alt="Esquerra 1" onclick="seleccionar('esquerra1')"></div>
+      <div class="item"><img src="https://via.placeholder.com/250x340?text=Esquerra+2" alt="Esquerra 2" onclick="seleccionar('esquerra2')"></div>
+    </div>
+    <div class="espai-escriure">Escriu aquí alguna cosa sobre aquestes peces esquerra</div>
 
   </div>
 
