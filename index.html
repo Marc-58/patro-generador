@@ -5,87 +5,88 @@
   <title>Patronador</title>
   <style>
     body {
-      font-family: sans-serif; /* Defineix la tipografia principal de la pàgina */
-      padding: 20px; /* Espai interior de la pàgina */
+      font-family: sans-serif;
+      padding: 20px;
     }
 
     /* Barra superior */
     .navbar {
-      width: 100%; /* Ocupa tota l'amplada */
-      border-bottom: 2px solid #333; /* Línia inferior de la barra */
-      padding: 15px 0; /* Espai interior vertical */
-      margin-bottom: 30px; /* Separació amb contingut següent */
-      display: flex; /* Layout flexible */
-      justify-content: center; /* Centrat horitzontal */
-      gap: 30px; /* Espai entre enllaços */
+  width: 100%; 
+      border-bottom: 2px solid #333; 
+      padding: 10px 0; 
+      margin-bottom: 30px; 
+      display: flex; justify-content: center; 
+      gap: 30px;
+}
+
     }
 
     .navbar a {
-      color: #333; /* Color del text */
-      font-weight: bold; /* Text en negreta */
-      font-size: 18px; /* Mida del text */
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      font-size: 18px;
     }
 
     .navbar a:hover {
-      text-decoration: underline; /* Subratllat al passar el ratolí */
+      text-decoration: underline;
     }
 
-    /* Formularis i secció de triar peça */
     .formulari, #triar-peca {
-      display: none; /* Oculta inicialment */
-      margin-top: 20px; /* Separació superior */
+      display: none;
+      margin-top: 20px;
     }
 
-    /* Layout de les opcions de peces amb grid */
+    /* Layout amb grid */
     .opcions-peces {
-      display: grid; /* Disposa els elements en quadrícula */
-      grid-template-columns: repeat(2, 1fr); /* 5 columnes iguals */
-      gap: 20px; /* Espai entre elements */
-      justify-items: center; /* Centrat horitzontal dins cel·la */
-      margin: auto; /* Centrat del contenidor */
-      max-width: 1000px; /* Amplada màxima */
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* 5 columnes */
+      gap: 20px;
+      justify-items: center;
+      margin: auto;
+      max-width: 1000px; /* centrat */
     }
 
-    /* Cada requadre d'una peça */
+    /* Cada requadre */
     .opcions-peces .item {
-      width: 170px; /* Amplada del requadre */
-      height: 170px; /* Alçada del requadre */
-      border: 2px solid transparent; /* Borde invisible inicial */
-      border-radius: 8px; /* Cantonades arrodonides */
-      display: flex; /* Layout flexible */
-      align-items: center; /* Centrat vertical */
-      justify-content: center; /* Centrat horitzontal */
-      overflow: hidden; /* Amaga contingut que sobresurt */
-      cursor: pointer; /* Canvia cursor al passar per sobre */
+      width: 170px;
+      height: 170px;
+      border: 2px solid transparent;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      cursor: pointer;
     }
 
     .opcions-peces .item:hover {
-      border-color: #333; /* Canvia color del borde al passar el ratolí */
+      border-color: #333;
     }
 
     .opcions-peces img {
-      max-width: 100%; /* Amplada màxima dins del requadre */
-      max-height: 100%; /* Alçada màxima dins del requadre */
-      object-fit: contain; /* Manté proporció de la imatge */
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain; /* Manté proporció */
     }
 
     #canvas-container {
-      margin-top: 20px; /* Separació superior */
-      text-align: center; /* Centrat horitzontal */
+      margin-top: 20px;
+      text-align: center;
     }
 
     button {
-      margin-top: 10px; /* Separació superior */
-      padding: 10px; /* Espai interior */
-      background-color: #333; /* Color de fons */
-      color: white; /* Color del text */
-      border: none; /* Sense borde */
-      border-radius: 5px; /* Cantonades arrodonides */
-      cursor: pointer; /* Canvia cursor al passar per sobre */
+      margin-top: 10px;
+      padding: 10px;
+      background-color: #333;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
     }
 
     input {
-      margin: 5px; /* Espai al voltant dels inputs */
+      margin: 5px;
     }
   </style>
 </head>
@@ -93,22 +94,32 @@
 
   <!-- Barra superior amb enllaços -->
   <div class="navbar" style="position: relative;">
-    <img src="https://i.pinimg.com/736x/11/fa/53/11fa53670046bef15e2c4a117c468294.jpg" 
-         alt="Logo de la web" 
-         style="height: 100px; position: absolute; left: 10px; top: 50%; transform: translateY(-50%);">
+  <img src="https://i.pinimg.com/736x/11/fa/53/11fa53670046bef15e2c4a117c468294.jpg" 
+       alt="Logo de la web" 
+        style="height: 100px;  /* doble de gran */
+              position: absolute; 
+              left: 10px; 
+              top: 50%; 
+              transform: translateY(-50%);
+              
+  
+  <a href="quisoc.html" target="_blank" style="font-weight: bold;">     
 
-    <a href="quisoc.html" target="_blank" style="font-weight: bold;">Qui sóc</a> <!-- Enllaç a la pàgina Qui sóc -->
-    <a href="comprendre-mides.html" target="_blank">Com prendre mides</a> <!-- Enllaç a la pàgina de mides -->
-    <a href="informacio.html" target="_blank">Informació addicional</a> <!-- Enllaç informació extra -->
-  </div>
+<a href="comprendre-mides.html" target="_blank">Com prendre mides</a>
+<a href="quisoc.html" target="_blank">Qui sóc</a>
+<a href="informacio.html" target="_blank">Informació addicional</a>
 
-  <h1>Patronador</h1> <!-- Títol principal de la pàgina -->
+</div>
+
+
+
+
+  <h1>Patronador</h1>
 
   <!-- Tria la peça -->
   <div id="triar-peca" style="display:block;">
-    <h2>Tria la peça</h2> <!-- Subtítol per triar peça -->
+    <h2>Tria la peça</h2>
     <div class="opcions-peces">
-      <!-- Cada imatge representa un tipus de peça i crida la funció seleccionar() amb el nom de la peça -->
       <div><img src="https://i.pinimg.com/736x/52/d7/8f/52d78f97d4773d860a5092113134fd90.jpg" alt="Faldilla" onclick="seleccionar('faldilla')"></div>
       <div><img src="https://i.pinimg.com/736x/ae/23/e2/ae23e286e730820512b52a23f4781efd.jpg" alt="Brusa" onclick="seleccionar('brusa')"></div>
       <div><img src="https://i.pinimg.com/736x/cb/b6/c2/cbb6c2a26d77b3155fedd50dab681d26.jpg" alt="Cos a cadera" onclick="seleccionar('cosACadera')"></div>
@@ -122,7 +133,7 @@
     </div>
   </div>
 
-  <!-- Formularis de cada peça amb inputs per introduir mides i botó per generar patró -->
+  <!-- Formulari de faldilla -->
   <div id="faldilla-form" class="formulari">
     <h2>Faldilla</h2>
     Llarg: <input id="llargFaldilla" type="number"><br>
@@ -131,17 +142,118 @@
     <button onclick="generarPatro('faldilla')">Generar patró</button>
   </div>
 
-  <!-- La resta de formularis segueix el mateix patró: ID específic, inputs de mida, botó per generar patró -->
+  <!-- Formulari de brusa -->
+  <div id="brusa-form" class="formulari">
+    <h2>Brusa</h2>
+    Cintura: <input id="cinturaBrusa" type="number"><br>
+    Coll: <input id="coll" type="number"><br>
+    Talle Espatlles: <input id="talleEspatlles" type="number"><br>
+    Talle davanter: <input id="talleDavanter" type="number"><br>
+    Alt de pit: <input id="altDePit" type="number"><br>
+    Espatlles: <input id="espatllesTotal" type="number"><br>
+    Caiguda: <input id="caiguda" type="number"><br>
+    Sisa: <input id="sisa" type="number"><br>
+    Torax: <input id="torax" type="number"><br>
+    Pit: <input id="pit" type="number"><br>
+    Cos a cintura: <input id="cosACintura" type="number"><br>
+    <button onclick="generarPatro('brusa')">Generar patró</button>
+  </div>
 
-  <div id="canvas-container"></div> <!-- Contenidor on es dibuixa el patró generat amb p5.js -->
+  <div id="cosACadera-form" class="formulari">
+    <h2>Cos a cadera</h2>
+    Cintura: <input id="cinturaCosCadera" type="number"><br>
+    Cadera: <input id="caderaCosCadera" type="number"><br>
+    Coll: <input id="collCosCadera" type="number"><br>
+    Talle Espatlles: <input id="talleEspatllesCosCadera" type="number"><br>
+    Talle davanter: <input id="talleDavanterCosCadera" type="number"><br>
+    Alt de pit: <input id="altDePitCosCadera" type="number"><br>
+    Espatlles: <input id="espatllesCosCadera" type="number"><br>
+    Caiguda: <input id="caigudaCosCadera" type="number"><br>
+    Sisa: <input id="sisaCosCadera" type="number"><br>
+    Tòrax: <input id="toraxCosCadera" type="number"><br>
+    Pit: <input id="pitCosCadera" type="number"><br>
+    <button onclick="generarPatro('cosACadera')">Generar patró</button>
+  </div>
 
-  <button onclick="descarregarCanvas()">Descarregar imatge</button> <!-- Permet descarregar el patró com a imatge -->
-  <button onclick="window.location.href='index.html'">⬅️ Tornar al patronador</button> <!-- Torna a la pàgina principal -->
+  <div id="vestit-form" class="formulari">
+    <h2>Vestit</h2>
+    Cintura: <input id="cinturaVestit" type="number"><br>
+    Cadera: <input id="caderaVestit" type="number"><br>
+    Coll: <input id="collVestit" type="number"><br>
+    Talle Espatlles: <input id="talleEspatllesVestit" type="number"><br>
+    Talle davanter: <input id="talleDavanterVestit" type="number"><br>
+    Alt de pit: <input id="altDePitVestit" type="number"><br>
+    Espatlles: <input id="espatllesVestit" type="number"><br>
+    Caiguda: <input id="caigudaVestit" type="number"><br>
+    Sisa: <input id="sisaVestit" type="number"><br>
+    Tòrax: <input id="toraxVestit" type="number"><br>
+    Pit: <input id="pitVestit" type="number"><br>
+    Llarg del vestit: <input id="llargVestit" type="number"><br>
+    <button onclick="generarPatro('vestit')">Generar patró</button>
+  </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/p5.min.js"></script> <!-- Biblioteca p5.js per dibuixar el patró -->
-  <script src="sketch.js"></script> <!-- Script que conté la lògica per generar patrons -->
+   <div id="faldillaPantalo-form" class="formulari">
+    <h2>Faldilla pantalo</h2>
+    Llarg: <input id="llargFaldillaPantalo" type="number"><br>
+    Cintura: <input id="cinturaFaldillaPantalo" type="number"><br>
+    Cadera: <input id="caderaFaldillaPantalo" type="number"><br>
+    Tiro: <input id="tiroFaldillaPantalo" type="number"><br>
+
+    <button onclick="generarPatro('faldillaPantalo')">Generar patró</button>
+  </div>
+
+   <div id="pantalo-form" class="formulari">
+    <h2>Pantalo</h2>
+    Llarg: <input id="llargPantalo" type="number"><br>
+    Cintura: <input id="cinturaPantalo" type="number"><br>
+    Cadera: <input id="caderaPantalo" type="number"><br>
+    Tiro: <input id="tiroPantalo" type="number"><br>
+    LlargGenoll <input id="llargGenollPantalo" type="number"><br>
+
+
+    <button onclick="generarPatro('pantalo')">Generar patró</button>
+  </div>
+
+  <div id="colls-form" class="formulari">
+    <h2>Colls</h2>
+    Coll: <input id="collColls" type="number"><br>
+
+    <button onclick="generarPatro('colls')">Generar patró</button>
+  </div>
+
+    <div id="maniga-form" class="formulari">
+    <h2>Maniga</h2>
+    LlargTotal: <input id="llargTotalManiga" type="number"><br>
+    LlargBraç: <input id="llargBraçManiga" type="number"><br>
+    Munyeca: <input id="munyecaManiga" type="number"><br>
+    ContornBraç: <input id="contornBraçManiga" type="number"><br>
+
+    <button onclick="generarPatro('maniga')">Generar patró</button>
+  </div>
+  
+   <div id="faldillaMitjaCapa-form" class="formulari">
+    <h2>Faldilla mitja capa</h2>
+    Llarg: <input id="llargFaldillaMitjaCapa" type="number"><br>
+    Cintura: <input id="cinturaFaldillaMitjaCapa" type="number"><br>
+    <button onclick="generarPatro('faldillaMitjaCapa')">Generar patró</button>
+  </div>
+  
+ <div id="faldillaCapaSencera-form" class="formulari">
+    <h2>Faldilla capa sencera</h2>
+    Llarg: <input id="llargFaldillaCapaSencera" type="number"><br>
+    Cintura: <input id="cinturaFaldillaCapaSencera" type="number"><br>
+    <button onclick="generarPatro('faldillaCapaSencera')">Generar patró</button>
+  </div>
+  
+ <div id="canvas-container"></div>
+
+ 
+  <button onclick="descarregarCanvas()">Descarregar imatge</button>
+  <button onclick="window.location.href='index.html'">⬅️ Tornar al patronador</button>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/p5.min.js"></script>
+  <script src="sketch.js"></script>
 
 </body>
 </html>
-
-
