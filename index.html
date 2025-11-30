@@ -7,18 +7,18 @@
     body {
       font-family: sans-serif;
       padding: 20px;
-      background: #0f0f0f;
+      background-color: black;
       color: white;
     }
 
     .navbar {
-      width: 100%; 
-      border-bottom: 2px solid #333; 
-      padding: 20px; 
-      margin-bottom: 30px; 
-      display: flex; justify-content: center; 
+      width: 100%;
+      border-bottom: 2px solid #fff;
+      padding: 10px 0;
+      margin-bottom: 30px;
+      display: flex;
+      justify-content: center;
       gap: 30px;
-      background:#1a1a1a;
     }
 
     .navbar a {
@@ -28,158 +28,97 @@
       font-size: 18px;
     }
 
-    .navbar a:hover {
-      text-decoration: underline;
+    .parelles {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+      max-width: 900px;
+      margin: auto;
+      margin-top: 40px;
     }
 
-    .hero {
-      width: 100%;
-      height: 350px;
-      background: url("FOTO-AQUI.jpg") center/cover no-repeat;
+    .box {
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 40px;
+      gap: 15px;
     }
 
-    .hero h1 {
-      font-size: 60px;
-      font-weight: 900;
-      color: white;
-      text-shadow: 0 0 20px black;
+    .items {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .items img {
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 8px;
+      cursor: pointer;
     }
 
     .frase {
       text-align: center;
-      font-size: 26px;
-      margin: 40px 0;
-    }
-
-    .foto-extra {
-      width: 100%;
-      height: 300px;
-      background: url("FOTO2.jpg") center/cover no-repeat;
-      margin: 50px 0;
-    }
-
-    .opcions-peces {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 20px;
-      justify-items: center;
-      margin: auto;
-      max-width: 1000px;
-    }
-
-    .opcions-peces .item {
-      width: 170px;
-      height: 170px;
-      border: 2px solid transparent;
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      cursor: pointer;
-      background:#1a1a1a;
-    }
-
-    .opcions-peces .item:hover {
-      border-color: white;
-      transform: scale(1.05);
-    }
-
-    .opcions-peces img {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain;
-    }
-
-    .formulari {
-      display: none;
-      margin-top: 20px;
-      background:#1a1a1a;
-      padding:20px;
-      border-radius:10px;
-    }
-
-    #canvas-container {
-      margin-top: 20px;
-      text-align: center;
-    }
-
-    button {
-      margin-top: 10px;
+      font-size: 16px;
       padding: 10px;
-      background-color: white;
-      color: black;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    input {
-      margin: 5px;
-      background:#111;
-      border:1px solid #333;
-      color:white;
-      padding:5px;
+      opacity: 0.8;
     }
   </style>
 </head>
 <body>
 
-<div class="navbar">
-  <a href="comprendre-mides.html" target="_blank">Com prendre mides</a>
-  <a href="quisoc.html" target="_blank">Qui sóc</a>
-  <a href="informacio.html" target="_blank">Informació addicional</a>
-</div>
-
-<div class="hero"><h1>EL TEU PATRONADOR</h1></div>
-<div class="frase">FRASE 1 AQUÍ</div>
-<div class="frase">FRASE 2 AQUÍ</div>
-<div class="frase">FRASE 3 AQUÍ</div>
-
-<div class="foto-extra"></div>
-
-<h1>Patronador</h1>
-
-<div id="triar-peca" style="display:block;">
-  <h2>Tria la peça</h2>
-  <div class="opcions-peces">
-      <div class="item"><img src="https://i.pinimg.com/736x/52/d7/8f/52d78f97d4773d860a5092113134fd90.jpg" alt="Faldilla" onclick="seleccionar('faldilla')"></div>
-      <div class="item"><img src="https://i.pinimg.com/736x/ae/23/e2/ae23e286e730820512b52a23f4781efd.jpg" alt="Brusa" onclick="seleccionar('brusa')"></div>
-      <div class="item"><img src="https://i.pinimg.com/736x/cb/b6/c2/cbb6c2a26d77b3155fedd50dab681d26.jpg" alt="Cos a cadera" onclick="seleccionar('cosACadera')"></div>
-      <div class="item"><img src="https://i.pinimg.com/236x/c1/5c/15/c15c159f09b1de522f791643eb5a4e78.jpg" alt="Vestit" onclick="seleccionar('vestit')"></div>
-      <div class="item"><img src="https://patronesmujer.com/blog/wp-content/uploads/2015/01/Falda-pantal%C3%B3n-delantero11.jpg" alt="Faldilla pantaló" onclick="seleccionar('faldillaPantalo')"></div>
-      <div class="item"><img src="https://i.pinimg.com/736x/a8/a7/1d/a8a71d7805cdb415529d58a67bed72e1.jpg" alt="Pantaló" onclick="seleccionar('pantalo')"></div>
-      <div class="item"><img src="https://bigbensalamanca.es/blog/wp-content/uploads/cuello-Ingles_03010.jpg" alt="Colls" onclick="seleccionar('colls')"></div>
-      <div class="item"><img src="https://upload.wikimedia.org/wikipedia/commons/e/ed/Straight_sleeve.jpg" alt="Màniga" onclick="seleccionar('maniga')"></div>
-      <div class="item"><img src="https://img.freepik.com/vector-premium/dibujo-tecnico-falda-vistas-delantera-trasera_837135-47.jpg" alt="Faldilla mitja capa" onclick="seleccionar('faldillaMitjaCapa')"></div>
-      <div class="item"><img src="https://patronesmujer.com/blog/wp-content/uploads/2014/12/patron-falda-capa.jpg" alt="Faldilla capa sencera" onclick="seleccionar('faldillaCapaSencera')"></div>
+  <div class="navbar">
+    <a href="comprendre-mides.html" target="_blank">Com prendre mides</a>
+    <a href="quisoc.html" target="_blank">Qui sóc</a>
+    <a href="informacio.html" target="_blank">Informació addicional</a>
   </div>
-</div>
 
-<!-- Tots els formularis intactes -->
-<div id="faldilla-form" class="formulari">...</div>
-<div id="brusa-form" class="formulari">...</div>
-<div id="cosACadera-form" class="formulari">...</div>
-<div id="vestit-form" class="formulari">...</div>
-<div id="faldillaPantalo-form" class="formulari">...</div>
-<div id="pantalo-form" class="formulari">...</div>
-<div id="colls-form" class="formulari">...</div>
-<div id="maniga-form" class="formulari">...</div>
-<div id="faldillaMitjaCapa-form" class="formulari">...</div>
-<div id="faldillaCapaSencera-form" class="formulari">...</div>
+  <h1 style="text-align:center;">Entrant al món del Patronador</h1>
 
-<div id="canvas-container"></div>
+  <div class="parelles">
 
-<button onclick="descarregarCanvas()">Descarregar imatge</button>
-<button onclick="window.location.href='index.html'">⬅️ Tornar al patronador</button>
+    <div class="box">
+      <div class="items">
+        <img src="https://i.pinimg.com/736x/52/d7/8f/52d78f97d4773d860a5092113134fd90.jpg" alt="Faldilla">
+        <img src="https://i.pinimg.com/736x/ae/23/e2/ae23e286e730820512b52a23f4781efd.jpg" alt="Brusa">
+      </div>
+      <div class="frase">Faldilla i Brusa — Un clàssic elegant.</div>
+    </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/p5.min.js"></script>
-<script src="sketch.js"></script>
+    <div class="box">
+      <div class="items">
+        <img src="https://i.pinimg.com/736x/cb/b6/c2/cbb6c2a26d77b3155fedd50dab681d26.jpg" alt="Cos a cadera">
+        <img src="https://i.pinimg.com/236x/c1/5c/15/c15c159f09b1de522f791643eb5a4e78.jpg" alt="Vestit">
+      </div>
+      <div class="frase">Cos a cadera i Vestit — Versatilitat total.</div>
+    </div>
+
+    <div class="box">
+      <div class="items">
+        <img src="https://patronesmujer.com/blog/wp-content/uploads/2015/01/Falda-pantalón-delantero11.jpg" alt="Faldilla pantaló">
+        <img src="https://i.pinimg.com/736x/a8/a7/1d/a8a71d7805cdb415529d58a67bed72e1.jpg" alt="Pantaló">
+      </div>
+      <div class="frase">Faldilla pantaló i Pantaló — Comoditat i estil.</div>
+    </div>
+
+    <div class="box">
+      <div class="items">
+        <img src="https://bigbensalamanca.es/blog/wp-content/uploads/cuello-Ingles_03010.jpg" alt="Colls">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/e/ed/Straight_sleeve.jpg" alt="Màniga">
+      </div>
+      <div class="frase">Colls i Màniga — Detalls que sumen.</div>
+    </div>
+
+    <div class="box">
+      <div class="items">
+        <img src="https://img.freepik.com/vector-premium/dibujo-tecnico-falda-vistas-delantera-trasera_837135-47.jpg" alt="Faldilla mitja capa">
+        <img src="https://patronesmujer.com/blog/wp-content/uploads/2014/12/patron-falda-capa.jpg" alt="Faldilla capa sencera">
+      </div>
+      <div class="frase">Mitja capa i Capa sencera — Moviment i volum.</div>
+    </div>
+
+  </div>
+
 </body>
 </html>
-
