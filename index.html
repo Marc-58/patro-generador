@@ -5,8 +5,8 @@
   <title>Patronador</title>
   <style>
     body {
-      font-family: sans-serif; /* Tipografia de la pàgina */
-      padding: 20px; /* Espai interior */
+      font-family: sans-serif;
+      padding: 20px;
       background-color: #000; /* Fons negre */
       color: #fff; /* Text blanc */
     }
@@ -24,7 +24,7 @@
 
     .navbar a {
       text-decoration: none;
-      color: #fff; /* Enllaços blancs */
+      color: #fff;
       font-weight: bold;
       font-size: 18px;
     }
@@ -39,22 +39,18 @@
       margin-top: 20px;
     }
 
-    /* Layout de peces: 2 columnes i espai per escriure */
-    .opcions-peces {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr); /* 2 columnes */
-      row-gap: 60px; /* Espai vertical entre files */
-      column-gap: 20px; /* Espai horitzontal entre columnes */
-      justify-items: center;
-      margin: auto;
-      max-width: 1000px;
+    /* Layout de peces: cada fila conté 2 imatges i després un espai per escriure */
+    .fila-peces {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 20px; /* Espai inferior abans del text */
     }
 
-    /* Cada requadre */
-    .opcions-peces .item {
+    .item {
       width: 170px;
       height: 170px;
-      border: 2px solid #fff; /* Borde blanc */
+      border: 2px solid #fff;
       border-radius: 8px;
       display: flex;
       align-items: center;
@@ -63,26 +59,24 @@
       cursor: pointer;
     }
 
-    .opcions-peces .item:hover {
-      border-color: #fff;
-    }
-
-    .opcions-peces img {
+    .item img {
       max-width: 100%;
       max-height: 100%;
       object-fit: contain;
     }
 
-    #canvas-container {
-      margin-top: 20px;
+    .espai-escriure {
+      width: 100%;
       text-align: center;
+      margin-bottom: 40px;
+      font-style: italic;
     }
 
     button {
       margin-top: 10px;
       padding: 10px;
-      background-color: #fff; /* Botó blanc */
-      color: #000; /* Text negre dins botó */
+      background-color: #fff;
+      color: #000;
       border: none;
       border-radius: 5px;
       cursor: pointer;
@@ -90,30 +84,20 @@
 
     input {
       margin: 5px;
-      background-color: #000; /* Fons input negre */
-      color: #fff; /* Text blanc */
-      border: 1px solid #fff; /* Borde blanc */
+      background-color: #000;
+      color: #fff;
+      border: 1px solid #fff;
       border-radius: 3px;
       padding: 5px;
-    }
-
-    /* Espai per escriure entre cada parell de fotos */
-    .espai-escriure {
-      width: 100%;
-      text-align: center;
-      margin: 10px 0;
-      font-style: italic;
     }
   </style>
 </head>
 <body>
 
-  <!-- Barra superior amb enllaços -->
   <div class="navbar" style="position: relative;">
     <img src="https://i.pinimg.com/736x/11/fa/53/11fa53670046bef15e2c4a117c468294.jpg" 
          alt="Logo de la web" 
          style="height: 100px; position: absolute; left: 10px; top: 50%; transform: translateY(-50%);">
-
     <a href="quisoc.html" target="_blank">Qui sóc</a>
     <a href="comprendre-mides.html" target="_blank">Com prendre mides</a>
     <a href="informacio.html" target="_blank">Informació addicional</a>
@@ -124,27 +108,38 @@
   <!-- Tria la peça -->
   <div id="triar-peca" style="display:block;">
     <h2>Tria la peça</h2>
-    <div class="opcions-peces">
+
+    <div class="fila-peces">
       <div class="item"><img src="https://i.pinimg.com/736x/52/d7/8f/52d78f97d4773d860a5092113134fd90.jpg" alt="Faldilla" onclick="seleccionar('faldilla')"></div>
       <div class="item"><img src="https://i.pinimg.com/736x/ae/23/e2/ae23e286e730820512b52a23f4781efd.jpg" alt="Brusa" onclick="seleccionar('brusa')"></div>
-      <div class="espai-escriure">Escriu aquí alguna cosa sobre aquestes peces</div>
+    </div>
+    <div class="espai-escriure">Escriu aquí alguna cosa sobre aquestes peces</div>
 
+    <div class="fila-peces">
       <div class="item"><img src="https://i.pinimg.com/736x/cb/b6/c2/cbb6c2a26d77b3155fedd50dab681d26.jpg" alt="Cos a cadera" onclick="seleccionar('cosACadera')"></div>
       <div class="item"><img src="https://i.pinimg.com/236x/c1/5c/15/c15c159f09b1de522f791643eb5a4e78.jpg" alt="Vestit" onclick="seleccionar('vestit')"></div>
-      <div class="espai-escriure">Escriu aquí alguna cosa sobre aquestes peces</div>
+    </div>
+    <div class="espai-escriure">Escriu aquí alguna cosa sobre aquestes peces</div>
 
+    <div class="fila-peces">
       <div class="item"><img src="https://patronesmujer.com/blog/wp-content/uploads/2015/01/Falda-pantal%C3%B3n-delantero11.jpg" alt="Faldilla pantaló" onclick="seleccionar('faldillaPantalo')"></div>
       <div class="item"><img src="https://i.pinimg.com/736x/a8/a7/1d/a8a71d7805cdb415529d58a67bed72e1.jpg" alt="Pantaló" onclick="seleccionar('pantalo')"></div>
-      <div class="espai-escriure">Escriu aquí alguna cosa sobre aquestes peces</div>
+    </div>
+    <div class="espai-escriure">Escriu aquí alguna cosa sobre aquestes peces</div>
 
+    <div class="fila-peces">
       <div class="item"><img src="https://bigbensalamanca.es/blog/wp-content/uploads/cuello-Ingles_03010.jpg" alt="Colls" onclick="seleccionar('colls')"></div>
       <div class="item"><img src="https://upload.wikimedia.org/wikipedia/commons/e/ed/Straight_sleeve.jpg" alt="Màniga" onclick="seleccionar('maniga')"></div>
-      <div class="espai-escriure">Escriu aquí alguna cosa sobre aquestes peces</div>
+    </div>
+    <div class="espai-escriure">Escriu aquí alguna cosa sobre aquestes peces</div>
 
+    <div class="fila-peces">
       <div class="item"><img src="https://img.freepik.com/vector-premium/dibujo-tecnico-falda-vistas-delantera-trasera_837135-47.jpg" alt="Faldilla mitja capa" onclick="seleccionar('faldillaMitjaCapa')"></div>
       <div class="item"><img src="https://patronesmujer.com/blog/wp-content/uploads/2014/12/patron-falda-capa.jpg" alt="Faldilla capa sencera" onclick="seleccionar('faldillaCapaSencera')"></div>
-      <div class="espai-escriure">Escriu aquí alguna cosa sobre aquestes peces</div>
     </div>
+    <div class="espai-escriure">Escriu aquí alguna cosa sobre aquestes peces</div>
+
+  </div>
 
   <h1>Patronador</h1>
 
