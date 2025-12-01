@@ -758,13 +758,39 @@ p.endShape();
   };
 }
 
-function descarregarCanvas() {
-  const canvases = document.getElementsByTagName("canvas");
-  if (canvases.length > 0) {
-    const canvas = canvases[0];
-    const link = document.createElement('a');
-    link.download = tipus + '_patro.png';
-    link.href = canvas.toDataURL("image/png");
-    link.click();
+function descarregarCanvas() {onst canvases = document.getElementsByTagName("canvas");
+  if (canvases.length === 0) return;
+
+  const canvas = canvases[0];
+  const canvasWidth = canvas.width;
+  const canvasHeight = canvas.height;
+
+  // mides A4 en pixels segons jsPDF (aprox a 72 DPI)
+  const a4Width = 595.28; // points (mm*72/25.4)
+  const a4Height = 841.89;
+
+  // escala per ajustar el canvas a l'amplada d'A4
+  const scale = a4Width / canvasWidth;
+  const pdf = new jsPDF('portrait', 'pt', 'a4');
+
+  let y = 0;
+  let page = 1;
+
+  while (y < canvasHeight) {
+    const tmpCanvas = document.createElement('canvas');
+    tmpCanvas.width = canvasWidth;
+    tmpCanvas.height = Math.min(a4Height / scale, canvasHeight - y);
+
+    const ctx = tmpCanvas.getContext('2d');
+    ctx.drawImage(canvas, 0, y, canvasWidth, tmpCanvas.height, 0, 0, canvasWidth, tmpCanvas.height);
+
+    const imgData = tmpCanvas.toDataURL("image/png");
+    if (page > 1) pdf.addPage();
+    pdf.addImage(imgData, 'PNG', 0, 0, a4Width, tmpCanvas.height * scale);
+
+    y += tmpCanvas.height;
+    page++;
   }
+
+  pdf.save('patro_A4.pdf');
 }
