@@ -50,7 +50,7 @@
     .parell {
       display: flex;
       flex-direction: column; /* Columna per a imatges i frase */
-      align-items: flex-start; /* Alineació per defecte a l'esquerra */
+      align-items: center; /* Centrar els elements */
       margin-bottom: 20px; /* Espai entre parells */
       width: 100%; /* Ample total per a l'alineació */
     }
@@ -85,7 +85,7 @@
 
     .frase {
       margin-top: 10px;
-      text-align: center;
+      text-align: center; /* Centrar la frase */
       color: #fff; /* Color blanc per a les frases */
     }
 
@@ -97,11 +97,11 @@
 
     /* Estils per a l'alineació */
     .dreta {
-      align-items: flex-end; /* Alineació a la dreta */
+      justify-content: flex-end; /* Alineació a la dreta */
     }
 
     .esquerra {
-      align-items: flex-start; /* Alineació a l'esquerra */
+      justify-content: flex-start; /* Alineació a l'esquerra */
     }
 
     #canvas-container {
@@ -139,7 +139,7 @@
     <h2>Tria la peça</h2>
     <div class="opcions-peces">
       <div class="parell dreta"> <!-- Alineat a la dreta -->
-        <div class="imatges">
+        <div class="imatges dreta">
           <div class="item"><img src="https://i.pinimg.com/736x/52/d7/8f/52d78f97d4773d860a5092113134fd90.jpg" alt="Faldilla" onclick="seleccionar('faldilla')"></div>
           <div class="item"><img src="https://i.pinimg.com/736x/ae/23/e2/ae23e286e730820512b52a23f4781efd.jpg" alt="Brusa" onclick="seleccionar('brusa')"></div>
         </div>
@@ -149,7 +149,7 @@
       </div>
 
       <div class="parell esquerra"> <!-- Alineat a l'esquerra -->
-        <div class="imatges">
+        <div class="imatges esquerra">
           <div class="item"><img src="https://i.pinimg.com/736x/cb/b6/c2/cbb6c2a26d77b3155fedd50dab681d26.jpg" alt="Cos a cadera" onclick="seleccionar('cosACadera')"></div>
           <div class="item"><img src="https://i.pinimg.com/236x/c1/5c/15/c15c159f09b1de522f791643eb5a4e78.jpg" alt="Vestit" onclick="seleccionar('vestit')"></div>
         </div>
@@ -159,7 +159,7 @@
       </div>
 
       <div class="parell dreta"> <!-- Alineat a la dreta -->
-        <div class="imatges">
+        <div class="imatges dreta">
           <div class="item"><img src="https://patronesmujer.com/blog/wp-content/uploads/2015/01/Falda-pantal%C3%B3n-delantero11.jpg" alt="Faldilla pantaló" onclick="seleccionar('faldillaPantalo')"></div>
           <div class="item"><img src="https://i.pinimg.com/736x/a8/a7/1d/a8a71d7805cdb415529d58a67bed72e1.jpg" alt="Pantaló" onclick="seleccionar('pantalo')"></div>
         </div>
@@ -169,7 +169,7 @@
       </div>
 
       <div class="parell esquerra"> <!-- Alineat a l'esquerra -->
-        <div class="imatges">
+        <div class="imatges esquerra">
           <div class="item"><img src="https://bigbensalamanca.es/blog/wp-content/uploads/cuello-Ingles_03010.jpg" alt="Colls" onclick="seleccionar('colls')"></div>
           <div class="item"><img src="https://upload.wikimedia.org/wikipedia/commons/e/ed/Straight_sleeve.jpg" alt="Màniga" onclick="seleccionar('maniga')"></div>
         </div>
@@ -179,7 +179,7 @@
       </div>
 
       <div class="parell dreta"> <!-- Alineat a la dreta -->
-        <div class="imatges">
+        <div class="imatges dreta">
           <div class="item"><img src="https://img.freepik.com/vector-premium/dibujo-tecnico-falda-vistas-delantera-trasera_837135-47.jpg" alt="Faldilla mitja capa" onclick="seleccionar('faldillaMitjaCapa')"></div>
           <div class="item"><img src="https://patronesmujer.com/blog/wp-content/uploads/2014/12/patron-falda-capa.jpg" alt="Faldilla capa sencera" onclick="seleccionar('faldillaCapaSencera')"></div>
         </div>
@@ -189,7 +189,6 @@
       </div>
     </div>
   </div>
-
 
   
   <!-- Formulari de faldilla -->
