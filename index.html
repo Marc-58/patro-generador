@@ -9,6 +9,7 @@
       padding: 20px;
       background-color: black; /* Fons negre */
       color: white; /* Color del text blanc per a contrast */
+      margin: 0; /* Eliminem marges del cos */
     }
 
     /* Barra superior */
@@ -57,6 +58,7 @@
       align-items: center; /* Centrar els elements */
       margin: auto;
       max-width: 1000px; /* centrat */
+      width: 100%; /* Ample total per a l'alineació */
     }
 
     /* Cada parell d'imatges i frase */
@@ -65,8 +67,8 @@
       flex-direction: column; /* Columna per a imatges i frase */
       align-items: center; /* Centrar els elements */
       margin-bottom: 20px; /* Espai entre parells */
-      width: 100%; /* Ample total per a l'alineació */
-      padding: 0 10px; /* Espai lateral de 1 cm (aproximadament 10px) */
+      width: calc(100% - 40px); /* Ample total amb espai per a marges */
+      padding: 0 20px; /* Espai lateral de 1 cm (aproximadament 20px) */
     }
 
     .imatges {
@@ -104,7 +106,8 @@
     }
 
     hr {
-      width: 100%; /* Llargada de la línia horitzontal */
+      width: calc(100% + 40px); /* Llargada de la línia horitzontal per cobrir l'ample total */
+      margin: 0 -20px; /* Ajustem marges per centrar la línia */
       border: 1px solid #fff; /* Color blanc per a la línia */
       margin: 10px 0; /* Espai abans i després de la línia */
     }
@@ -118,11 +121,6 @@
     .esquerra {
       justify-content: flex-start; /* Alineació a l'esquerra */
       margin-right: auto; /* Desplaçar a l'esquerra */
-    }
-
-    /* Espai entre el marge i la primera foto */
-    .espai {
-      margin-left: 20px; /* Espai d'un dit (aproximadament 20 píxels) */
     }
 
     #canvas-container {
