@@ -1,208 +1,208 @@
 <!DOCTYPE html>
 <html lang="ca">
 <head>
-  <meta charset="UTF-8" />
-  <title>Patronador</title>
-  <style>
-    body {
-      font-family: 'Arial', sans-serif; /* Font per defecte */
-      padding: 20px;
-      background-color: black; /* Fons negre */
-      color: white; /* Color del text blanc per a contrast */
-      margin: 0; /* Eliminem marges del cos */
-    }
+<meta charset="UTF-8" />
+<title>Patronador</title>
+<style>
+  body {
+    font-family: 'Arial', sans-serif; /* Font per defecte */
+    padding: 20px;
+    background-color: black; /* Fons negre */
+    color: white; /* Color del text blanc per a contrast */
+    margin: 0; /* Eliminem marges del cos */
+  }
 
-    /* Barra superior */
-    .navbar {
-      width: 100%; 
-      border-bottom: 2px solid #333; 
-      padding: 10px 0; 
-      margin-bottom: 30px; 
-      display: flex; 
-      justify-content: center; 
-      gap: 30px;
-      background-image: url('https://i.pinimg.com/736x/11/fa/53/11fa53670046bef15e2c4a117c468294.jpg'); /* Imatge de fons */
-      background-size: cover; /* Cobrir tota la barra */
-      background-position: center; /* Centrar la imatge */
-      height: 100px; /* Altura de la barra superior */
-    }
+  /* Barra superior */
+  .navbar {
+    width: 100%; 
+    border-bottom: 2px solid #333; 
+    padding: 10px 0; 
+    margin-bottom: 30px; 
+    display: flex; 
+    justify-content: center; 
+    gap: 30px;
+    background-image: url('https://i.pinimg.com/736x/11/fa/53/11fa53670046bef15e2c4a117c468294.jpg'); /* Imatge de fons */
+    background-size: cover; /* Cobrir tota la barra */
+    background-position: center; /* Centrar la imatge */
+    height: 100px; /* Altura de la barra superior */
+  }
 
-    .navbar a {
-      text-decoration: none;
-      color: #fff; /* Color blanc per als enllaços */
-      font-weight: bold;
-      font-size: 18px;
-    }
+  .navbar a {
+    text-decoration: none;
+    color: #fff; /* Color blanc per als enllaços */
+    font-weight: bold;
+    font-size: 18px;
+  }
 
-    .navbar a:hover {
-      text-decoration: underline;
-    }
+  .navbar a:hover {
+    text-decoration: underline;
+  }
 
-    h1 {
-      text-align: center; /* Centrar el títol */
-      font-size: 48px; /* Mida més gran del títol */
-      font-family: 'Georgia', serif; /* Font més elegant */
-      text-transform: uppercase; /* Majúscules */
-      margin: 20px 0; /* Espai al voltant del títol */
-    }
+  h1 {
+    text-align: center; /* Centrar el títol */
+    font-size: 48px; /* Mida més gran del títol */
+    font-family: 'Georgia', serif; /* Font més elegant */
+    text-transform: uppercase; /* Majúscules */
+    margin: 20px 0; /* Espai al voltant del títol */
+  }
 
-    .formulari, #triar-peca {
-      display: none;
-      margin-top: 20px;
-    }
+  .formulari, #triar-peca {
+    display: none;
+    margin-top: 20px;
+  }
 
-    /* Layout amb grid */
-    .opcions-peces {
-      display: flex;
-      flex-direction: column; /* Flex per a la columna */
-      align-items: center; /* Centrar els elements */
-      margin: auto;
-      max-width: 1000px; /* centrat */
-      width: 100%; /* Ample total per a l'alineació */
-    }
+  /* Layout amb grid */
+  .opcions-peces {
+    display: flex;
+    flex-direction: column; /* Flex per a la columna */
+    align-items: center; /* Centrar els elements */
+    margin: auto;
+    max-width: 1200px; /* centrat */
+    width: 100%; /* Ample total per a l'alineació */
+  }
 
-    /* Cada parell d'imatges i frase */
-    .parell {
-      display: flex;
-      flex-direction: column; /* Columna per a imatges i frase */
-      align-items: center; /* Centrar els elements */
-      margin-bottom: 20px; /* Espai entre parells */
-      width: calc(100% - 40px); /* Ample total amb espai per a marges */
-      padding: 0 20px; /* Espai lateral de 1 cm (aproximadament 20px) */
-    }
+  /* Cada parell d'imatges i frase */
+  .parell {
+    display: flex;
+    flex-direction: column; /* Columna per a imatges i frase */
+    align-items: center; /* Centrar els elements */
+    margin-bottom: 20px; /* Espai entre parells */
+    width: 100%; /* Ample total per a l'alineació */
+    padding: 0 50px; /* Espai lateral de 2.5 cm (aproximadament 50px) */
+  }
 
-    .imatges {
-      display: flex; /* Flex per a les imatges en horitzontal */
-      gap: 20px; /* Espai entre les imatges */
-      width: 100%; /* Ample total per a les imatges */
-    }
+  .imatges {
+    display: flex; /* Flex per a les imatges en horitzontal */
+    gap: 20px; /* Espai entre les imatges */
+    width: 100%; /* Ample total per a les imatges */
+  }
 
-    .item {
-      width: 340px; /* Ample duplicat */
-      height: 340px; /* Alçada duplicada */
-      border: 2px solid transparent;
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      cursor: pointer;
-    }
+  .item {
+    width: 340px; /* Ample duplicat */
+    height: 340px; /* Alçada duplicada */
+    border: 2px solid transparent;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    cursor: pointer;
+  }
 
-    .item:hover {
-      border-color: #333;
-    }
+  .item:hover {
+    border-color: #333;
+  }
 
-    .item img {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain; /* Manté proporció */
-    }
+  .item img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Manté proporció */
+  }
 
-    .frase {
-      margin-top: 10px;
-      text-align: center; /* Centrar la frase */
-      color: #fff; /* Color blanc per a les frases */
-    }
+  .frase {
+    margin-top: 10px;
+    text-align: center; /* Centrar la frase */
+    color: #fff; /* Color blanc per a les frases */
+  }
 
-    hr {
-      width: calc(100% + 40px); /* Llargada de la línia horitzontal per cobrir l'ample total */
-      margin: 0 -20px; /* Ajustem marges per centrar la línia */
-      border: 1px solid #fff; /* Color blanc per a la línia */
-      margin: 10px 0; /* Espai abans i després de la línia */
-    }
+  hr {
+    width: calc(100% + 100px); /* Llargada de la línia horitzontal per cobrir l'ample total */
+    margin: 0 -50px; /* Ajustem marges per centrar la línia */
+    border: 1px solid #fff; /* Color blanc per a la línia */
+    margin: 10px 0; /* Espai abans i després de la línia */
+  }
 
-    /* Estils per a l'alineació */
-    .dreta {
-      justify-content: flex-end; /* Alineació a la dreta */
-      margin-left: auto; /* Desplaçar a la dreta */
-    }
+  /* Estils per a l'alineació */
+  .dreta {
+    justify-content: flex-end; /* Alineació a la dreta */
+    margin-left: auto; /* Desplaçar a la dreta */
+  }
 
-    .esquerra {
-      justify-content: flex-start; /* Alineació a l'esquerra */
-      margin-right: auto; /* Desplaçar a l'esquerra */
-    }
+  .esquerra {
+    justify-content: flex-start; /* Alineació a l'esquerra */
+    margin-right: auto; /* Desplaçar a l'esquerra */
+  }
 
-    #canvas-container {
-      margin-top: 20px;
-      text-align: center;
-    }
+  #canvas-container {
+    margin-top: 20px;
+    text-align: center;
+  }
 
-    button {
-      margin-top: 10px;
-      padding: 10px;
-      background-color: #333;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-  </style>
+  button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+</style>
 </head>
 <body>
 
-  <!-- Barra superior amb enllaços -->
-  <div class="navbar">
-    <a href="comprendre-mides.html" target="_blank">Com prendre mides</a>
-    <a href="quisoc.html" target="_blank">Qui sóc</a>
-    <a href="informacio.html" target="_blank">Informació addicional</a>
-  </div>
+<!-- Barra superior amb enllaços -->
+<div class="navbar">
+  <a href="comprendre-mides.html" target="_blank">Com prendre mides</a>
+  <a href="quisoc.html" target="_blank">Qui sóc</a>
+  <a href="informacio.html" target="_blank">Informació addicional</a>
+</div>
 
-  <h1>PATRONADOR</h1>
+<h1>PATRONADOR</h1>
 
-  <div id="triar-peca" style="display:block;">
-    <div class="opcions-peces">
-      <div class="parell dreta espai"> <!-- Alineat a la dreta amb espai -->
-        <div class="imatges dreta">
-          <div class="item"><img src="https://i.pinimg.com/736x/52/d7/8f/52d78f97d4773d860a5092113134fd90.jpg" alt="Faldilla" onclick="seleccionar('faldilla')"></div>
-          <div class="item"><img src="https://i.pinimg.com/736x/ae/23/e2/ae23e286e730820512b52a23f4781efd.jpg" alt="Brusa" onclick="seleccionar('brusa')"></div>
-        </div>
-        <hr>
-        <div class="frase">Aquesta és una faldilla i una brusa.</div>
-        <hr>
+<div id="triar-peca" style="display:block;">
+  <div class="opcions-peces">
+    <div class="parell dreta espai"> <!-- Alineat a la dreta amb espai -->
+      <div class="imatges dreta">
+        <div class="item"><img src="https://i.pinimg.com/736x/52/d7/8f/52d78f97d4773d860a5092113134fd90.jpg" alt="Faldilla" onclick="seleccionar('faldilla')"></div>
+        <div class="item"><img src="https://i.pinimg.com/736x/ae/23/e2/ae23e286e730820512b52a23f4781efd.jpg" alt="Brusa" onclick="seleccionar('brusa')"></div>
       </div>
+      <hr>
+      <div class="frase">Aquesta és una faldilla i una brusa.</div>
+      <hr>
+    </div>
 
-      <div class="parell esquerra espai"> <!-- Alineat a l'esquerra amb espai -->
-        <div class="imatges esquerra">
-          <div class="item"><img src="https://i.pinimg.com/736x/cb/b6/c2/cbb6c2a26d77b3155fedd50dab681d26.jpg" alt="Cos a cadera" onclick="seleccionar('cosACadera')"></div>
-          <div class="item"><img src="https://i.pinimg.com/236x/c1/5c/15/c15c159f09b1de522f791643eb5a4e78.jpg" alt="Vestit" onclick="seleccionar('vestit')"></div>
-        </div>
-        <hr>
-        <div class="frase">Aquí tenim un cos a cadera i un vestit.</div>
-        <hr>
+    <div class="parell esquerra espai"> <!-- Alineat a l'esquerra amb espai -->
+      <div class="imatges esquerra">
+        <div class="item"><img src="https://i.pinimg.com/736x/cb/b6/c2/cbb6c2a26d77b3155fedd50dab681d26.jpg" alt="Cos a cadera" onclick="seleccionar('cosACadera')"></div>
+        <div class="item"><img src="https://i.pinimg.com/236x/c1/5c/15/c15c159f09b1de522f791643eb5a4e78.jpg" alt="Vestit" onclick="seleccionar('vestit')"></div>
       </div>
+      <hr>
+      <div class="frase">Aquí tenim un cos a cadera i un vestit.</div>
+      <hr>
+    </div>
 
-      <div class="parell dreta espai"> <!-- Alineat a la dreta amb espai -->
-        <div class="imatges dreta">
-          <div class="item"><img src="https://patronesmujer.com/blog/wp-content/uploads/2015/01/Falda-pantal%C3%B3n-delantero11.jpg" alt="Faldilla pantaló" onclick="seleccionar('faldillaPantalo')"></div>
-          <div class="item"><img src="https://i.pinimg.com/736x/a8/a7/1d/a8a71d7805cdb415529d58a67bed72e1.jpg" alt="Pantaló" onclick="seleccionar('pantalo')"></div>
-        </div>
-        <hr>
-        <div class="frase">Faldilla pantaló i pantaló clàssic.</div>
-        <hr>
+    <div class="parell dreta espai"> <!-- Alineat a la dreta amb espai -->
+      <div class="imatges dreta">
+        <div class="item"><img src="https://patronesmujer.com/blog/wp-content/uploads/2015/01/Falda-pantal%C3%B3n-delantero11.jpg" alt="Faldilla pantaló" onclick="seleccionar('faldillaPantalo')"></div>
+        <div class="item"><img src="https://i.pinimg.com/736x/a8/a7/1d/a8a71d7805cdb415529d58a67bed72e1.jpg" alt="Pantaló" onclick="seleccionar('pantalo')"></div>
       </div>
+      <hr>
+      <div class="frase">Faldilla pantaló i pantaló clàssic.</div>
+      <hr>
+    </div>
 
-      <div class="parell esquerra espai"> <!-- Alineat a l'esquerra amb espai -->
-        <div class="imatges esquerra">
-          <div class="item"><img src="https://bigbensalamanca.es/blog/wp-content/uploads/cuello-Ingles_03010.jpg" alt="Colls" onclick="seleccionar('colls')"></div>
-          <div class="item"><img src="https://upload.wikimedia.org/wikipedia/commons/e/ed/Straight_sleeve.jpg" alt="Màniga" onclick="seleccionar('maniga')"></div>
-        </div>
-        <hr>
-        <div class="frase">Colls elegants i màniga recta.</div>
-        <hr>
+    <div class="parell esquerra espai"> <!-- Alineat a l'esquerra amb espai -->
+      <div class="imatges esquerra">
+        <div class="item"><img src="https://bigbensalamanca.es/blog/wp-content/uploads/cuello-Ingles_03010.jpg" alt="Colls" onclick="seleccionar('colls')"></div>
+        <div class="item"><img src="https://upload.wikimedia.org/wikipedia/commons/e/ed/Straight_sleeve.jpg" alt="Màniga" onclick="seleccionar('maniga')"></div>
       </div>
+      <hr>
+      <div class="frase">Colls elegants i màniga recta.</div>
+      <hr>
+    </div>
 
-      <div class="parell dreta espai"> <!-- Alineat a la dreta amb espai -->
-        <div class="imatges dreta">
-          <div class="item"><img src="https://img.freepik.com/vector-premium/dibujo-tecnico-falda-vistas-delantera-trasera_837135-47.jpg" alt="Faldilla mitja capa" onclick="seleccionar('faldillaMitjaCapa')"></div>
-          <div class="item"><img src="https://patronesmujer.com/blog/wp-content/uploads/2014/12/patron-falda-capa.jpg" alt="Faldilla capa sencera" onclick="seleccionar('faldillaCapaSencera')"></div>
-        </div>
-        <hr>
-        <div class="frase">Faldilla mitja capa i faldilla capa sencera.</div>
-        <hr>
+    <div class="parell dreta espai"> <!-- Alineat a la dreta amb espai -->
+      <div class="imatges dreta">
+        <div class="item"><img src="https://img.freepik.com/vector-premium/dibujo-tecnico-falda-vistas-delantera-trasera_837135-47.jpg" alt="Faldilla mitja capa" onclick="seleccionar('faldillaMitjaCapa')"></div>
+        <div class="item"><img src="https://patronesmujer.com/blog/wp-content/uploads/2014/12/patron-falda-capa.jpg" alt="Faldilla capa sencera" onclick="seleccionar('faldillaCapaSencera')"></div>
       </div>
+      <hr>
+      <div class="frase">Faldilla mitja capa i faldilla capa sencera.</div>
+      <hr>
     </div>
   </div>
+</div>
   
   <!-- Formulari de faldilla -->
   <div id="faldilla-form" class="formulari">
