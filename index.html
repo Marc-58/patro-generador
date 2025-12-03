@@ -68,9 +68,10 @@
     padding: 0 20px;
   }
 
+  /* 🔥 ESPAI ENTRE LES DUES IMATGES AMB ENLLAÇ → REDUÏT A 10PX */
   .imatges {
     display: flex;
-    gap: 20px;
+    gap: 10px; /* abans 20 */
     width: 100%;
     justify-content: center;
   }
@@ -114,10 +115,10 @@
     object-fit: contain;
   }
 
-  /* 🔥 SEPARACIÓ ×2,5 APLICADA A TOTES LES EXTRA-IMAGE */
+  /* 🔥 ESPAI EXTRA ENTRE EXTRA-IMAGE I LA IMATGE DEL MIG → 120PX */
   .parell .extra-image {
-    margin-right: 50px;
-    margin-left: 50px;
+    margin-right: 120px;
+    margin-left: 120px;
   }
 
   .frase {
@@ -204,7 +205,7 @@
         <div class="item"><img src="https://i.pinimg.com/736x/a8/a7/1d/a8a71d7805cdb415529d58a67bed72e1.jpg" onclick="seleccionar('pantalo')"></div>
       </div>
       <hr>
-      <div class="frase">“La elegancia debe ser la combinación correcta de distinción, naturalidad, cuidado y simplicidad. Fuera de esto, no hay elegancia. Sólo la pretensión.” Christian Dior</div>
+      <div class="frase">“La elegancia debe ser la combinación correcta de distinción, naturalidad, cuidado y simplicidad.” Christian Dior</div>
       <hr>
     </div>
 
@@ -234,6 +235,7 @@
 
   </div>
 </div>
+
   <!-- Formulari de faldilla -->
   <div id="faldilla-form" class="formulari">
     <h2>Faldilla</h2>
