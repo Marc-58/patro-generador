@@ -5,7 +5,7 @@
   <title>Patronador</title>
   <style>
     body {
-      font-family: sans-serif;
+      font-family: 'Arial', sans-serif; /* Font per defecte */
       padding: 20px;
       background-color: black; /* Fons negre */
       color: white; /* Color del text blanc per a contrast */
@@ -19,6 +19,9 @@
       margin-bottom: 30px; 
       display: flex; justify-content: center; 
       gap: 30px;
+      background-image: url('https://your-image-url.com/background.jpg'); /* Imatge de fons */
+      background-size: cover; /* Cobrir tota la barra */
+      background-position: center; /* Centrar la imatge */
     }
 
     .navbar a {
@@ -30,6 +33,14 @@
 
     .navbar a:hover {
       text-decoration: underline;
+    }
+
+    h1 {
+      text-align: center; /* Centrar el títol */
+      font-size: 36px; /* Mida del títol */
+      font-family: 'Georgia', serif; /* Font més elegant */
+      text-transform: uppercase; /* Majúscules */
+      margin: 20px 0; /* Espai al voltant del títol */
     }
 
     .formulari, #triar-peca {
@@ -141,11 +152,9 @@
     <a href="informacio.html" target="_blank">Informació addicional</a>
   </div>
 
-  <h1>Patronador</h1>
+  <h1>PATRONADOR</h1>
 
-  <!-- Tria la peça -->
   <div id="triar-peca" style="display:block;">
-    <h2>Tria la peça</h2>
     <div class="opcions-peces">
       <div class="parell dreta espai"> <!-- Alineat a la dreta amb espai -->
         <div class="imatges dreta">
