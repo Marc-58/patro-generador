@@ -171,15 +171,16 @@ function dibuixaPatro(p) {
     const escala = 10;
     const marge = 50;
 
-    p.createCanvas(1800, 1300);
-    p.background(255);
-    p.stroke(0);
-    p.noFill();
-
     if (tipus === "faldilla") {
       const cintura = mides.cintura * escala;
       const cadera = mides.cadera * escala;
       const llarg = mides.llarg * escala;
+
+      // Crear el canvas amb dimensions dinàmiques
+      p.createCanvas(cadera + cintura + 2 * marge, llarg + 2 * marge);
+      p.background(255);
+      p.stroke(0);
+      p.noFill();
 
       // Dibuix del patró de la faldilla
     // Dibuixar línies verticals i horitzontals per marcar la forma
@@ -223,6 +224,11 @@ function dibuixaPatro(p) {
       const pit = mides.pit * escala;
       const marge = espatlles / 2 + 20 * escala + 10;
 
+      p.createCanvas(espatlles + torax + 2 * marge, Math.max(talleEspatlles + 50, talleDavanter + llarg) + 2 * marge);
+      p.background(255);
+      p.stroke(0);
+      p.noFill();
+      
       // Part esquerra - esquena
       p.rect(10, 10, espatlles / 2, talleEspatlles);
       p.line(10 + coll / 6, 10, 10 + espatlles / 2, 10 + (talleEspatlles - caiguda)); // espatlla
@@ -319,6 +325,11 @@ p.line(
   const altDePit = mides.altDePit * escala;
   const pit = mides.pit * escala;
   const cadera = mides.cadera * escala;
+
+       p.createCanvas(espatlles + torax + 2 * marge, Math.max(talleEspatlles + 50, talleDavanter + llarg) + 2 * marge);
+      p.background(255);
+      p.stroke(0);
+      p.noFill();
 
   // Part esquerra - esquena
   p.rect(10, 10, espatlles / 2, talleEspatlles+18*escala);
@@ -426,6 +437,11 @@ p.line(
   const llargVestit = mides.llargVestit * escala;
   const cadera = mides.cadera * escala;
 
+         p.createCanvas(espatlles + torax + 2 * marge, Math.max(talleEspatlles + llargVestit + 50, talleDavanter + llargVestit) + 2 * marge);
+      p.background(255);
+      p.stroke(0);
+      p.noFill();
+
   // Part esquerra - esquena
   p.rect(10, 10, espatlles / 2, talleEspatlles+18*escala);
   p.line(10 + coll / 6, 10, 10 + espatlles / 2, 10 + (talleEspatlles - caiguda)); // espatlla
@@ -530,6 +546,10 @@ p.line(marge + torax / 4 - cintura / 8, 10 + talleDavanter, marge + torax / 4 - 
       const m2 = cadera/4+marge+10*escala+cadera/6 ;
       const B = cadera/12 ;
 
+      p.createCanvas(cadera + cintura + 2 * marge, llarg + 2 * marge);
+      p.background(255);
+      p.stroke(0);
+      p.noFill();
 
       p.rect(marge, marge, cadera / 4, llarg );
       p.rect(m2, marge,cadera / 4, llarg );
@@ -589,7 +609,11 @@ p.arc(
       const llargGenoll = mides.llargGenoll * escala;
       const marge = 10*escala
       const m2 = cadera/4+cadera/10+marge+10*escala ;
-
+      
+ p.createCanvas(cadera + cintura + 2 * marge, llarg + 2 * marge);
+      p.background(255);
+      p.stroke(0);
+      p.noFill();
 
       p.rect(marge, marge, cadera / 4, llarg );
       p.rect(m2, marge,cadera / 4, llarg );
@@ -674,6 +698,12 @@ p.strokeWeight(6)
 
       
     }else if (tipus === "colls") {
+
+ p.createCanvas(coll + 2 * marge, 6 * escala + 2 * marge);
+      p.background(255);
+      p.stroke(0);
+      p.noFill();
+      
       const coll = mides.coll * escala;
       
       p.rect(marge, marge, coll/2, 6*escala);
@@ -690,6 +720,13 @@ p.strokeWeight(6)
       const llargBraç = mides.llargBraç * escala;
       const munyeca = mides.munyeca * escala;
       const contornBraç = mides.contornBraç * escala;
+      
+ p.createCanvas(contornBraç + 2 * marge, llargTotal + 2 * marge);
+      p.background(255);
+      p.stroke(0);
+      p.noFill();
+
+      
       p.line(marge,marge+(llargTotal-llargBraç), marge+(contornBraç/2-munyeca/2), marge+llargTotal );
       p.line(marge+contornBraç,marge+(llargTotal-llargBraç), marge+(contornBraç/2-munyeca/2)+munyeca, marge+llargTotal );
       p.rect(marge, marge, contornBraç,llargTotal);
@@ -737,6 +774,11 @@ p.endShape();
       const llarg = mides.llarg * escala;
        const radi = cintura / (2 * Math.PI)*2;
 
+            p.createCanvas(2 * radi + 2 * marge, llarg + 2 * marge);
+      p.background(255);
+      p.stroke(0);
+      p.noFill();
+
     // Arc de cintura (semicercle cap avall)
     p.arc(0, marge , 2 *radi ,2*radi, 0, p.PI);
     p.arc(0 , marge , 2 * radi+llarg*2, 2 * radi+llarg*2, 0, p.PI);
@@ -749,6 +791,12 @@ p.endShape();
       const cintura = mides.cintura * escala;
       const llarg = mides.llarg * escala;
      const radi = cintura / (2 * Math.PI);
+
+      p.createCanvas(2 * radi + 2 * marge, llarg + 2 * marge);
+      p.background(255);
+      p.stroke(0);
+      p.noFill();
+
 
     // Arc de cintura (semicercle cap avall)
     p.arc(marge + radi+llarg , marge , 2 *radi ,2*radi, 0, p.PI);
