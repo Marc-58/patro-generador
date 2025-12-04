@@ -806,13 +806,68 @@ p.endShape();
   };
 }
 
+// Assegura't d'incloure les biblioteques jsPDF i JSZip al teu HTML
+// <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+// <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
 function descarregarCanvas() {
   const canvases = document.getElementsByTagName("canvas");
   if (canvases.length > 0) {
     const canvas = canvases[0];
-    const link = document.createElement('a');
-    link.download = tipus + '_patro.png';
-    link.href = canvas.toDataURL("image/png");
-    link.click();
+    const canvasWidth = canvas.width;
+    const canvasHeight = canvas.height;
+
+    // Dimensions d'un A4 en píxels (a 72 DPI)
+    const a4Width = 595; // 21 cm
+    const a4Height = 842; // 29.7 cm
+
+    // Calcular el nombre de files i columnes
+    const cols = Math.ceil(canvasWidth / a4Width);
+    const rows = Math.ceil(canvasHeight / a4Height);
+
+    // Crear un nou zip
+    const zip = new JSZip();
+
+    // Iterar sobre cada secció del canvas
+    for (let row = 0; row < rows; row++) {
+      for (let col = 0; col < cols; col++) {
+        // Crear un canvas temporal per a la secció
+        const tempCanvas = document.createElement("canvas");
+        const ctx = tempCanvas.getContext("2d");
+
+        // Ajustar les dimensions del canvas temporal
+        tempCanvas.width = Math.min(a4Width, canvasWidth - col * a4Width);
+        tempCanvas.height = Math.min(a4Height, canvasHeight - row * a4Height);
+
+        // Dibuixar la secció del canvas original al canvas temporal
+        ctx.drawImage(
+          canvas,
+          col * a4Width, row * a4Height, // Posició a l'original
+          tempCanvas.width, tempCanvas.height, // Dimensions a copiar
+          0, 0, // Posició a l'tempCanvas
+          tempCanvas.width, tempCanvas.height // Dimensions a l'tempCanvas
+        );
+
+        // Crear un nou document PDF
+        const { jsPDF } = window.jspdf;
+        const pdf = new jsPDF();
+
+        // Afegir la imatge al PDF
+        const imgData = tempCanvas.toDataURL("image/png");
+        pdf.addImage(imgData, 'PNG', 0, 0, tempCanvas.width * 0.75, tempCanvas.height * 0.75); // Ajusta la mida si cal
+
+        // Afegir el PDF al zip
+        zip.file(`part_${row + 1}_${col + 1}.pdf`, pdf.output('blob'));
+      }
+    }
+
+    // Descarregar el zip
+    zip.generateAsync({ type: "blob" }).then(function(content) {
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(content);
+      link.download = "canvas_parts.zip"; // Nom del fitxer zip
+      link.click();
+    });
   }
 }
+
