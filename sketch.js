@@ -698,14 +698,13 @@ p.strokeWeight(6)
 
       
     }else if (tipus === "colls") {
+      const coll = mides.coll * escala;
 
       p.createCanvas(coll + 2 * marge, 6 * escala + 2 * marge);
       p.background(255);
       p.stroke(0);
       p.noFill();
-      
-      const coll = mides.coll * escala;
-      
+            
       p.rect(marge, marge, coll/2, 6*escala);
       
       p.line(marge+coll/2-1*escala,marge, marge+coll/2, marge+5*escala );
