@@ -177,7 +177,7 @@ function dibuixaPatro(p) {
       const llarg = mides.llarg * escala;
 
       // Crear el canvas amb dimensions dinàmiques
-      p.createCanvas(cadera +100 + 2 * marge, llarg + 2 * marge);
+      p.createCanvas(cadera/2 +100 + 2 * marge, llarg + 2 * marge);
       p.background(255);
       p.stroke(0);
       p.noFill();
