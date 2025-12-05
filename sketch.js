@@ -326,7 +326,7 @@ p.line(
   const pit = mides.pit * escala;
   const cadera = mides.cadera * escala;
 
-       p.createCanvas(espatlles + torax + 2 * marge, Math.max(talleEspatlles + 50, talleDavanter + llarg) + 2 * marge);
+      p.createCanvas(cadera/2 +100 + 2 * marge, llarg + 2 * marge+18*escala);
       p.background(255);
       p.stroke(0);
       p.noFill();
@@ -437,7 +437,7 @@ p.line(
   const llargVestit = mides.llargVestit * escala;
   const cadera = mides.cadera * escala;
 
-         p.createCanvas(espatlles + torax + 2 * marge, Math.max(talleEspatlles + llargVestit + 50, talleDavanter + llargVestit) + 2 * marge);
+      p.createCanvas(cadera/2 +100 + 2 * marge, llarg + 2 * marge+llarg);
       p.background(255);
       p.stroke(0);
       p.noFill();
@@ -542,11 +542,11 @@ p.line(marge + torax / 4 - cintura / 8, 10 + talleDavanter, marge + torax / 4 - 
       const tiro = mides.tiro * escala;
       const cadera = mides.cadera * escala;
       const llarg = mides.llarg * escala;
-       const marge = 10 *escala;
+      const marge = 10 *escala;
       const m2 = cadera/4+marge+10*escala+cadera/6 ;
       const B = cadera/12 ;
 
-      p.createCanvas(cadera + cintura + 2 * marge, llarg + 2 * marge);
+      p.createCanvas(m2+cadera/4+B+1.5*escala +marge,marge+llarg+marge);
       p.background(255);
       p.stroke(0);
       p.noFill();
@@ -610,7 +610,7 @@ p.arc(
       const marge = 10*escala
       const m2 = cadera/4+cadera/10+marge+10*escala ;
       
- p.createCanvas(cadera + cintura + 2 * marge, llarg + 2 * marge);
+ p.createCanvas(m2+cadera/4+cadera/20+marge, llarg + 2 * marge);
       p.background(255);
       p.stroke(0);
       p.noFill();
@@ -699,7 +699,7 @@ p.strokeWeight(6)
       
     }else if (tipus === "colls") {
 
- p.createCanvas(coll + 2 * marge, 6 * escala + 2 * marge);
+      p.createCanvas(coll + 2 * marge, 6 * escala + 2 * marge);
       p.background(255);
       p.stroke(0);
       p.noFill();
@@ -774,7 +774,7 @@ p.endShape();
       const llarg = mides.llarg * escala;
        const radi = cintura / (2 * Math.PI)*2;
 
-            p.createCanvas(2 * radi + 2 * marge, llarg + 2 * marge);
+            p.createCanvas(radi + 2 * marge+llarg, radi + 2 * marge+llarg);
       p.background(255);
       p.stroke(0);
       p.noFill();
@@ -792,7 +792,7 @@ p.endShape();
       const llarg = mides.llarg * escala;
      const radi = cintura / (2 * Math.PI);
 
-      p.createCanvas(2 * radi + 2 * marge, llarg + 2 * marge);
+      p.createCanvas(radi + 2 * marge+llarg,radi + 2 * marge+llarg);
       p.background(255);
       p.stroke(0);
       p.noFill();
