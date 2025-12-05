@@ -699,6 +699,7 @@ p.strokeWeight(6)
       
     }else if (tipus === "colls") {
       const coll = mides.coll * escala;
+      const marge = 10* escala;
 
       p.createCanvas(coll + 2 * marge, 6 * escala + 2 * marge);
       p.background(255);
