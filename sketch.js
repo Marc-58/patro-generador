@@ -700,7 +700,7 @@ p.stroke("red");
       const coll = mides.coll * escala;
       const marge = 10;
 
-      p.createCanvas(coll + 2 * marge, 6 * escala + 2 * marge);
+      p.createCanvas(coll/2 + 2 * marge, 6 * escala + 2 * marge);
       p.background(255);
       p.stroke(0);
       p.noFill();
