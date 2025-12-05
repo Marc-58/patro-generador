@@ -791,7 +791,7 @@ p.endShape();
       const llarg = mides.llarg * escala;
      const radi = cintura / (2 * Math.PI);
 
-      p.createCanvas(radi + 2 * marge+llarg,radi + 2 * marge+llarg);
+      p.createCanvas(2*radi + 2 * marge+2*llarg,radi + 2 * marge+llarg);
       p.background(255);
       p.stroke(0);
       p.noFill();
