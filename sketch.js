@@ -689,7 +689,6 @@ m2 + cadera/4 + cadera/20, marge + 20*escala + cadera/20           // punt final
       
       
 p.stroke("red");
-p.strokeWeight(6)
       p.line(marge+cadera/4-(cintura/4+6*escala),marge, marge+cadera/4-3*escala ,marge); // cint
       p.line( marge+3*escala,marge+llarg, marge+cadera/4+2*escala ,marge+llarg); // baix
 
@@ -699,7 +698,7 @@ p.strokeWeight(6)
       
     }else if (tipus === "colls") {
       const coll = mides.coll * escala;
-      const marge = 10* escala;
+      const marge = 10;
 
       p.createCanvas(coll + 2 * marge, 6 * escala + 2 * marge);
       p.background(255);
