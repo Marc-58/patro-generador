@@ -434,7 +434,7 @@ p.line(
   const talleDavanter = mides.talleDavanter * escala;
   const altDePit = mides.altDePit * escala;
   const pit = mides.pit * escala;
-  const llargVestit = mides.llargVestit * escala;
+  const llargVestit = mides.llarg * escala;
   const cadera = mides.cadera * escala;
 
       p.createCanvas(cadera/2  + 2 * marge, llargVestit+ talleDavanter + 2 * marge);
