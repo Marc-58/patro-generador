@@ -326,7 +326,7 @@ p.line(
   const pit = mides.pit * escala;
   const cadera = mides.cadera * escala;
 
-      p.createCanvas(cadera/2 + 2 * 10*escala, talleDavanter +18*escala+20*escala);
+      p.createCanvas(cadera/2 + 20, talleDavanter +18*escala+20);
       p.background(255);
       p.stroke(0);
       p.noFill();
