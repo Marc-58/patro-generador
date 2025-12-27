@@ -326,7 +326,7 @@ p.line(
   const pit = mides.pit * escala;
   const cadera = mides.cadera * escala;
 
-      p.createCanvas(cadera/2 + 2 * marge, talleDavanter +18*escala+20*escala);
+      p.createCanvas(cadera/2 + 2 * 10*escala, talleDavanter +18*escala+20*escala);
       p.background(255);
       p.stroke(0);
       p.noFill();
@@ -437,7 +437,7 @@ p.line(
   const llargVestit = mides.llarg * escala;
   const cadera = mides.cadera * escala;
 
-      p.createCanvas(cadera/2  + 2 * marge, llargVestit+ talleDavanter + 2 * marge);
+      p.createCanvas(cadera/2  + 2 * 10*escala, llargVestit+ talleDavanter + 2 * 10*escala);
       p.background(255);
       p.stroke(0);
       p.noFill();
@@ -533,8 +533,8 @@ p.line(marge + torax / 4 - cintura / 8, 10 + talleDavanter, marge + torax / 4 - 
   p.line(10 + cintura / 8 + 1.5 * escala,talleEspatlles  + 10+18*escala, 10 + (cintura / 8) + 3 * escala, 10 + talleEspatlles); // pinça dreta
   
   // Part de vestit
-  p.rect(10, talleEspatlles+18*escala+10, (cadera / 4)-1*escala, llargVestit-18*escala);
-  p.rect(marge, talleDavanter+18*escala+10, (cadera / 4)+1*escala, llargVestit-18*escala);
+  p.rect(10, talleEspatlles+18*escala+10, (cadera / 4)+1*escala, llargVestit-18*escala);
+  p.rect(marge, talleDavanter+18*escala+10, (cadera / 4)-1*escala, llargVestit-18*escala);
 
 
     } else if (tipus === "faldillaPantalo") {
