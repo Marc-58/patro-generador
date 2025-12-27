@@ -326,7 +326,7 @@ p.line(
   const pit = mides.pit * escala;
   const cadera = mides.cadera * escala;
 
-      p.createCanvas(cadera/2 +100 + 2 * marge, llarg + 2 * marge+18*escala);
+      p.createCanvas(cadera/2 + 2 * marge, talleDavanter  + 2 * marge+18*escala);
       p.background(255);
       p.stroke(0);
       p.noFill();
@@ -437,7 +437,7 @@ p.line(
   const llargVestit = mides.llargVestit * escala;
   const cadera = mides.cadera * escala;
 
-      p.createCanvas(cadera/2 +100 + 2 * marge, llarg + 2 * marge+llarg);
+      p.createCanvas(cadera/2  + 2 * marge, llargVestit+talleDavanter + 2 * marge);
       p.background(255);
       p.stroke(0);
       p.noFill();
