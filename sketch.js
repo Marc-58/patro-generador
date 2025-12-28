@@ -719,7 +719,7 @@ p.stroke("red");
       const llargBraç = mides.llargBraç * escala;
       const munyeca = mides.munyeca * escala;
       const contornBraç = mides.contornBraç * escala;
-      const marge=10*escala
+      const marge=5*escala
  p.createCanvas(contornBraç + 2 * marge, llargTotal + 2 * marge);
       p.background(255);
       p.stroke(0);
@@ -750,7 +750,6 @@ p.curveVertex(marge+contornBraç/4,marge+(llargTotal-llargBraç)/2);
 p.curveVertex(marge+contornBraç/8 *3,marge+2*escala);
      
 p.curveVertex(marge + contornBraç / 2-1.5*escala, marge - 1 * escala);
-p.curveVertex(marge + contornBraç / 2, marge - 2 * escala);
 p.curveVertex(marge + contornBraç / 2, marge - 2 * escala);
 p.curveVertex(marge + contornBraç / 2+1.5*escala, marge - 1 * escala);
 
