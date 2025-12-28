@@ -729,13 +729,6 @@ p.stroke("red");
       p.line(marge,marge+(llargTotal-llargBraç), marge+(contornBraç/2-munyeca/2), marge+llargTotal );
       p.line(marge+contornBraç,marge+(llargTotal-llargBraç), marge+(contornBraç/2-munyeca/2)+munyeca, marge+llargTotal );
       p.rect(marge, marge, contornBraç,llargTotal);
-p.stroke("red");
-p.strokeWeight(6);
-   
-
-       p.point(marge+contornBraç/4,marge+(llargTotal-llargBraç)/2);
-      p.point( marge+contornBraç*3/4,marge+(llargTotal-llargBraç)/2);
-      p.point(marge+contornBraç/2, marge-2*escala);
 
 p.beginShape();
 p.noFill();
