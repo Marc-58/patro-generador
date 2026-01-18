@@ -224,7 +224,7 @@ function dibuixaPatro(p) {
       const pit = mides.pit * escala;
       const marge = espatlles / 2 + 20 * escala + 10;
 
-      p.createCanvas(espatlles + torax + 2 * marge,  talleDavanter + 2 * marge);
+      p.createCanvas(espatlles + torax + 2 * marge,  talleDavanter + 2 );
       p.background(255);
       p.stroke(0);
       p.noFill();
@@ -306,11 +306,6 @@ p.line(
   xFinal,
   yFinal
 );
-
-//p.arc(marge, 10, coll/6+2, coll/6 + 4*escala, 0, p.HALF_PI);
-
-
-
 
     } else if (tipus === "cosACadera") { 
   const espatlles = mides.espatllesTotal * escala;
