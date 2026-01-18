@@ -797,63 +797,69 @@ p.endShape();
 // <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 
 function descarregarCanvas() {
-  const canvases = document.getElementsByTagName("canvas");
-  if (canvases.length > 0) {
-    const canvas = canvases[canvases.length - 1];
-    const canvasWidth = canvas.width;
-    const canvasHeight = canvas.height;
 
-    // Dimensions d'un A4 en píxels (a 72 DPI)
-    const a4Width = 595; // 21 cm
-    const a4Height = 842; // 29.7 cm
+  const container = document.getElementById("canvas-container");
+  const canvas = container.querySelector("canvas");
 
-    // Calcular el nombre de files i columnes
-    const cols = Math.ceil(canvasWidth / a4Width);
-    const rows = Math.ceil(canvasHeight / a4Height);
-
-    // Crear un nou zip
-    const zip = new JSZip();
-
-    // Iterar sobre cada secció del canvas
-    for (let row = 0; row < rows; row++) {
-      for (let col = 0; col < cols; col++) {
-        // Crear un canvas temporal per a la secció
-        const tempCanvas = document.createElement("canvas");
-        const ctx = tempCanvas.getContext("2d");
-
-        // Ajustar les dimensions del canvas temporal
-        tempCanvas.width = Math.min(a4Width, canvasWidth - col * a4Width);
-        tempCanvas.height = Math.min(a4Height, canvasHeight - row * a4Height);
-
-        // Dibuixar la secció del canvas original al canvas temporal
-        ctx.drawImage(
-          canvas,
-          col * a4Width, row * a4Height, // Posició a l'original
-          tempCanvas.width, tempCanvas.height, // Dimensions a copiar
-          0, 0, // Posició a l'tempCanvas
-          tempCanvas.width, tempCanvas.height // Dimensions a l'tempCanvas
-        );
-
-        // Crear un nou document PDF
-        const { jsPDF } = window.jspdf;
-        const pdf = new jsPDF();
-
-        // Afegir la imatge al PDF
-        const imgData = tempCanvas.toDataURL("image/png");
-        pdf.addImage(imgData, 'PNG', 0, 0, tempCanvas.width * 0.75, tempCanvas.height * 0.75); // Ajusta la mida si cal
-
-        // Afegir el PDF al zip
-        zip.file(`part_${row + 1}_${col + 1}.pdf`, pdf.output('blob'));
-      }
-    }
-
-    // Descarregar el zip
-    zip.generateAsync({ type: "blob" }).then(function(content) {
-      const link = document.createElement('a');
-      link.href = URL.createObjectURL(content);
-      link.download = "canvas_parts.zip"; // Nom del fitxer zip
-      link.click();
-    });
+  if (!canvas) {
+    alert("No s'ha trobat cap canvas");
+    return;
   }
-}
 
+  const a4Width = 595;
+  const a4Height = 842;
+
+  const cols = Math.ceil(canvas.width / a4Width);
+  const rows = Math.ceil(canvas.height / a4Height);
+
+  const zip = new JSZip();
+  const { jsPDF } = window.jspdf;
+
+  for (let row = 0; row < rows; row++) {
+    for (let col = 0; col < cols; col++) {
+
+      const sx = col * a4Width;
+      const sy = row * a4Height;
+
+      const sw = Math.min(a4Width, canvas.width - sx);
+      const sh = Math.min(a4Height, canvas.height - sy);
+
+      if (sw <= 0 || sh <= 0) continue;
+
+      const tempCanvas = document.createElement("canvas");
+      tempCanvas.width = a4Width;
+      tempCanvas.height = a4Height;
+
+      const ctx = tempCanvas.getContext("2d");
+      ctx.fillStyle = "white";
+      ctx.fillRect(0, 0, a4Width, a4Height);
+
+      ctx.drawImage(
+        canvas,
+        sx, sy, sw, sh,
+        0, 0, sw, sh
+      );
+
+      const pdf = new jsPDF({
+        orientation: "portrait",
+        unit: "px",
+        format: [a4Width, a4Height]
+      });
+
+      pdf.addImage(
+        tempCanvas.toDataURL("image/png"),
+        "PNG",
+        0,
+        0,
+        a4Width,
+        a4Height
+      );
+
+      zip.file(`fila_${row + 1}_col_${col + 1}.pdf`, pdf.output("blob"));
+    }
+  }
+
+  zip.generateAsync({ type: "blob" }).then(content => {
+    saveAs(content, "patro.zip");
+  });
+}
