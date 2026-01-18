@@ -797,7 +797,6 @@ p.endShape();
 // <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 
 function descarregarCanvas() {
-
   const container = document.getElementById("canvas-container");
   const canvas = container.querySelector("canvas");
 
@@ -806,8 +805,11 @@ function descarregarCanvas() {
     return;
   }
 
-  const a4Width = 595;
-  const a4Height = 842;
+  const escala = 28.3464567; // 1 cm en píxels
+
+  // Mida A4 REAL en píxels (21 x 29,7 cm)
+  const a4Width = 21 * escala;
+  const a4Height = 29.7 * escala;
 
   const cols = Math.ceil(canvas.width / a4Width);
   const rows = Math.ceil(canvas.height / a4Height);
@@ -851,15 +853,18 @@ function descarregarCanvas() {
         "PNG",
         0,
         0,
-        a4Width,
-        a4Height
+        sw,
+        sh
       );
 
-      zip.file(`fila_${row + 1}_col_${col + 1}.pdf`, pdf.output("blob"));
+      zip.file(
+        `fila_${row + 1}_col_${col + 1}.pdf`,
+        pdf.output("blob")
+      );
     }
   }
 
   zip.generateAsync({ type: "blob" }).then(content => {
-    saveAs(content, "patro.zip");
+    saveAs(content, "patro_A4.zip");
   });
 }
