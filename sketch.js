@@ -799,7 +799,7 @@ p.endShape();
 function descarregarCanvas() {
   const canvases = document.getElementsByTagName("canvas");
   if (canvases.length > 0) {
-    const canvas = canvases[0];
+    const canvas = canvases[canvases.length - 1];
     const canvasWidth = canvas.width;
     const canvasHeight = canvas.height;
 
