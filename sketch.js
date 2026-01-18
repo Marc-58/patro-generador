@@ -168,7 +168,7 @@ function generarPatro(peca) {
 
 function dibuixaPatro(p) {
   p.setup = function () {
-    const escala = 28.3464567;
+    const escala = 0,0265;
     const marge = 50;
 
     if (tipus === "faldilla") {
