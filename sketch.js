@@ -224,7 +224,8 @@ function dibuixaPatro(p) {
       const pit = mides.pit * escala;
       const marge = espatlles / 2 + 20 * escala + 10;
 
-      p.createCanvas(cadera/2 + 20, talleDavanter +20 );
+
+      p.createCanvas(ciintura/2 + 20, talleDavanter +20 );
       p.background(255);
       p.stroke(0);
       p.noFill();
